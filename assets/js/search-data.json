@@ -4,8 +4,8 @@
         "post0": {
             "title": "First Markdown Post",
             "content": "Markdown is a lightweight markup language for creating formatted text using a plain-text editor! . Here are a few things that you can do with Markdown: . You can style text using Markdown! . You can also add numbered lists! . My top 3 programming languages: . Python | Markdown | HTML Add images! . This is the logo for Markdown! . Add Youtube embeds! . youtube: https://youtu.be/watch?v=dQw4w9WgXcQ . Add code embeds! . print(&quot;Prime numbers:&quot;,end=&#39; &#39;) for n in range(1,100): for i in range(2,n): if(n%i==0): break else: print(n,end=&#39; &#39;) . This is the code that I used in my Jupyter notebook to print the prime numbers ranging from 1 to 100! . Add HTML Fragments! . | About Me Click this! . .",
-            "url": "https://raunak2007.github.io/csp-fast-pages/markdown/2022/08/21/markdown-(2).html",
-            "relUrl": "/markdown/2022/08/21/markdown-(2).html",
+            "url": "https://raunak2007.github.io/csp-fast-pages/markdown/2022/08/21/markdown-(3).html",
+            "relUrl": "/markdown/2022/08/21/markdown-(3).html",
             "date": " • Aug 21, 2022"
         }
         
