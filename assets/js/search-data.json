@@ -95,6 +95,22 @@
   
 
   
+      ,"page3": {
+          "title": "Notes for CSP",
+          "content": "Notes for Python: . def symbolizes a new function | if, elif and, else can be used to do something after a given condition occurs | strings have to be in quotation marks | .",
+          "url": "https://raunak2007.github.io/csp-fast-pages/_pages/notes.html",
+          "relUrl": "/_pages/notes.html",
+          "date": ""
+      }
+      
+  
+
+  
+  
+
+  
+
+  
   
 
   
@@ -103,18 +119,13 @@
   
 
   
-
-  
   
 
   
   
 
   
-  
-
-  
-      ,"page10": {
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://raunak2007.github.io/csp-fast-pages/robots.txt",
