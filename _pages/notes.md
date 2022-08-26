@@ -1,8 +1,8 @@
 ---
 toc: false
 layout: post
-description: My first post using the features of Markdown
-categories: [markdown]
+description: Notes that will be useful for me in CSP this year
+categories: [csp]
 title: Notes for CSP
 ---
 Notes for Python:
