@@ -96,7 +96,10 @@ plugins:
   - jekyll-twitter-plugin
   - jekyll-relative-links
   - jekyll-seo-tag
-  - jekyll-remote-theme
+  - jekyll-
+  
+  
+  -theme
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
@@ -106,7 +109,7 @@ plugins:
 paginate: 15
 paginate_path: /page:num/
 
-remote_theme: jekyll/minima
+remote_theme: pages-themes/cayman@v0.2.0
 
 titles_from_headings:
   enabled:     true
