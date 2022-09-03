@@ -1,14 +1,14 @@
 ---
 toc: true
 layout: post
-description: "DNHS 2022-2023 Bell Schedule"
+description: "Inputting DNHS 2022-2023 Bell Schedule Data into a table in Markdown"
 categories: [markdown, week2]
 title: DNHS Bell Schedule 
 ---
 <html>
 <style>
     table, th, td {
-        border: 2 px white;
+        border: 4 px white;
     }
 </style>
 
