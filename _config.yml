@@ -94,10 +94,7 @@ plugins:
   - jekyll-twitter-plugin
   - jekyll-relative-links
   - jekyll-seo-tag
-  - jekyll-
-  
-  
-  -theme
+  - jekyll-remote-theme
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
