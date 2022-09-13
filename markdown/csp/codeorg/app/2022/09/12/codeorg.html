@@ -72,7 +72,7 @@
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      3 min read
     
 </span></p>
 
@@ -109,18 +109,6 @@
 <li class="toc-entry toc-h2"><a href="#procedural-abstraction">Procedural Abstraction</a></li>
 <li class="toc-entry toc-h2"><a href="#algorithm-implementation">Algorithm Implementation</a></li>
 <li class="toc-entry toc-h2"><a href="#testing">Testing</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h1"><a href="#initial-thinking-1">Initial Thinking</a></li>
-<li class="toc-entry toc-h1"><a href="#design-work-1">Design Work</a></li>
-<li class="toc-entry toc-h1"><a href="#creation-1">Creation</a>
-<ul>
-<li class="toc-entry toc-h2"><a href="#program-purpose--function-1">Program Purpose &amp; Function</a></li>
-<li class="toc-entry toc-h2"><a href="#data-abstraction-1">Data Abstraction</a></li>
-<li class="toc-entry toc-h2"><a href="#managing-complexity-1">Managing Complexity</a></li>
-<li class="toc-entry toc-h2"><a href="#procedural-abstraction-1">Procedural Abstraction</a></li>
-<li class="toc-entry toc-h2"><a href="#algorithm-implementation-1">Algorithm Implementation</a></li>
-<li class="toc-entry toc-h2"><a href="#testing-1">Testing</a></li>
 </ul>
 </li>
 </ul><h1 id="link">
@@ -244,117 +232,6 @@
   <li>Use of <code class="language-plaintext highlighter-rouge">console.log</code> to test the scoring feature
     <ul>
       <li>Logged each correct answer, incorrect answer, and overall score)</li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="initial-thinking-1">
-<a class="anchor" href="#initial-thinking-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Initial Thinking</h1>
-
-<p>Harsha and I want to build a quiz application that is user-friendly and easy to code. We want to avoid repetitive code so that we can have the most efficient programming experience. Our plan is to create an app that can support the selection of different quizzes given a dropdown selection. We want it to have 4 choices on each answer screen with only one correct answer. We also want to have a final screen which displays the score out of 3 as well as a percentage. There should be a way to go back to the main screen to retake a quiz or take the other quiz. Finally, there should be a “How to Play” screen for anyone confused about where to start.</p>
-
-<h1 id="design-work-1">
-<a class="anchor" href="#design-work-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Design Work</h1>
-
-<p>Harsha and I met up outside of school and did some sketches for the app on an iPad. We decided that we wanted to have a front screen with 3 images and a dropdown to select the quiz. On each question, we wanted to have a text box for the current quiz question and a 2x2 grid to display the answer choices with images and labels. We also planned out a score page that showed how many questions they got right out of 3 and percent accuracy with which they completed the quiz. The how to play screen was something Harsha designed on the fly by himself since we didn’t originally plan it but we wanted to add more features.</p>
-
-<h1 id="creation-1">
-<a class="anchor" href="#creation-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creation</h1>
-
-<p><img src="/csp-fast-pages/images/js-code.png" alt="js-code"></p>
-
-<p>Harsha and I used the JavaScript editor for quite a bit of our code. We used it to define the calculus quizzes in JavaScript objects. We used block coding to define <code class="language-plaintext highlighter-rouge">onEvent</code> listeners and <code class="language-plaintext highlighter-rouge">setProperty</code> calls because it has useful autocompletion features for the IDs of elements and their respective properties/emitters.</p>
-
-<p>We designed the quiz in such a way that all the questions would live on one screen. When the user clicks the “next” or “submit” button, the following function runs”</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">nextQuestion</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">quiz</span><span class="p">[</span><span class="nx">question</span> <span class="o">-</span> <span class="mi">1</span><span class="p">].</span><span class="nx">answers</span><span class="p">[</span><span class="nx">selected</span> <span class="o">-</span> <span class="mi">1</span><span class="p">].</span><span class="nx">correct</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">correct</span><span class="o">++</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nx">question</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">===</span> <span class="nx">quiz</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">setProperty</span><span class="p">(</span><span class="dl">"</span><span class="s2">nextButton</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">setProperty</span><span class="p">(</span><span class="dl">"</span><span class="s2">nextButton</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">next</span><span class="dl">"</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="nx">setProperty</span><span class="p">(</span><span class="dl">"</span><span class="s2">label</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">selected</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text-color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">white</span><span class="dl">"</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">question</span> <span class="o">===</span> <span class="nx">quiz</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">finish</span><span class="p">();</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="nx">question</span><span class="o">++</span><span class="p">;</span>
-    <span class="nx">updateImages</span><span class="p">();</span>
-    <span class="nx">updateQuestion</span><span class="p">();</span>
-    <span class="nx">updateChoices</span><span class="p">();</span>
-
-    <span class="nx">selected</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>This function will set the label text, image sources, and question text to the next question without having to switch screens, avoiding repeated element creation and centralizing all the quiz logic in a single function. Additionally, it reduces the amount of event listeners being created (1 for each of the total 4 images).</p>
-
-<h2 id="program-purpose--function-1">
-<a class="anchor" href="#program-purpose--function-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Program Purpose &amp; Function</h2>
-
-<ul>
-  <li>A quiz to assess the user’s knowledge of calculus</li>
-  <li>Should display the user’s score at the end to show their understanding</li>
-</ul>
-
-<h2 id="data-abstraction-1">
-<a class="anchor" href="#data-abstraction-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Abstraction</h2>
-
-<ul>
-  <li>Definition of the <code class="language-plaintext highlighter-rouge">a=getTime()</code> and <code class="language-plaintext highlighter-rouge">score</code> variables containing objects representing the quizzes for each sport</li>
-  <li>Separated from functions that are actually using the data</li>
-</ul>
-
-<h2 id="managing-complexity-1">
-<a class="anchor" href="#managing-complexity-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Complexity</h2>
-
-<ul>
-  <li>Use of a single screen to display all quiz questions using “containers” for images, the question, and the answer labels
-    <ul>
-      <li>Setting certain properties on these based on the current question to show the correct information</li>
-      <li>Creation of functions to abstract away logic for changing each of these individual parts of the quiz screen</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="procedural-abstraction-1">
-<a class="anchor" href="#procedural-abstraction-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Procedural Abstraction</h2>
-
-<ul>
-  <li>Use of functions to update images, questions, and choices</li>
-  <li>Use of function to abstract away quiz logic and execute the correct quiz based on user</li>
-  <li>Use of function to set the current selected answer choice
-    <ul>
-      <li>Changes previously selected answer label’s color, sets newly selected answer label’s color, and sets the current selected answer choice in a global variable</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="algorithm-implementation-1">
-<a class="anchor" href="#algorithm-implementation-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Algorithm Implementation</h2>
-
-<ul>
-  <li>Creation of a <code class="language-plaintext highlighter-rouge">nextQuestion</code> algorithm that procedurally fills in the correct question, labels, and answer choices for each quiz question
-    <ul>
-      <li>Handles answer choice colors, text value of the “next” button (changes to “submit” for the last question)</li>
-      <li>Handles quiz ending scenario</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="testing-1">
-<a class="anchor" href="#testing-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h2>
-
-<ul>
-  <li>Use of <code class="language-plaintext highlighter-rouge">console.log</code> to debug unwanted behavior</li>
-  <li>Use of <code class="language-plaintext highlighter-rouge">console.log</code> to test the scoring feature
-    <ul>
-      <li>Logged each correct answer, incorrect answer, and overall score</li>
     </ul>
   </li>
 </ul>
