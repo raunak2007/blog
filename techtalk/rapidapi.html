@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Python RapidAPI | Raunak Mondal’s CSP Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Python RapidAPI" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="APIs can be found all over the internet. A great consolidator of many APIs is RapidAPI. In this blog we will use a site to consolidates API stats. Learning a few lines of code and you can start extracting lots of data from the internet via APIs." />
+<meta property="og:description" content="APIs can be found all over the internet. A great consolidator of many APIs is RapidAPI. In this blog we will use a site to consolidates API stats. Learning a few lines of code and you can start extracting lots of data from the internet via APIs." />
+<link rel="canonical" href="https://raunak2007.github.io/csp-fast-pages/techtalk/rapidapi" />
+<meta property="og:url" content="https://raunak2007.github.io/csp-fast-pages/techtalk/rapidapi" />
+<meta property="og:site_name" content="Raunak Mondal’s CSP Blog" />
+<meta property="og:image" content="https://raunak2007.github.io/csp-fast-pages/images/rapidapi.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-10T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://raunak2007.github.io/csp-fast-pages/images/rapidapi.png" />
+<meta property="twitter:title" content="Python RapidAPI" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-10T00:00:00-05:00","datePublished":"2022-10-10T00:00:00-05:00","description":"APIs can be found all over the internet. A great consolidator of many APIs is RapidAPI. In this blog we will use a site to consolidates API stats. Learning a few lines of code and you can start extracting lots of data from the internet via APIs.","headline":"Python RapidAPI","image":"https://raunak2007.github.io/csp-fast-pages/images/rapidapi.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://raunak2007.github.io/csp-fast-pages/techtalk/rapidapi"},"url":"https://raunak2007.github.io/csp-fast-pages/techtalk/rapidapi"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/csp-fast-pages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://raunak2007.github.io/csp-fast-pages/feed.xml" title="Raunak Mondal's CSP Blog" /><link rel="shortcut icon" type="image/x-icon" href="/csp-fast-pages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/csp-fast-pages/">Raunak Mondal&#39;s CSP Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/csp-fast-pages/about/">About Me</a><a class="page-link" href="/csp-fast-pages/_pages/frontend.html">Frontend</a><a class="page-link" href="/csp-fast-pages/_pages/notes.html">Notes for CSP</a><a class="page-link" href="/csp-fast-pages/search/">Search</a><a class="page-link" href="/csp-fast-pages/categories/">Tags</a><a class="page-link" href="/csp-fast-pages/_pages/vocab.html">My CSP Vocab</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Python RapidAPI</h1><p class="page-description">APIs can be found all over the internet.  A great consolidator of many APIs is <mark>RapidAPI</mark>.  In this blog we will use a site to consolidates API stats.  Learning a few lines of code and you can start extracting lots of data from the internet via APIs.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-10T00:00:00-05:00" itemprop="datePublished">
+        Oct 10, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      8 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/csp-fast-pages/categories/#1.A">1.A</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/csp-fast-pages/categories/#5.B">5.B</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/csp-fast-pages/categories/#5.D">5.D</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/raunak2007/csp-fast-pages/tree/master/_notebooks/2022_10_03_PBL_python_rapidapi (2).ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/raunak2007/csp-fast-pages/master?filepath=_notebooks%2F2022_10_03_PBL_python_rapidapi+%282%29.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/raunak2007/csp-fast-pages/blob/master/_notebooks/2022_10_03_PBL_python_rapidapi (2).ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fraunak2007%2Fcsp-fast-pages%2Fblob%2Fmaster%2F_notebooks%2F2022_10_03_PBL_python_rapidapi+%282%29.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#Python,-RapidAPI-Terms">Python, RapidAPI Terms </a></li>
+<li class="toc-entry toc-h3"><a href="#Covid19-RapidAPI-Example">Covid19 RapidAPI Example </a></li>
+<li class="toc-entry toc-h3"><a href="#Digital-Coin-Example">Digital Coin Example </a></li>
+<li class="toc-entry toc-h3"><a href="#Formatting-Digital-Coin-example">Formatting Digital Coin example </a></li>
+<li class="toc-entry toc-h1"><a href="#Our-Group-Project-API-(World-Time)">Our Group Project API (World Time) </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Go-deeper-into-APIs">Go deeper into APIs </a></li>
+<li class="toc-entry toc-h2"><a href="#Hacks">Hacks </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022_10_03_PBL_python_rapidapi (2).ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Python,-RapidAPI-Terms">
+<a class="anchor" href="#Python,-RapidAPI-Terms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python, RapidAPI Terms<a class="anchor-link" href="#Python,-RapidAPI-Terms"> </a>
+</h3>
+<blockquote>
+<p>APIs and tooling like Jupyter docs allows many opportunities in fields like Data Science.  As more and more developers use APIs, they build standards in how you setup a client, send requests and receive information...</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Covid19-RapidAPI-Example">
+<a class="anchor" href="#Covid19-RapidAPI-Example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Covid19 RapidAPI Example<a class="anchor-link" href="#Covid19-RapidAPI-Example"> </a>
+</h3>
+<blockquote>
+<p>To begin the API journey.  You need to find an API provider.</p>
+</blockquote>
+<ul>
+<li>RapidAPI is a great option.  You must setup and account, but there are many free options.</li>
+<li>Goto this page for starters, the <a href="https://rapidapi.com/spamakashrajtech/api/corona-virus-world-and-india-data/">Corona virus World and India data</a>- Under Code Snippets pick Python - Requests</li>
+</ul>
+<p>RapidAPI, you will select Python Requests type of code to work with you Notebook.</p>
+<ul>
+<li>The url is the endpoint to which the API is directed</li>
+<li>The headers is a dictionary data structure to send special messaging to the endpoint </li>
+<li>The requests.request() python function is used to send a request and retrieve their responses</li>
+<li>The response variable receives result of of the request in JSON text</li>
+</ul>
+<p>Next step, is to format the response according to your data science needs</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
+<span class="sd">Requests is a HTTP library for the Python programming language. </span>
+<span class="sd">The goal of the project is to make HTTP requests simpler and more human-friendly. </span>
+<span class="sd">"""</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="sd">"""</span>
+<span class="sd">RapidAPI is the world's largest API Marketplace. </span>
+<span class="sd">Developers use Rapid API to discover and connect to thousands of APIs. </span>
+<span class="sd">"""</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://corona-virus-world-and-india-data.p.rapidapi.com/api"</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'x-rapidapi-key'</span><span class="p">:</span> <span class="s2">"068e8e71ccmsh9b3b0cf234e3d0dp15d891jsn4e9a94382eba"</span><span class="p">,</span>
+    <span class="s1">'x-rapidapi-host'</span><span class="p">:</span> <span class="s2">"corona-virus-world-and-india-data.p.rapidapi.com"</span>
+<span class="p">}</span>
+
+<span class="c1"># Request Covid Data</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="c1"># print(response.text)  # uncomment this line to see raw data</span>
+
+<span class="c1"># This code looks for "world data"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"World Totals"</span><span class="p">)</span>
+<span class="n">world</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'world_total'</span><span class="p">)</span>  <span class="c1"># turn response to json() so we can extract "world_total"</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">world</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>  <span class="c1"># this finds key, value pairs in country</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># This code looks for USA in "countries_stats"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Country Totals"</span><span class="p">)</span>
+<span class="n">countries</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'countries_stat'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>  <span class="c1"># countries is a list</span>
+    <span class="k">if</span> <span class="n">country</span><span class="p">[</span><span class="s2">"country_name"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"USA"</span><span class="p">:</span>  <span class="c1"># this filters for USA</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">country</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>  <span class="c1"># this finds key, value pairs in country</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>World Totals
+total_cases 509,268,964
+new_cases 204,268
+total_deaths 6,242,509
+new_deaths 630
+total_recovered 461,827,849
+active_cases 41,198,606
+serious_critical 42,510
+total_cases_per_1m_population 65,334
+deaths_per_1m_population 800.9
+statistic_taken_at 2022-04-24 11:18:01
+
+Country Totals
+country_name USA
+cases 82,649,779
+deaths 1,018,316
+region 
+total_recovered 80,434,925
+new_deaths 0
+new_cases 0
+serious_critical 1,465
+active_cases 1,196,538
+total_cases_per_1m_population 247,080
+deaths_per_1m_population 3,044
+total_tests 1,000,275,726
+tests_per_1m_population 2,990,303
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Digital-Coin-Example">
+<a class="anchor" href="#Digital-Coin-Example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Digital Coin Example<a class="anchor-link" href="#Digital-Coin-Example"> </a>
+</h3>
+<blockquote>
+<p>This example provides digital coin feedback (ie Bitcoin).  It include popularity, price, symbols, etc.</p>
+<ul>
+<li>A valid X-RapidAPI-Key is required.  Look in code for link to RapidAPI page</li>
+<li>Read all comments in code for further guidance</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># RapidAPI page https://rapidapi.com/Coinranking/api/coinranking1/</span>
+
+<span class="c1"># Begin Rapid API Code</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://coinranking1.p.rapidapi.com/coins"</span>
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"referenceCurrencyUuid"</span><span class="p">:</span><span class="s2">"yhjMzLPhuIDl"</span><span class="p">,</span><span class="s2">"timePeriod"</span><span class="p">:</span><span class="s2">"24h"</span><span class="p">,</span><span class="s2">"tiers[0]"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="s2">"orderBy"</span><span class="p">:</span><span class="s2">"marketCap"</span><span class="p">,</span><span class="s2">"orderDirection"</span><span class="p">:</span><span class="s2">"desc"</span><span class="p">,</span><span class="s2">"limit"</span><span class="p">:</span><span class="s2">"50"</span><span class="p">,</span><span class="s2">"offset"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="s2">"X-RapidAPI-Key"</span><span class="p">:</span> <span class="s2">"068e8e71ccmsh9b3b0cf234e3d0dp15d891jsn4e9a94382eba"</span><span class="p">,</span>  <span class="c1"># place your key here</span>
+	<span class="s2">"X-RapidAPI-Host"</span><span class="p">:</span> <span class="s2">"coinranking1.p.rapidapi.com"</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="c1"># End Rapid API Code</span>
+<span class="n">json</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>  <span class="c1"># convert response to python json object</span>
+
+<span class="c1"># Observe data from an API.  This is how data transports over the internet in a "JSON" text form</span>
+<span class="c1"># - The JSON "text" is formed in dictionary {} and list [] divisions</span>
+<span class="c1"># - To read the result, Data Scientist of  Developer converts JSON into human readable form</span>
+<span class="c1"># - Review the first line, look for the keys --  "status" and "data"</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{"status":"success","data":{"stats":{"total":1497,"totalCoins":15880,"totalMarkets":29499,"totalExchanges":173,"totalMarketCap":"983600351889","total24hVolume":"62271932590"},"coins":[{"uuid":"Qwsogvtv82FCd","symbol":"BTC","name":"Bitcoin","color":"#f7931A","iconUrl":"https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg","marketCap":"384252414254","price":"20043.048298420286","listedAt":1330214400,"tier":1,"change":"-0.09","rank":1,"sparkline":["20050.210772224906","20104.086969351873","20157.612080991814","20244.902254214187","20296.13179911493","20355.40420179014","20339.584455003165","20380.9608314705","20334.43838223393","20256.397755502137","20214.818396073206","20187.14537643429","20159.744112050765","20135.103620334423","20152.838726388378","20223.999055486038","20188.386841136497","20099.650776087008","20022.525302913724","20060.360700925474","20058.49372151537","20101.79019444109","20068.60680042962","20037.990245449524","20040.006424632564"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/Qwsogvtv82FCd+bitcoin-btc","24hVolume":"34643309443","btcPrice":"1"},{"uuid":"razxDUgYGNAdQ","symbol":"ETH","name":"Ethereum","color":"#3C3C3D","iconUrl":"https://cdn.coinranking.com/rk4RKHOuW/eth.svg","marketCap":"166771865158","price":"1363.4411267728026","listedAt":1438905600,"tier":1,"change":"1.12","rank":2,"sparkline":["1349.0952855712028","1351.020589256574","1352.8575645347053","1363.1472565613235","1374.6067561390107","1375.494244817268","1372.953523219661","1375.925446184292","1374.4292408387619","1368.4552635284397","1366.1167355485723","1363.0950291906606","1360.3636987191837","1358.3640048395087","1360.4342504890021","1369.213281754299","1368.3676032576047","1364.1360571475047","1363.3432991494524","1364.0707758574745","1363.3606085887561","1364.148825121332","1361.3954792114398","1359.0031784082305","1360.6275497370877"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/razxDUgYGNAdQ+ethereum-eth","24hVolume":"11632395543","btcPrice":"0.06802563694267322"},{"uuid":"HIVsRcGKkPFtW","symbol":"USDT","name":"Tether USD","color":"#22a079","iconUrl":"https://cdn.coinranking.com/mgHqwlCLj/usdt.svg","marketCap":"68226757608","price":"1.0002079259242496","listedAt":1420761600,"tier":1,"change":"-0.13","rank":3,"sparkline":["1.0005865365358848","0.9997222677525898","1.000302739310476","0.9991136110008606","0.9999088281238293","1.0001228624687193","1.0002330626742733","0.9999085006515177","1.000637166558432","1.0010864048424142","1.000382906070256","1.0008861750426428","1.0002453605323327","1.0005499753502725","0.9999702733020642","0.9994598707479958","1.0012863570809547","1.0016448157620703","0.9996482331493484","1.0004215336032052","0.9999570213425627","0.9999224272643209","1.0007392056569566","1.000325844124763","1.0001333206640304"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/HIVsRcGKkPFtW+tetherusd-usdt","24hVolume":"40185169770","btcPrice":"0.000049902984368056"},{"uuid":"aKzUVe4Hh_CON","symbol":"USDC","name":"USDC","color":"#7894b4","iconUrl":"https://cdn.coinranking.com/jkDf8sQbY/usdc.svg","marketCap":"46265013950","price":"1.0001455267516093","listedAt":1539043200,"tier":1,"change":"-0.14","rank":4,"sparkline":["1.0004792903280844","0.9997900335112507","1.0002409949691449","0.9991618677934375","0.9998534185910576","0.9999410847854596","1.0002265014975766","0.9999486744759792","1.0006735177764154","1.0009635471641476","1.0003204451973837","1.0007368556469354","1.0001965553835719","1.0005780931027144","1.0000088554796078","0.9994586243665149","1.0011869248897938","1.0015496148117664","0.9997673802296243","1.0003598578573154","1.0000778482427792","0.9998861638814902","1.0006873238669673","1.0002882569057026","1.0001093290939425"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/aKzUVe4Hh_CON+usdc-usdc","24hVolume":"3358522477","btcPrice":"0.000049899871110446"},{"uuid":"WcwrkfNI4FUAe","symbol":"BNB","name":"Binance Coin","color":"#e8b342","iconUrl":"https://cdn.coinranking.com/B1N19L_dZ/bnb.svg","marketCap":"41769765064","price":"288.31435478535195","listedAt":1503014400,"tier":1,"change":"-1.55","rank":5,"sparkline":["293.0659068658593","293.14125809992265","293.927072308215","294.83908930457306","297.17141223267646","296.54802038189746","296.5585630450058","296.294553936533","295.9679395053358","295.35520526954036","294.7847791953549","295.0951173850531","294.5306048069131","294.30050189031186","294.22403335151813","294.80827509690437","294.33033971155965","293.96591310440675","293.66576108995565","293.99310192770326","293.69072498915045","293.4540279331547","293.23188737664185","293.09086576852025","290.12424881390194"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/WcwrkfNI4FUAe+binancecoin-bnb","24hVolume":"1154452180","btcPrice":"0.014384755776299543"},{"uuid":"-l8Mn2pVlRs-p","symbol":"XRP","name":"XRP","color":"#000000","iconUrl":"https://cdn.coinranking.com/B1oPuTyfX/xrp.svg","marketCap":"24935527184","price":"0.5001251405968443","listedAt":1421798400,"tier":1,"change":"1.02","rank":6,"sparkline":["0.4937540033530011","0.4935243660903145","0.49094545203960516","0.4918624009473887","0.4957389899343572","0.49519738378148237","0.4958525362412369","0.5001275119658124","0.5026720193539957","0.4991920707876871","0.49523182938198607","0.4939376274503768","0.4938461715574201","0.4949672333116952","0.49671660295169745","0.4983157134968618","0.4984385599250301","0.4958643382230643","0.4954888154508337","0.4956388106133542","0.49687913330335365","0.49710524663432437","0.4967817423491458","0.4960523063301114","0.5002588730645078"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/-l8Mn2pVlRs-p+xrp-xrp","24hVolume":"1951851389","btcPrice":"0.000024952548791506"},{"uuid":"vSo2fu9iE1s0Y","symbol":"BUSD","name":"Binance USD","color":"#f0b90b","iconUrl":"https://cdn.coinranking.com/6SJHRfClq/busd.svg","marketCap":"21383646644","price":"1.0000938123108745","listedAt":1563197940,"tier":1,"change":"-0.14","rank":7,"sparkline":["1.0005254447624727","0.9997390821935204","1.0002531268638544","0.99900371650551","0.9998191100048063","0.9999887701995116","1.0001269869516713","0.9997967773830551","1.0005975052435443","1.0010354550388738","1.000273734165667","1.0007993618135278","1.0001675248577555","1.0004436296308015","0.9998831620327592","0.9993790802417244","1.0011655146499898","1.0015608327721508","0.9996737479147666","1.0003874163381075","0.999855178764249","0.9997695857566036","1.0006363550917916","1.0003015517514349","1.0001110800082091"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/vSo2fu9iE1s0Y+binanceusd-busd","24hVolume":"6147025365","btcPrice":"0.000049897290942002"},{"uuid":"qzawljRxB5bYu","symbol":"ADA","name":"Cardano","color":"#3cc8c8","iconUrl":"https://cdn.coinranking.com/ryY28nXhW/ada.svg","marketCap":"13373195008","price":"0.4298337184562682","listedAt":1506902400,"tier":1,"change":"0.15","rank":8,"sparkline":["0.4294077817341544","0.43010743439413285","0.4311330265281362","0.43172655110842456","0.43548735625164897","0.4357388064320796","0.4347251184847503","0.43502688530763967","0.4347130159622236","0.433471895077104","0.43259694190748693","0.4319744086787819","0.4312921949359245","0.4311011590020075","0.4302280684331196","0.4319813231178509","0.43173383257478504","0.4303997167352433","0.429398559339474","0.4299648257425132","0.4297343398397519","0.42997828353732326","0.42937033740290426","0.42883620108710657","0.42920069115240905"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/qzawljRxB5bYu+cardano-ada","24hVolume":"688064082","btcPrice":"0.000021445526252119"},{"uuid":"zNZHO_Sjf","symbol":"SOL","name":"Solana","color":"#9cddec","iconUrl":"https://cdn.coinranking.com/yvUG4Qex5/solana.svg","marketCap":"11984369729","price":"33.73772094047453","listedAt":1586539320,"tier":1,"change":"-0.07","rank":9,"sparkline":["33.76424676052897","33.851653978639725","34.0161400563986","34.24080407969258","34.31681894129343","34.35588900553808","34.33042777400873","34.38277635446187","34.379681489180044","34.23752810964467","34.00887003667719","34.03341197552819","34.0205375439139","33.986450347226565","33.97284356925897","34.12322348136839","34.04818308388973","33.90841528770745","33.922236226998955","33.895084271212774","33.877508596833344","33.769632367031555","33.71898828195219","33.69001212339477","33.72267866886839"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/zNZHO_Sjf+solana-sol","24hVolume":"777816550","btcPrice":"0.001683262966698214"},{"uuid":"a91GCGd_u96cF","symbol":"DOGE","name":"Dogecoin","color":"#c2a633","iconUrl":"https://cdn.coinranking.com/H1arXIuOZ/doge.svg","marketCap":"8488807961","price":"0.06398401339869234","listedAt":1391212800,"tier":1,"change":"-0.80","rank":10,"sparkline":["0.06431595805843943","0.06435400841112346","0.0645379870268131","0.0650123288913721","0.06501563524570002","0.06505378638919912","0.0657960580235114","0.06603851629936867","0.0658184759881278","0.06555988714644552","0.06534311647764794","0.06512217936701878","0.06525813392333525","0.06507123735868817","0.06508747877233641","0.06537694106515178","0.06521416310707462","0.06486795280882116","0.06440018609785521","0.06431000551190193","0.06399099516985579","0.0639611688502269","0.06388198077385676","0.06396888900414123","0.06390412971383753"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/a91GCGd_u96cF+dogecoin-doge","24hVolume":"479258397","btcPrice":"0.000003192329452389"},{"uuid":"uW2tk-ILY0ii","symbol":"MATIC","name":"Polygon","color":"#8247e5","iconUrl":"https://cdn.coinranking.com/WulYRq14o/polygon.png","marketCap":"7357221715","price":"0.8402806991486048","listedAt":1558961160,"tier":1,"change":"-0.27","rank":11,"sparkline":["0.8434958048685458","0.850001213528094","0.853335038035505","0.8542282047138157","0.8515372370926926","0.8500057857531073","0.8471550687491181","0.8479199485431772","0.8469126231548905","0.8444467185672693","0.8452742352058495","0.8476150079540906","0.8463925672110996","0.8432430183950218","0.8407816804410218","0.8419007497492077","0.8398864867524278","0.8393073071328305","0.8429567390022452","0.8430941255831178","0.8444119779861358","0.8446502533596543","0.8422100742264239","0.8398203812650741","0.8392859340943655"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/uW2tk-ILY0ii+polygon-matic","24hVolume":"448903663","btcPrice":"0.000041923797550038"},{"uuid":"25W7FG7om","symbol":"DOT","name":"Polkadot","color":"#d64cA8","iconUrl":"https://cdn.coinranking.com/RsljYqnbu/polkadot.svg","marketCap":"7333124913","price":"6.374344819711631","listedAt":1598365200,"tier":1,"change":"-0.33","rank":12,"sparkline":["6.399722350341929","6.407431469281856","6.427796901211662","6.453758384149317","6.486494555997307","6.502517900580541","6.4967988980633296","6.498221992937296","6.477292881924281","6.477685872716661","6.447216988451034","6.445307223733043","6.445036089260377","6.436040246095806","6.435080457086081","6.463836456516857","6.450387542070514","6.421359237807177","6.391124134834344","6.389976567958392","6.385572049998837","6.392125200223458","6.382091060151221","6.386981587242469","6.371255606973179"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/25W7FG7om+polkadot-dot","24hVolume":"203228586","btcPrice":"0.000318032702651025"},{"uuid":"xz24e0BjL","symbol":"SHIB","name":"Shiba Inu","color":"#fda32b","iconUrl":"https://cdn.coinranking.com/D69LfI-tm/shib.png","marketCap":"6650702423","price":"0.000011280863460425","listedAt":1620650373,"tier":1,"change":"-0.64","rank":13,"sparkline":["0.000011387877948418","0.000011396704562993","0.000011430609861","0.000011487055432932","0.00001152036610693","0.000011526380751596","0.000011558700842959","0.000011588746012207","0.000011501542165893","0.000011474456994294","0.000011432798956209","0.000011440729374507","0.000011461144205322","0.000011476554808705","0.000011469743005642","0.00001147197624755","0.000011424815330699","0.000011366708333454","0.0000113570498162","0.000011330129168691","0.000011283648128574","0.000011278387257469","0.000011289529854914","0.000011276233126799","0.000011273560500492"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/xz24e0BjL+shibainu-shib","24hVolume":"280794784","btcPrice":"5.62831726e-10"},{"uuid":"MoTuySvg7","symbol":"DAI","name":"Dai","color":null,"iconUrl":"https://cdn.coinranking.com/mAZ_7LwOE/mutli-collateral-dai.svg","marketCap":"6330165313","price":"0.9999235811511265","listedAt":1585574040,"tier":1,"change":"-0.11","rank":14,"sparkline":["1.0002501483819342","0.9996079953426593","0.9998324870129061","0.9990101105933146","0.9994857500759958","0.999624908391188","0.9998816954065115","0.9994957093637207","1.0001208517367788","1.0005216349460553","1.0000957970716848","1.000296333339733","1.0000223644977213","1.0001689023102156","0.9997500246036027","0.999188166117977","1.0005244452746045","1.0009465956605519","0.999923212227354","0.999943746062425","0.9998895246210896","0.9996584146724661","1.00032070114622","1.0001058587674057","0.9999037241650416"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/MoTuySvg7+dai-dai","24hVolume":"129125861","btcPrice":"0.000049888797665071"},{"uuid":"qUhEFk1I61atv","symbol":"TRX","name":"TRON","color":"#eb0029","iconUrl":"https://cdn.coinranking.com/behejNqQs/trx.svg","marketCap":"5775077437","price":"0.06254395432208257","listedAt":1505260800,"tier":1,"change":"0.35","rank":15,"sparkline":["0.06236315630333049","0.06246392912773974","0.06240652113985693","0.06227589703736964","0.06221053328122907","0.06260319363131635","0.06283033390340566","0.06275581270672362","0.0626978662815527","0.06256692378726383","0.062454674750590175","0.06247130825939604","0.06256137344897823","0.06269756605100256","0.06269254530093321","0.06269809717602999","0.06270258509423554","0.06262935941097252","0.0625525372842027","0.0626080433578714","0.06263852382635865","0.06265458985596026","0.06258971581342093","0.06255323825419136","0.06256018276012307"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/qUhEFk1I61atv+tron-trx","24hVolume":"312325495","btcPrice":"0.000003120481145925"},{"uuid":"Mtfb0obXVh59u","symbol":"WETH","name":"Wrapped Ether","color":"#303030","iconUrl":"https://cdn.coinranking.com/KIviQyZlt/weth.svg","marketCap":"5506331908","price":"1363.1831262096398","listedAt":1600259445,"tier":1,"change":"0.91","rank":16,"sparkline":["1349.149143129576","1351.1432170463336","1354.6776632978115","1359.8352913708866","1372.7157537367023","1375.4201893881768","1373.656092011277","1374.4831471744365","1374.1769793087985","1370.915906218165","1366.8736380227815","1364.5777400837617","1361.7692633130323","1360.874730475116","1360.5880536977058","1367.7933188873656","1371.0864182649937","1366.2849418001506","1363.6612621508384","1366.3897957603679","1362.6017418911797","1363.558194381478","1361.1032201925939","1358.1013179936974","1359.5832745179157"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/Mtfb0obXVh59u+wrappedether-weth","24hVolume":"190296605","btcPrice":"0.06801276462109211"},{"uuid":"_H5FVG9iW","symbol":"UNI","name":"Uniswap","color":"#ff007a","iconUrl":"https://cdn.coinranking.com/1heSvUgtl/uniswap-v2.svg?size=48x48","marketCap":"5412997860","price":"6.970594962776281","listedAt":1600323371,"tier":1,"change":"3.24","rank":17,"sparkline":["6.773487842115684","6.754212108157756","6.7904912939092545","6.859091490236875","6.930938536697723","6.979888406385319","6.95205928455466","6.9286481982692205","6.908425318713336","6.880030568657563","6.8885892255227095","6.905746957106719","6.863039316865727","6.8298809342946445","6.841694456601706","6.90374298301861","6.8980780970926565","6.846666245892528","6.840143513460894","6.886346571294433","6.894919048207694","6.8980327967208135","6.897799219282073","6.917336871562214","6.9384106402636725"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/_H5FVG9iW+uniswap-uni","24hVolume":"217649348","btcPrice":"0.000347781178740445"},{"uuid":"dvUj0CzDZ","symbol":"AVAX","name":"Avalanche","color":"#e84242","iconUrl":"https://cdn.coinranking.com/S0C6Cw2-w/avax-avalanche.png","marketCap":"5074795440","price":"17.139061861537474","listedAt":1600961596,"tier":1,"change":"-0.58","rank":18,"sparkline":["17.253975766732072","17.305445105419164","17.35179898605964","17.43602090243061","17.5320617464102","17.556198635951862","17.522328032378404","17.567506807180212","17.518999622426595","17.438188969460462","17.396108974246218","17.373243917453404","17.336368659218273","17.319601875912156","17.320429202377582","17.375834229410586","17.37115155021162","17.337499378166246","17.29492516682681","17.27482970087828","17.236186499512122","17.23084707590994","17.187481717207028","17.155821443785648","17.14078782290297"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/dvUj0CzDZ+avalanche-avax","24hVolume":"232336499","btcPrice":"0.000855112536095036"},{"uuid":"x4WXHge-vvFY","symbol":"WBTC","name":"Wrapped BTC","color":"#000000","iconUrl":"https://cdn.coinranking.com/o3-8cvCHu/wbtc[1].svg","marketCap":"4906490614","price":"20046.410227137","listedAt":1549894980,"tier":1,"change":"-0.09","rank":19,"sparkline":["20049.450436563653","20101.625670107587","20156.496626937733","20240.909995938804","20292.728315757773","20352.616852214596","20337.507383965705","20378.75288185548","20330.405569268383","20254.404761507907","20210.442606111905","20184.9491174058","20155.621076440202","20130.24398537466","20151.81371000324","20220.458796392188","20191.06461094672","20102.3711890372","20023.818445349818","20063.904548084807","20060.09333245677","20106.126030789226","20068.970588505534","20037.981397876472","20038.946703723883"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/x4WXHge-vvFY+wrappedbtc-wbtc","24hVolume":"65699991","btcPrice":"1.0001677353996585"},{"uuid":"Knsels4_Ol-Ny","symbol":"ATOM","name":"Cosmos","color":"#5064fb","iconUrl":"https://cdn.coinranking.com/HJzHboruM/atom.svg","marketCap":"4082107070","price":"13.113113000226868","listedAt":1552520100,"tier":1,"change":"2.06","rank":20,"sparkline":["12.86904144147151","12.971292431991326","12.997809503523687","13.053288754075908","13.126935514160385","13.162946510226798","13.176459006280066","13.160096288039203","13.137389824650167","13.06998182322184","13.020726821088282","13.014732730953519","12.998975121153673","12.998577583467394","12.961451954944232","13.060564440903033","13.110658052250319","13.099438593619361","13.13330326447949","13.33452783192435","13.373831271270106","13.343650016008963","13.181674409038528","13.131683725387289","13.11536231838439"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/Knsels4_Ol-Ny+cosmos-atom","24hVolume":"310021593","btcPrice":"0.00065424743806362"},{"uuid":"PDKcptVnzJTmN","symbol":"OKB","name":"OKB","color":"#2d60e0","iconUrl":"https://cdn.coinranking.com/xcZdYtX6E/okx.png","marketCap":"3938034123","price":"15.650246402664713","listedAt":1538524800,"tier":1,"change":"0.08","rank":21,"sparkline":["15.564802534652488","15.557466143075752","15.524158368263686","15.564589461143923","15.626264641755956","15.739580440410696","15.723161103836562","15.756631052262051","15.719769516902309","15.679332809859426","15.65865704432778","15.65207565226499","15.638815307350377","15.638325526594082","15.630250194419004","15.770101867167902","15.772787444807776","15.726419071810144","15.730397527991796","15.706278363014619","15.644427965881071","15.661521309252834","15.65810007258811","15.657230878915703","15.653006930210385"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/PDKcptVnzJTmN+okb-okb","24hVolume":"15757847","btcPrice":"0.000780831646446624"},{"uuid":"D7B1x_ks7WhV5","symbol":"LTC","name":"Litecoin","color":"#345d9d","iconUrl":"https://cdn.coinranking.com/BUvPxmc9o/ltcnew.svg","marketCap":"3815864606","price":"53.846722765780676","listedAt":1382572800,"tier":1,"change":"-0.92","rank":22,"sparkline":["54.29583735175494","54.33319375556465","54.50446073551073","54.689512299086346","54.83579215246787","54.86128649682968","54.85557746061394","54.79815311448016","54.77378739059752","54.513674702652395","54.35029802146673","54.358307825475265","54.422181211169935","54.4489516734391","54.48573164038176","54.566006895097175","54.60169376918578","54.434757779526166","54.23335179752326","54.413459080815954","54.21240080510803","54.29942643192169","54.14247458562991","54.048141904913244","53.830450120278314"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/D7B1x_ks7WhV5+litecoin-ltc","24hVolume":"386436989","btcPrice":"0.002686553560319697"},{"uuid":"NfeOYfNcl","symbol":"FTT","name":"FTX Token","color":"#77d9ed","iconUrl":"https://cdn.coinranking.com/WyBm4_EzM/ftx-exchange.svg","marketCap":"3291845373","price":"24.66016972332323","listedAt":1566222960,"tier":1,"change":"-0.12","rank":23,"sparkline":["24.683542378165935","24.719459773866813","24.76219388151077","24.89617949229818","24.99584490014685","25.024271811661002","25.03560312685286","25.100681844582844","25.06002637860313","24.964601458157446","24.906805998876433","24.881179208531478","24.84671933295274","24.828862066050032","24.846952016930494","24.962693812346263","24.917387870404692","24.806139246634455","24.74429478499735","24.780282567891753","24.77215711531799","24.782999234672975","24.733584769696286","24.691015340268255","24.666234967252606"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/NfeOYfNcl+ftxtoken-ftt","24hVolume":"40334123","btcPrice":"0.001230360240426445"},{"uuid":"hnfQfsYfeIGUQ","symbol":"ETC","name":"Ethereum Classic","color":"#699070","iconUrl":"https://cdn.coinranking.com/rJfyor__W/etc.svg","marketCap":"3270026019","price":"28.113947823836092","listedAt":1469577600,"tier":1,"change":"1.95","rank":24,"sparkline":["27.57375287086344","27.583701817024274","27.628337152556885","27.71293784101918","28.233029378330688","28.720730972372852","28.46641731982247","28.461748558520167","28.43371813306647","28.28911168246897","28.14473632072935","28.15563557551264","28.240843430286514","28.318006504862765","28.299833108837987","28.329928166122407","28.27078454554885","28.13957915693539","28.037422192263545","28.02538763544355","27.990684342238957","27.99587068353575","27.980180249457508","27.96831699810348","28.017446779311992"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/hnfQfsYfeIGUQ+ethereumclassic-etc","24hVolume":"583436183","btcPrice":"0.001402678245606579"},{"uuid":"3mVx2FX_iJFp5","symbol":"XMR","name":"Monero","color":"#ff7519","iconUrl":"https://cdn.coinranking.com/Syz-oSd_Z/xmr.svg","marketCap":"2708742548","price":"148.96689473750794","listedAt":1422489600,"tier":1,"change":"1.98","rank":25,"sparkline":["146.06343032587645","146.2075982055981","146.16344802044546","146.888041879794","147.51024728525","147.80256016994798","148.2027654532922","149.11840657324646","148.0031628172107","146.08426002755598","145.4683320265626","145.45336396325644","145.13011985927878","145.01926185302602","145.05380463743765","145.5189388138254","144.94121932498405","144.55169371872742","144.03637609256356","144.0602822952893","143.9422537624223","144.01800973377962","144.85743594518297","145.90656965474264","146.43871992411874"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/3mVx2FX_iJFp5+monero-xmr","24hVolume":"115093840","btcPrice":"0.007432347241774043"},{"uuid":"TpHE2IShQw-sJ","symbol":"ALGO","name":"Algorand","color":null,"iconUrl":"https://cdn.coinranking.com/lzbmCkUGB/algo.svg","marketCap":"2467427793","price":"0.35172981355990574","listedAt":1562082540,"tier":1,"change":"0.16","rank":26,"sparkline":["0.3515600123998059","0.35203683586559326","0.3530001942757888","0.35412309079161114","0.35642368756646714","0.35691371592641125","0.35632693256778514","0.35761063132157045","0.35770076129143336","0.35735739919120424","0.35578661849459614","0.35494000660403097","0.3544949322189096","0.35419673898063","0.3545814398327581","0.3560563698021784","0.35476940248868055","0.35303138884975377","0.3526138360299577","0.353297325772352","0.3530050986834627","0.3519348960977679","0.3512839084444219","0.35035540536790366","0.35085105792254034"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/TpHE2IShQw-sJ+algorand-algo","24hVolume":"115391491","btcPrice":"0.000017548718554334"},{"uuid":"f3iaFeCKEmkaZ","symbol":"XLM","name":"Stellar","color":"#000000","iconUrl":"https://cdn.coinranking.com/78CxK1xsp/Stellar_symbol_black_RGB.svg","marketCap":"2437361911","price":"0.12062849560760455","listedAt":1484611200,"tier":1,"change":"1.34","rank":27,"sparkline":["0.11887874398521932","0.11899682832112154","0.11900784650582279","0.11903091787613028","0.11932756061340988","0.1193124601461036","0.11935198330687927","0.11968956008888623","0.11982768782602261","0.11926800493330945","0.11894584887939669","0.11912211829876701","0.11882743355055038","0.11868474386838856","0.11878227754760867","0.11974550069912294","0.11958643330478903","0.11927337184798883","0.11957351041625688","0.11944049884817015","0.12009378998253879","0.12024109052539109","0.12017728479638659","0.12012660542021919","0.12022267745313032"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/f3iaFeCKEmkaZ+stellar-xlm","24hVolume":"183603999","btcPrice":"0.0000060184705346"},{"uuid":"ZlZpzOJo43mIo","symbol":"BCH","name":"Bitcoin Cash","color":"#8dc451","iconUrl":"https://cdn.coinranking.com/By8ziihX7/bch.svg","marketCap":"2276265173","price":"118.98058610983257","listedAt":1541808000,"tier":1,"change":"-2.66","rank":28,"sparkline":["122.32262573171138","122.21216671462395","122.2424076189862","122.65231412716444","123.18814722852751","123.0389419465099","122.7525437321455","122.63297695763477","122.25888231512374","121.6083740301883","121.0704992507114","121.08119723327034","121.3486844528348","121.35241663771652","121.4308975310673","121.83807088869149","121.79108869683151","121.38727041457742","120.77014246462569","120.9730955171752","120.81712651964756","120.67586343768751","120.35934093743896","119.33573062080143","118.92020484427697"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/ZlZpzOJo43mIo+bitcoincash-bch","24hVolume":"207705732","btcPrice":"0.005936252028051548"},{"uuid":"9_jH48RBW","symbol":"BTCB","name":"Bitcoin BEP2","color":"#ff9d14","iconUrl":"https://cdn.coinranking.com/Swr_SeZio/4023.png","marketCap":"2254967512","price":"20043.97749206499","listedAt":1629334963,"tier":1,"change":"-0.40","rank":29,"sparkline":["20057.082143515574","20073.73634471567","20155.35074272695","20201.665838224184","20307.87652463223","20347.737496425136","20336.451830858347","20370.359230166003","20347.242691661544","20289.47946418053","20236.389261394786","20216.767454565917","20157.58477689183","20148.427911440165","20139.404745478332","20195.51476083255","20218.207717425983","20128.86850120113","20006.9744546404","20060.410623139804","20033.996371801375","20098.47310976815","20097.464012404307","20046.809041658624","20049.799901903058"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/9_jH48RBW+bitcoinbep2-btcb","24hVolume":"24085498","btcPrice":"1.0000463598965021"},{"uuid":"65PHZTpmE55b","symbol":"CRO","name":"Cronos","color":"#01275d","iconUrl":"https://cdn.coinranking.com/2o91jm73M/cro.svg","marketCap":"2207091566","price":"0.10974041351835884","listedAt":1548953220,"tier":1,"change":"0.15","rank":30,"sparkline":["0.10962651467178453","0.10994008962491644","0.1102558436062367","0.11066651769044844","0.11099761359490694","0.11112033875517015","0.11109668798682694","0.11125486280094371","0.11097328447826356","0.11061839872555923","0.11051157703154837","0.11040516533585498","0.11018324144957391","0.11015957429341776","0.11025941309951554","0.1107306596648452","0.11056541424952443","0.11033981054182589","0.11014982408569168","0.11018846762437533","0.11026378704001755","0.11036637137706824","0.11006396812568181","0.10976547166697294","0.10969235793422591"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/65PHZTpmE55b+cronos-cro","24hVolume":"32894151","btcPrice":"0.000005475235696908"},{"uuid":"DCrsaMv68","symbol":"NEAR","name":"NEAR Protocol","color":"#000000","iconUrl":"https://cdn.coinranking.com/Cth83dCnl/near.png","marketCap":"2206952701","price":"3.630786016166329","listedAt":1615164591,"tier":1,"change":"-1.37","rank":31,"sparkline":["3.6764432411708334","3.6877377535157785","3.695275020835127","3.703712737949751","3.7340726187087037","3.7301224517518223","3.726830183476546","3.732039649903934","3.717434927228703","3.6877396306355372","3.672153124641749","3.6712014753545934","3.682858101631704","3.6816966205355786","3.6732422481738896","3.68742500998647","3.67949841043138","3.658086252545483","3.6466882303359083","3.653534815527586","3.6524651001872352","3.6566637162352977","3.6505578611908183","3.641624197517031","3.6360026668443743"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/DCrsaMv68+nearprotocol-near","24hVolume":"214660455","btcPrice":"0.000181149392153712"},{"uuid":"AaQUAs2Mc","symbol":"LUNC","name":"Terra Classic","color":"#0E3CA5","iconUrl":"https://cdn.coinranking.com/F-PJdF8Um/LUNA.svg","marketCap":"1912308135","price":"0.000290147954073881","listedAt":1565957940,"tier":1,"change":"-2.81","rank":32,"sparkline":["0.000297534732475355","0.00029924350285628","0.000301788299795161","0.000299920153570012","0.000298931795978761","0.00030181081782183","0.000303176990591589","0.000301682155659599","0.000300427127360826","0.000299399340560452","0.000295889751885886","0.000294483950425306","0.000296163406502654","0.000295896753590268","0.000296293813138895","0.00029712340206075","0.000296241802461865","0.000294833413425782","0.000295805632133273","0.000295448279840089","0.000294342506473691","0.000292052607134611","0.000290629002509443","0.000292037309457244","0.000292007407136324"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/AaQUAs2Mc+terraclassic-lunc","24hVolume":"87308849","btcPrice":"1.4476238831e-8"},{"uuid":"08CsQa-Ov","symbol":"WEMIX","name":"WEMIX TOKEN","color":"#9bdc70","iconUrl":"https://cdn.coinranking.com/1N84MQsoO/7548.png","marketCap":"1809009261","price":"1.8090092609827892","listedAt":1638249982,"tier":1,"change":"-1.08","rank":33,"sparkline":["1.8200632272957997","1.8247805232483643","1.828712312707551","1.833483750666553","1.8388113856711226","1.8340065059765118","1.833810679916731","1.8379730157830576","1.839871909045534","1.8316951407594886","1.8218905615149048","1.8133420432182386","1.8119386729956268","1.8082288357010967","1.8068009632735749","1.8188388540688198","1.8203819894312625","1.814524337055796","1.808721193963964","1.8196357521223283","1.815149328780377","1.8112776438372116","1.8108458436676627","1.8027262559586126","1.805119314397385"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/08CsQa-Ov+wemixtoken-wemix","24hVolume":"12137167","btcPrice":"0.000090256194269879"},{"uuid":"QQ0NCmjVq","symbol":"FLOW","name":"Flow","color":"#9efad7","iconUrl":"https://cdn.coinranking.com/xh8X8QBss/flow.png","marketCap":"1767866343","price":"1.7061053298863806","listedAt":1614963736,"tier":1,"change":"1.32","rank":34,"sparkline":["1.6885003563699261","1.6911129238364746","1.6949035542249486","1.7027954737084738","1.7125610716564361","1.7140651860196017","1.714695946307908","1.7186349196969963","1.7112095222795702","1.7059432521776707","1.6993434662570355","1.7005773278388585","1.6968447607894448","1.6929234664355564","1.692450465901943","1.7010313056523052","1.6985550988885165","1.6893705490937398","1.6866645696902811","1.7019443099317626","1.7014230772153076","1.7069133070811424","1.7033611748224882","1.6994360137640887","1.704400633762173"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/QQ0NCmjVq+flow-flow","24hVolume":"71187916","btcPrice":"0.000085122048526962"},{"uuid":"SbWqqTui-","symbol":"ENS","name":"EnergySwap","color":"#ffda55","iconUrl":"https://cdn.coinranking.com/fmYxEUV5a/cropped-logo37-Converted-01-192x192.png","marketCap":"1725996262","price":"17.259962623670035","listedAt":1626134763,"tier":1,"change":"1.03","rank":35,"sparkline":["17.0775388533003","17.067912741278125","17.19371992172132","17.4049080612785","17.349122197170388","17.383691525495145","17.38955154672953","17.62408133673586","17.593322076060364","17.4386892965598","17.328889316544824","17.447514865666506","17.32297480082281","17.37509972478323","17.34525419003646","17.409372532584655","17.389133405821546","17.35036829752898","17.427069919455597","17.552044170794996","17.412493725255267","17.349458429441366","17.146992959728287","17.252120262541386","17.264212303383914"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/SbWqqTui-+energyswap-ens","24hVolume":"19832838","btcPrice":"0.000860915853391649"},{"uuid":"ymQub4fuB","symbol":"FIL","name":"Filecoin","color":"#0090ff","iconUrl":"https://cdn.coinranking.com/vUmvv-IQA/FIL3-filecoin.svg?size=48x48","marketCap":"1632172859","price":"5.553360617882926","listedAt":1602839473,"tier":1,"change":"-0.39","rank":36,"sparkline":["5.563583111239947","5.566550453652093","5.574658649368248","5.59947207926758","5.623738949982796","5.620874463842186","5.636449717522663","5.636012075827377","5.621787024814909","5.604863066684564","5.59106302185655","5.592521259925081","5.578504466675582","5.569698214994045","5.57106966286358","5.5871830930712845","5.58594625512426","5.567567471367906","5.557070809165411","5.564056973722409","5.560812558868851","5.555371588027569","5.5431943077677825","5.540294464973471","5.542380071855275"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/ymQub4fuB+filecoin-fil","24hVolume":"155725594","btcPrice":"0.000277071657723871"},{"uuid":"aMNLwaUbY","symbol":"ICP","name":"Internet Computer (DFINITY)","color":"#00042b","iconUrl":"https://cdn.coinranking.com/1uJ_RVrmC/dfinity-icp.png","marketCap":"1579991723","price":"6.0165579380799885","listedAt":1601555742,"tier":1,"change":"-0.11","rank":37,"sparkline":["6.016755740637141","6.025549949045874","6.025640938683228","6.0377448148370085","6.064372958080765","6.083168222934446","6.121138125111502","6.122110772502033","6.115151992864029","6.094617924935418","6.060091344132251","6.055252608620663","6.044824998176658","6.039684832886364","6.031722431559297","6.051848135596568","6.052505386943968","6.039004021283348","6.03094716124407","6.0282463753416","6.032921444329065","6.04632010848593","6.041115706175561","6.045998924171826","6.0229305076806545"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/aMNLwaUbY+internetcomputerdfinity-icp","24hVolume":"35516114","btcPrice":"0.000300181781159216"},{"uuid":"FEbS54wxo4oIl","symbol":"VET","name":"VeChain","color":"#4bc0fa","iconUrl":"https://cdn.coinranking.com/B1_TDu9Dm/VEN.svg","marketCap":"1572684480","price":"0.023557025426635677","listedAt":1533427200,"tier":1,"change":"-0.72","rank":38,"sparkline":["0.02375170887710745","0.023790767210407363","0.02385906108038382","0.023963654949121647","0.024032391322482857","0.02406040482720113","0.0240241062637749","0.024037336226182978","0.02400171948264513","0.02387998962803967","0.02378930361410667","0.02383913575157462","0.02381560283772684","0.02375080527252874","0.023755408145521056","0.02387716977416547","0.02387351543491939","0.023763817483126306","0.023691552163897643","0.023726104965078293","0.02368589760998112","0.023671062742535463","0.023601726034422614","0.0235570377718252","0.0235469112210421"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/FEbS54wxo4oIl+vechain-vet","24hVolume":"88620897","btcPrice":"0.000001175321491816"},{"uuid":"ncYFcP709","symbol":"CAKE","name":"PancakeSwap","color":"#fe9555","iconUrl":"https://cdn.coinranking.com/aRtgdw7bQ/pancakeswap-cake-logo.png","marketCap":"1553748228","price":"4.671730797095194","listedAt":1613642379,"tier":1,"change":"0.22","rank":39,"sparkline":["4.661125064396867","4.663869351538766","4.66954849891612","4.700257578283811","4.730018157572612","4.714143976512721","4.723478551910749","4.726841497246268","4.71589081766422","4.704019970362516","4.6988239161796725","4.701002359282831","4.691700450917038","4.677135351952703","4.694429858732558","4.721898404666295","4.72192706714792","4.711492514608389","4.722961417487937","4.727350513894986","4.726777756847048","4.730691546772397","4.723894121828546","4.720900237522959","4.694323412913096"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/ncYFcP709+pancakeswap-cake","24hVolume":"62601195","btcPrice":"0.000233084844557472"},{"uuid":"tEf7-dnwV3BXS","symbol":"MANA","name":"Decentraland","color":"#f47e33","iconUrl":"https://cdn.coinranking.com/ph_svUzXs/decentraland(1).svg","marketCap":"1535345175","price":"0.6999520749208403","listedAt":1500336000,"tier":1,"change":"-0.37","rank":40,"sparkline":["0.7018437336148443","0.7012296643669335","0.7022993535952263","0.7043824624342494","0.7061012732016445","0.7092722059821073","0.7107294942869858","0.7108990080244315","0.7099791984418414","0.7078420220186218","0.7051095437828625","0.707248929548027","0.7050915198697436","0.7044747588216688","0.7041160697442599","0.7066206655413716","0.7058549946852882","0.7032486369948753","0.7012876549332069","0.7009747852786251","0.700473849406315","0.7005982029037023","0.7002369574369308","0.7006334207984222","0.7000127772948245"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/tEf7-dnwV3BXS+decentraland-mana","24hVolume":"113068798","btcPrice":"0.000034922436173344"},{"uuid":"Z96jIvLU7","symbol":"IMX","name":"Immutable X","color":"#000000","iconUrl":"https://cdn.coinranking.com/naRGT2Y_X/10603.png","marketCap":"1529157571","price":"0.7645787855498196","listedAt":1649387294,"tier":1,"change":"-2.80","rank":41,"sparkline":["0.7862352418397442","0.7857962385011888","0.7860823591712383","0.7913864227222935","0.7931731378366671","0.7918535836709918","0.7934385490032205","0.7935992087657073","0.7897855169136626","0.7868869873929384","0.7827511307418661","0.7829200782135203","0.7815399732777862","0.7772118263855671","0.7746419330272937","0.7799681155884691","0.777981466209664","0.7739045575146072","0.7718550460057184","0.7715939215456447","0.7695383673672498","0.7673191324882311","0.7657534786224457","0.764881660541454","0.7646092366582135"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/Z96jIvLU7+immutablex-imx","24hVolume":"145242009","btcPrice":"0.000038146831468249"},{"uuid":"jad286TjB","symbol":"HBAR","name":"Hedera","color":"#000000","iconUrl":"https://cdn.coinranking.com/dSCnSLilQ/hedera.svg","marketCap":"1413337607","price":"0.058052265495351495","listedAt":1568704980,"tier":1,"change":"0.61","rank":42,"sparkline":["0.05770820809062958","0.05773161591193554","0.057901448026430706","0.058104711439575775","0.05821494457445837","0.05837605385144989","0.0583912493104286","0.058424171286181624","0.05828953359467471","0.058191254382563104","0.058069476804724386","0.05816012171446981","0.05809696154952601","0.05804430834562561","0.058079013279903904","0.058270287529447726","0.05828744692577993","0.05819030965298005","0.05799510351002881","0.05801850162696806","0.05804288093820356","0.05809254408384736","0.05803413483043568","0.057982852173679544","0.05799862984287226"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/jad286TjB+hedera-hbar","24hVolume":"38825707","btcPrice":"0.000002896379065251"},{"uuid":"KfWtaeV1W","symbol":"FRAX","name":"Frax","color":"#000000","iconUrl":"https://cdn.coinranking.com/BpVNCX-NM/frax.png","marketCap":"1359878097","price":"1.001334577613883","listedAt":1615299931,"tier":1,"change":"0.07","rank":43,"sparkline":["0.99995237657306","0.9992610930077082","0.9995048898577841","0.9984857957300194","0.9991338275862605","0.9991463646832447","0.9995515068035792","0.9992688671456238","0.9999129851645419","1.0002242997546233","0.999712820332821","1.0000332602428952","0.9995079927133396","0.999782374902935","0.999308877507305","0.9988846870195152","1.0005152287641716","1.0008340522704022","0.9994436410988572","0.9996849217788387","0.9995211220531371","0.999211197536607","0.9999983085146361","0.999769500498533","1.0011860473290413"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/KfWtaeV1W+frax-frax","24hVolume":"6768277","btcPrice":"0.000049959195961864"},{"uuid":"bauj_21eYVwso","symbol":"QNT","name":"Quant","color":"#585e63","iconUrl":"https://cdn.coinranking.com/a-i9Dl392/quant.png","marketCap":"1353847155","price":"138.46931334806206","listedAt":1533945600,"tier":1,"change":"0.70","rank":44,"sparkline":["136.82868883894076","137.71306856606782","138.03647928074753","138.80197795554938","139.12071269372848","139.05878455835125","139.14677841096062","138.87253490735398","138.02179236057498","137.42442294208283","137.6271009908909","139.44419273993879","138.9594762558207","139.35956951767986","139.76224675334996","140.73346306408735","139.70014562219615","139.58102151134608","139.19177605867037","139.65458123164169","139.17824474960636","139.1901615972891","138.83319330338816","138.1218448902609","138.15277303739376"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/bauj_21eYVwso+quant-qnt","24hVolume":"71501255","btcPrice":"0.006908595503358421"},{"uuid":"omwkOTglq","symbol":"EGLD","name":"Elrond","color":"#000000","iconUrl":"https://cdn.coinranking.com/X62ruAuZQ/Elrond.svg","marketCap":"1316030339","price":"55.7002018134128","listedAt":1612524044,"tier":1,"change":"1.89","rank":45,"sparkline":["54.49977253219301","54.11874620026287","54.2183062824539","54.68045352030543","55.29261101979573","55.12466500529631","55.4096265101037","55.17360006105945","55.03825697066999","54.83782041498208","54.61174346698164","54.72261326487687","55.07467359664748","55.12258904806393","55.12232719822051","55.10748540691841","55.01733359597467","54.876885804473424","54.85576050348866","55.096674446643746","55.35611005385607","54.96784781952569","54.84449264613283","54.95034295425699","55.112649002423744"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/omwkOTglq+elrond-egld","24hVolume":"72484623","btcPrice":"0.002779028468329484"},{"uuid":"fsIbGOEJWbzxG","symbol":"XTZ","name":"Tezos","color":"#2c7df7","iconUrl":"https://cdn.coinranking.com/HkLUdilQ7/xtz.svg","marketCap":"1298954067","price":"1.4302723371340804","listedAt":1530662400,"tier":1,"change":"0.37","rank":46,"sparkline":["1.421883939884071","1.42509607402001","1.4278239665456545","1.4336636277697252","1.4443645638453815","1.4463747088081587","1.4428608091094144","1.4490881454348474","1.4450878337651158","1.4401715843904537","1.4355148328665224","1.4365319902236815","1.4339651090330499","1.4334495267586773","1.4333504141935083","1.4389840361204465","1.4379456439736016","1.4315401694215406","1.4240153029007887","1.4240927210678032","1.4220389629012662","1.4290008245398644","1.4312652127406216","1.4310909189590104","1.4306725904273427"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/fsIbGOEJWbzxG+tezos-xtz","24hVolume":"35958124","btcPrice":"0.000071360020483851"},{"uuid":"GSCt2y6YSgO26","symbol":"CHZ","name":"Chiliz","color":"#d05e72","iconUrl":"https://cdn.coinranking.com/gTsOlSnwR/4066.png","marketCap":"1281371060","price":"0.21568734363318337","listedAt":1562332440,"tier":1,"change":"-0.48","rank":47,"sparkline":["0.21553593139708543","0.21544366417321525","0.21646610949174847","0.21730782782429547","0.21865681130587172","0.21939390999187283","0.21985592005582816","0.21915437745243896","0.2184171446254368","0.21798236632181323","0.21690087683062034","0.21604240077342493","0.21587704160172458","0.2158448062065273","0.21568131629647883","0.21628666481515962","0.21575577092565493","0.21492437995400548","0.21514404501911413","0.2171108493305216","0.21771656940310347","0.21679986568652215","0.21607273994568685","0.21599406892348155","0.216016823604864"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/GSCt2y6YSgO26+chiliz-chz","24hVolume":"205319395","btcPrice":"0.000010761204604301"},{"uuid":"pxtKbG5rg","symbol":"SAND","name":"The Sandbox","color":"#00adef","iconUrl":"https://cdn.coinranking.com/kd_vwOcnI/sandbox.png","marketCap":"1273244296","price":"0.8491294389371948","listedAt":1613583024,"tier":1,"change":"-1.58","rank":48,"sparkline":["0.8590405964683089","0.859478250004335","0.8609939510022012","0.8652881133772078","0.8665208089867517","0.8666644958759461","0.8662362089943302","0.8669849089516505","0.8647803548984957","0.8606548254227334","0.858647121421129","0.8662635524287782","0.8588847882234059","0.8544149170251873","0.8528484459196816","0.8567742977148085","0.8559971556239261","0.8526369746427614","0.8503963749700182","0.8514893353210455","0.8513642787546029","0.8508505323793061","0.8483933250963328","0.8475209589259349","0.8482538011775931"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/pxtKbG5rg+thesandbox-sand","24hVolume":"116012726","btcPrice":"0.000042365284276849"},{"uuid":"Pe93bIOD2","symbol":"LDO","name":"Lido DAO Token","color":"#77cced","iconUrl":"https://cdn.coinranking.com/Wp6LFY6ZZ/8000.png","marketCap":"1216349067","price":"1.5122657530928172","listedAt":1627361901,"tier":1,"change":"-0.34","rank":49,"sparkline":["1.5150991540359635","1.5176061095960762","1.5245756510192037","1.5369489213784007","1.5521086753177897","1.5577273434480916","1.5620222188046804","1.5618008806408366","1.5635266954065115","1.5512539189835166","1.5391754904487456","1.5415483542201813","1.5406687905041778","1.5536997118197664","1.5585509390347834","1.5605461378658754","1.556322526404288","1.5432139594119398","1.527711427666444","1.5295360489082588","1.5251991365229256","1.523882390305484","1.5152199119209957","1.5079084095454254","1.5059207760888258"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/Pe93bIOD2+lidodaotoken-ldo","24hVolume":"14537858","btcPrice":"0.000075450886041721"},{"uuid":"iAzbfXiBBKkR6","symbol":"EOS","name":"EOS","color":"#443f54","iconUrl":"https://cdn.coinranking.com/PqOYrWSje/eos2.svg","marketCap":"1157143428","price":"1.170587468937924","listedAt":1498694400,"tier":1,"change":"0.08","rank":50,"sparkline":["1.1694694824289555","1.1709120673050462","1.1739859596809479","1.17900555328724","1.184230473597679","1.185710435108849","1.1864344657129484","1.1885516582635711","1.1870888275685685","1.1829654851494844","1.17709582794196","1.1762202099671832","1.1773458464363997","1.1770861707666584","1.1811474861902838","1.1833592012519114","1.1818251357201783","1.1782503602022067","1.176960097898779","1.1767921922729265","1.1759604894059537","1.1750064515228658","1.1729163746108195","1.170358956437112","1.1692075076471242"],"lowVolume":false,"coinrankingUrl":"https://coinranking.com/coin/iAzbfXiBBKkR6+eos-eos","24hVolume":"178450428","btcPrice":"0.000058403664527924"}]}}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Formatting-Digital-Coin-example">
+<a class="anchor" href="#Formatting-Digital-Coin-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Formatting Digital Coin example<a class="anchor-link" href="#Formatting-Digital-Coin-example"> </a>
+</h3>
+<blockquote>
+<p>JSON text transferred from the API in the previous cell was converted to a Python Dictionary called json.  The "coins" in the dictionary contain a list of the most relevant data.   Look at the code and comments to see how the original text is turned into something understandable.   Additionally, there are error check to make sure we are starting the code with the expectation that the API was run correctly.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
+<span class="sd">This cell is dependent on valid run of API above.</span>
+<span class="sd">- try and except code is making sure "json" was properly run above</span>
+<span class="sd">- inside second try is code that is used to process Coin API data</span>
+
+<span class="sd">Note.  Run this cell repeatedly to format data without re-activating API</span>
+<span class="sd">"""</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"JSON data is Python type: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">json</span><span class="p">)))</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Extracting Coins JSON status, if the API worked</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'status'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"API status: "</span> <span class="o">+</span> <span class="n">status</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">()</span>
+        
+        <span class="c1"># Extracting Coins JSON data, data about the coins</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'data'</span><span class="p">)</span>
+        
+        <span class="c1"># Procedural abstraction of Print code for coins</span>
+        <span class="k">def</span> <span class="nf">print_coin</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">"symbol"</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="s2">"price"</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Icon Url: "</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="s2">"iconUrl"</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Rank Url: "</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="s2">"coinrankingUrl"</span><span class="p">])</span>
+
+        <span class="c1"># Coins data was observed to be a list</span>
+        <span class="k">for</span> <span class="n">coin</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">'coins'</span><span class="p">]:</span>
+            <span class="n">print_coin</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">()</span>
+            
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Did you insert a valid key in X-RapidAPI-Key of API cell above?"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"This cell is dependent on running API call in cell above!"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>JSON data is Python type: &lt;class 'dict'&gt;
+API status: success
+
+BTC 20043.048298420286
+Icon Url: https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg
+Rank Url: https://coinranking.com/coin/Qwsogvtv82FCd+bitcoin-btc
+
+ETH 1363.4411267728026
+Icon Url: https://cdn.coinranking.com/rk4RKHOuW/eth.svg
+Rank Url: https://coinranking.com/coin/razxDUgYGNAdQ+ethereum-eth
+
+USDT 1.0002079259242496
+Icon Url: https://cdn.coinranking.com/mgHqwlCLj/usdt.svg
+Rank Url: https://coinranking.com/coin/HIVsRcGKkPFtW+tetherusd-usdt
+
+USDC 1.0001455267516093
+Icon Url: https://cdn.coinranking.com/jkDf8sQbY/usdc.svg
+Rank Url: https://coinranking.com/coin/aKzUVe4Hh_CON+usdc-usdc
+
+BNB 288.31435478535195
+Icon Url: https://cdn.coinranking.com/B1N19L_dZ/bnb.svg
+Rank Url: https://coinranking.com/coin/WcwrkfNI4FUAe+binancecoin-bnb
+
+XRP 0.5001251405968443
+Icon Url: https://cdn.coinranking.com/B1oPuTyfX/xrp.svg
+Rank Url: https://coinranking.com/coin/-l8Mn2pVlRs-p+xrp-xrp
+
+BUSD 1.0000938123108745
+Icon Url: https://cdn.coinranking.com/6SJHRfClq/busd.svg
+Rank Url: https://coinranking.com/coin/vSo2fu9iE1s0Y+binanceusd-busd
+
+ADA 0.4298337184562682
+Icon Url: https://cdn.coinranking.com/ryY28nXhW/ada.svg
+Rank Url: https://coinranking.com/coin/qzawljRxB5bYu+cardano-ada
+
+SOL 33.73772094047453
+Icon Url: https://cdn.coinranking.com/yvUG4Qex5/solana.svg
+Rank Url: https://coinranking.com/coin/zNZHO_Sjf+solana-sol
+
+DOGE 0.06398401339869234
+Icon Url: https://cdn.coinranking.com/H1arXIuOZ/doge.svg
+Rank Url: https://coinranking.com/coin/a91GCGd_u96cF+dogecoin-doge
+
+MATIC 0.8402806991486048
+Icon Url: https://cdn.coinranking.com/WulYRq14o/polygon.png
+Rank Url: https://coinranking.com/coin/uW2tk-ILY0ii+polygon-matic
+
+DOT 6.374344819711631
+Icon Url: https://cdn.coinranking.com/RsljYqnbu/polkadot.svg
+Rank Url: https://coinranking.com/coin/25W7FG7om+polkadot-dot
+
+SHIB 0.000011280863460425
+Icon Url: https://cdn.coinranking.com/D69LfI-tm/shib.png
+Rank Url: https://coinranking.com/coin/xz24e0BjL+shibainu-shib
+
+DAI 0.9999235811511265
+Icon Url: https://cdn.coinranking.com/mAZ_7LwOE/mutli-collateral-dai.svg
+Rank Url: https://coinranking.com/coin/MoTuySvg7+dai-dai
+
+TRX 0.06254395432208257
+Icon Url: https://cdn.coinranking.com/behejNqQs/trx.svg
+Rank Url: https://coinranking.com/coin/qUhEFk1I61atv+tron-trx
+
+WETH 1363.1831262096398
+Icon Url: https://cdn.coinranking.com/KIviQyZlt/weth.svg
+Rank Url: https://coinranking.com/coin/Mtfb0obXVh59u+wrappedether-weth
+
+UNI 6.970594962776281
+Icon Url: https://cdn.coinranking.com/1heSvUgtl/uniswap-v2.svg?size=48x48
+Rank Url: https://coinranking.com/coin/_H5FVG9iW+uniswap-uni
+
+AVAX 17.139061861537474
+Icon Url: https://cdn.coinranking.com/S0C6Cw2-w/avax-avalanche.png
+Rank Url: https://coinranking.com/coin/dvUj0CzDZ+avalanche-avax
+
+WBTC 20046.410227137
+Icon Url: https://cdn.coinranking.com/o3-8cvCHu/wbtc[1].svg
+Rank Url: https://coinranking.com/coin/x4WXHge-vvFY+wrappedbtc-wbtc
+
+ATOM 13.113113000226868
+Icon Url: https://cdn.coinranking.com/HJzHboruM/atom.svg
+Rank Url: https://coinranking.com/coin/Knsels4_Ol-Ny+cosmos-atom
+
+OKB 15.650246402664713
+Icon Url: https://cdn.coinranking.com/xcZdYtX6E/okx.png
+Rank Url: https://coinranking.com/coin/PDKcptVnzJTmN+okb-okb
+
+LTC 53.846722765780676
+Icon Url: https://cdn.coinranking.com/BUvPxmc9o/ltcnew.svg
+Rank Url: https://coinranking.com/coin/D7B1x_ks7WhV5+litecoin-ltc
+
+FTT 24.66016972332323
+Icon Url: https://cdn.coinranking.com/WyBm4_EzM/ftx-exchange.svg
+Rank Url: https://coinranking.com/coin/NfeOYfNcl+ftxtoken-ftt
+
+ETC 28.113947823836092
+Icon Url: https://cdn.coinranking.com/rJfyor__W/etc.svg
+Rank Url: https://coinranking.com/coin/hnfQfsYfeIGUQ+ethereumclassic-etc
+
+XMR 148.96689473750794
+Icon Url: https://cdn.coinranking.com/Syz-oSd_Z/xmr.svg
+Rank Url: https://coinranking.com/coin/3mVx2FX_iJFp5+monero-xmr
+
+ALGO 0.35172981355990574
+Icon Url: https://cdn.coinranking.com/lzbmCkUGB/algo.svg
+Rank Url: https://coinranking.com/coin/TpHE2IShQw-sJ+algorand-algo
+
+XLM 0.12062849560760455
+Icon Url: https://cdn.coinranking.com/78CxK1xsp/Stellar_symbol_black_RGB.svg
+Rank Url: https://coinranking.com/coin/f3iaFeCKEmkaZ+stellar-xlm
+
+BCH 118.98058610983257
+Icon Url: https://cdn.coinranking.com/By8ziihX7/bch.svg
+Rank Url: https://coinranking.com/coin/ZlZpzOJo43mIo+bitcoincash-bch
+
+BTCB 20043.97749206499
+Icon Url: https://cdn.coinranking.com/Swr_SeZio/4023.png
+Rank Url: https://coinranking.com/coin/9_jH48RBW+bitcoinbep2-btcb
+
+CRO 0.10974041351835884
+Icon Url: https://cdn.coinranking.com/2o91jm73M/cro.svg
+Rank Url: https://coinranking.com/coin/65PHZTpmE55b+cronos-cro
+
+NEAR 3.630786016166329
+Icon Url: https://cdn.coinranking.com/Cth83dCnl/near.png
+Rank Url: https://coinranking.com/coin/DCrsaMv68+nearprotocol-near
+
+LUNC 0.000290147954073881
+Icon Url: https://cdn.coinranking.com/F-PJdF8Um/LUNA.svg
+Rank Url: https://coinranking.com/coin/AaQUAs2Mc+terraclassic-lunc
+
+WEMIX 1.8090092609827892
+Icon Url: https://cdn.coinranking.com/1N84MQsoO/7548.png
+Rank Url: https://coinranking.com/coin/08CsQa-Ov+wemixtoken-wemix
+
+FLOW 1.7061053298863806
+Icon Url: https://cdn.coinranking.com/xh8X8QBss/flow.png
+Rank Url: https://coinranking.com/coin/QQ0NCmjVq+flow-flow
+
+ENS 17.259962623670035
+Icon Url: https://cdn.coinranking.com/fmYxEUV5a/cropped-logo37-Converted-01-192x192.png
+Rank Url: https://coinranking.com/coin/SbWqqTui-+energyswap-ens
+
+FIL 5.553360617882926
+Icon Url: https://cdn.coinranking.com/vUmvv-IQA/FIL3-filecoin.svg?size=48x48
+Rank Url: https://coinranking.com/coin/ymQub4fuB+filecoin-fil
+
+ICP 6.0165579380799885
+Icon Url: https://cdn.coinranking.com/1uJ_RVrmC/dfinity-icp.png
+Rank Url: https://coinranking.com/coin/aMNLwaUbY+internetcomputerdfinity-icp
+
+VET 0.023557025426635677
+Icon Url: https://cdn.coinranking.com/B1_TDu9Dm/VEN.svg
+Rank Url: https://coinranking.com/coin/FEbS54wxo4oIl+vechain-vet
+
+CAKE 4.671730797095194
+Icon Url: https://cdn.coinranking.com/aRtgdw7bQ/pancakeswap-cake-logo.png
+Rank Url: https://coinranking.com/coin/ncYFcP709+pancakeswap-cake
+
+MANA 0.6999520749208403
+Icon Url: https://cdn.coinranking.com/ph_svUzXs/decentraland(1).svg
+Rank Url: https://coinranking.com/coin/tEf7-dnwV3BXS+decentraland-mana
+
+IMX 0.7645787855498196
+Icon Url: https://cdn.coinranking.com/naRGT2Y_X/10603.png
+Rank Url: https://coinranking.com/coin/Z96jIvLU7+immutablex-imx
+
+HBAR 0.058052265495351495
+Icon Url: https://cdn.coinranking.com/dSCnSLilQ/hedera.svg
+Rank Url: https://coinranking.com/coin/jad286TjB+hedera-hbar
+
+FRAX 1.001334577613883
+Icon Url: https://cdn.coinranking.com/BpVNCX-NM/frax.png
+Rank Url: https://coinranking.com/coin/KfWtaeV1W+frax-frax
+
+QNT 138.46931334806206
+Icon Url: https://cdn.coinranking.com/a-i9Dl392/quant.png
+Rank Url: https://coinranking.com/coin/bauj_21eYVwso+quant-qnt
+
+EGLD 55.7002018134128
+Icon Url: https://cdn.coinranking.com/X62ruAuZQ/Elrond.svg
+Rank Url: https://coinranking.com/coin/omwkOTglq+elrond-egld
+
+XTZ 1.4302723371340804
+Icon Url: https://cdn.coinranking.com/HkLUdilQ7/xtz.svg
+Rank Url: https://coinranking.com/coin/fsIbGOEJWbzxG+tezos-xtz
+
+CHZ 0.21568734363318337
+Icon Url: https://cdn.coinranking.com/gTsOlSnwR/4066.png
+Rank Url: https://coinranking.com/coin/GSCt2y6YSgO26+chiliz-chz
+
+SAND 0.8491294389371948
+Icon Url: https://cdn.coinranking.com/kd_vwOcnI/sandbox.png
+Rank Url: https://coinranking.com/coin/pxtKbG5rg+thesandbox-sand
+
+LDO 1.5122657530928172
+Icon Url: https://cdn.coinranking.com/Wp6LFY6ZZ/8000.png
+Rank Url: https://coinranking.com/coin/Pe93bIOD2+lidodaotoken-ldo
+
+EOS 1.170587468937924
+Icon Url: https://cdn.coinranking.com/PqOYrWSje/eos2.svg
+Rank Url: https://coinranking.com/coin/iAzbfXiBBKkR6+eos-eos
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Our-Group-Project-API-(World-Time)">
+<a class="anchor" href="#Our-Group-Project-API-(World-Time)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Our Group Project API (World Time)<a class="anchor-link" href="#Our-Group-Project-API-(World-Time)"> </a>
+</h1>
+<blockquote>
+<p>Indented block</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://world-time2.p.rapidapi.com/timezone/Europe/London"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="s2">"X-RapidAPI-Key"</span><span class="p">:</span> <span class="s2">"c0f7469cd7mshc45a4834d55afdep1b5c00jsnc8a41fb46f94"</span><span class="p">,</span>
+	<span class="s2">"X-RapidAPI-Host"</span><span class="p">:</span> <span class="s2">"world-time2.p.rapidapi.com"</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'abbreviation': 'BST', 'client_ip': '107.23.255.129', 'datetime': '2022-10-11T21:41:29.063416+01:00', 'day_of_week': 2, 'day_of_year': 284, 'dst': True, 'dst_from': '2022-03-27T01:00:00+00:00', 'dst_offset': 3600, 'dst_until': '2022-10-30T01:00:00+00:00', 'raw_offset': 0, 'timezone': 'Europe/London', 'unixtime': 1665520889, 'utc_datetime': '2022-10-11T20:41:29.063416+00:00', 'utc_offset': '+01:00', 'week_number': 41}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Go-deeper-into-APIs">
+<a class="anchor" href="#Go-deeper-into-APIs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Go deeper into APIs<a class="anchor-link" href="#Go-deeper-into-APIs"> </a>
+</h3>
+<blockquote>
+<p>Web Development vs Jupyter Notebook.  A notebook is certainly a great place to start.  But, for your end of Trimester project we want you to build the skill to reference and use APIs within your Project.  Here are some resources to get you started with this journey.</p>
+</blockquote>
+<ul>
+<li>In the Nighthawk Coders APCSP you can find an Overview and Examples using APIs:<a href="https://nighthawkcoders.github.io/APCSP/api/overview">APCSP APIs menu</a>- Using Covid RapidAPI<ul>
+<li>JavaScript frontend API code in APCSP Fastpages GitHub repo: <a href="https://github.com/nighthawkcoders/APCSP/blob/master/_posts/2022-07-10-PBL-rapidapi.md">https://github.com/nighthawkcoders/APCSP/blob/master/_posts/2022-07-10-PBL-rapidapi.md</a>
+</li>
+</ul>
+</li>
+<li>Making a Jokes API (this will next API tech talk)<ul>
+<li>Frontend. JavaScript frontend code in APCSP fastpages GitHub repo: <a href="https://github.com/nighthawkcoders/APCSP/blob/master/_posts/2022-07-10-PBL-jokes.md">https://github.com/nighthawkcoders/APCSP/blob/master/_posts/2022-07-10-PBL-jokes.md</a>
+</li>
+<li>Backend Endpoints.  Python code that allows Frontend access: <a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/api.py">https://github.com/nighthawkcoders/flask_portfolio/blob/main/api.py</a>
+</li>
+<li>Backend Jokes Management.  Python code that support Create, Read, Update, Delete (CRUD): <a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/model_jokes.py">https://github.com/nighthawkcoders/flask_portfolio/blob/main/model_jokes.py</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hacks">
+<a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
+</h2>
+<blockquote>
+<p>Find and use an API as part of your project.  An API and a little coding logic will be a big step toward getting meaningful data for a project.  There are many API providers, find one that might work for your project to complete this hack. When picking an API you are looking for something that will work with either JavaScript Fetch or Python Request.  Here are some samples, these are not qualified in any way.</p>
+<ul>
+<li>
+<a href="https://rapidapi.com/collection/list-of-free-apis">RapidAPI</a>- <a href="https://github.com/public-apis/public-apis/blob/master/README.md">GitHub Project</a>
+</li>
+<li><a href="https://nordicapis.com/9-free-public-apis-that-offer-up-some-cool-open-data/">No Key APIs Article</a></li>
+<li><a href="https://developer.twitter.com/en/docs/twitter-api">Twitter Developer</a></li>
+<li><a href="https://developers.google.com/apis-explorer">Google Developer</a></li>
+<li><a href="https://www.reddit.com/dev/api/">Reddit Developer</a></li>
+</ul>
+<p>Show API and format results in either Web Page or Jupyter Notebook.  Ultimately, I will expect that we do APIs in backend (Python/Flask).  However, for this Hack you can pick your preference.  We will discuss pros and cons in next API tech talk.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/csp-fast-pages/techtalk/rapidapi" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/csp-fast-pages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/csp-fast-pages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/csp-fast-pages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Raunak Mondal&#39;s AP Computer Science Principles Blog</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/raunak2007" target="_blank" title="raunak2007"><svg class="svg-icon grey"><use xlink:href="/csp-fast-pages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.instagram.com/raunakmondal07" target="_blank" title="raunakmondal07"><svg class="svg-icon grey"><use xlink:href="/csp-fast-pages/assets/minima-social-icons.svg#instagram"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/raunak-mondal-5121241b6" target="_blank" title="raunak-mondal-5121241b6"><svg class="svg-icon grey"><use xlink:href="/csp-fast-pages/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/csp-fast-pages/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
