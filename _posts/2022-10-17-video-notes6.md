@@ -68,7 +68,7 @@ Computer Protocol Models
         - DNS- Domain Name Service
             - Applications that translate a human readable URL to an IP address
         - World Wide Web (WWW) is not the Internet!
-![]({{site.baseurl}}/images/diagram12.png "https://github.com/Emaad-Mir/emaad-fastpages")
+![](https://emaad-mir.github.io/emaad-fastpages/images/diagram12.png)
 
 
 
@@ -90,10 +90,10 @@ After watching these two videos, I now find it pretty fascinating about how the 
 
 # MCQ Results
 
-![]({{site.baseurl}}/images/questions5.png "https://github.com/Emaad-Mir/emaad-fastpages")
+![](https://emaad-mir.github.io/emaad-fastpages/images/questions5.png)
 
 # Internet Diagram
 
-![]({{site.baseurl}}/images/bad.png "https://github.com/Emaad-Mir/emaad-fastpages")
+![](https://emaad-mir.github.io/emaad-fastpages/images/bad.png)
 
 
