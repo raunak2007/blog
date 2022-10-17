@@ -1,56 +1,27 @@
 ---
 toc: true
 layout: post
-description: Notes on CollegeBoard videos, The Internet 4.1.
-categories: [Markdown, Trimester 1, Tri 1 Notes, Collegeboard]
-title: The Internet 4.1 Notes
-comments: true
+description: The Internet.
+categories: [markdown,csp]
+title: Notes on the Internet.
 ---
 
-# The Internet 4.1 Notes
-- computers used to be big and got smaller and smaller as time went on
-- computers talk through packets
-  - a small piece of information that goes from one computer to another
-  - computers interconnected led to them exchanging packets
-- packet switching - message is broken up into packets and then sent in any order (reassembled by the recipient)
-- bandwidth - speed at which the packets travel (bits per second)
-  - speed depends on the amount of info sent
-- protocols are a set of rules that both systems agree to
-<br>
+As time went on, computers got smaller and smaller. 
 
-![]({{site.baseurl}}/images/computerprotocolmodels.png)
-<br>
+Computers talk through **packets**, which are small pieces of information which are transferred from one computer to the next. 
 
-![]({{site.baseurl}}/images/narrowwaistmodel.png)
-<br>
+**Bandwidth** is the speed at which the packets travel, measured in bits per second. 
 
-![]({{site.baseurl}}/images/networkaccess.png)
-<br>
+There are many models to show the different protocols, standards, and data formats which are followed. 
 
-![]({{site.baseurl}}/images/internetlayer.png)
-<br>
+The **OSI** model has 7 layers: physical, data link, network, transport, session, presentation, and application.
 
-![]({{site.baseurl}}/images/internetlayer2.png)
-<br>
+The **TCP/IP** model has 4 layers: network access, internet, transport, and application.
 
-![]({{site.baseurl}}/images/internetscalability.png)
-<br>
+Examples of devices running at the application layer include web servers, where programs are running on machines connected to the Internet, and DNS, where applications are being translated from readable URLs to IP addresses.
 
-![]({{site.baseurl}}/images/transport.png)
-<br>
+Three Targets that can be addressed using IP:
 
-![]({{site.baseurl}}/images/internetandtransport.png)
-<br>
-
-![]({{site.baseurl}}/images/application.png)
-<br>
-
-![]({{site.baseurl}}/images/internetandtransport.png)
-<br>
-
-![]({{site.baseurl}}/images/internetandtransportoperation.png)
-<br>
-
-## Quiz Results:
-
-![]({{site.baseurl}}/images/quiz4.1.png)
+1. Unicast (specific device)
+2. Multicast (group of devices)
+3. Broadcast (all devices)
