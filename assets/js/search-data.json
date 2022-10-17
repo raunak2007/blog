@@ -112,10 +112,10 @@
   
     
         ,"post10": {
-            "title": "The Internet 4.1 Notes",
-            "content": "The Internet 4.1 Notes . computers used to be big and got smaller and smaller as time went on | computers talk through packets a small piece of information that goes from one computer to another | computers interconnected led to them exchanging packets | . | packet switching - message is broken up into packets and then sent in any order (reassembled by the recipient) | bandwidth - speed at which the packets travel (bits per second) speed depends on the amount of info sent | . | protocols are a set of rules that both systems agree to | . . . . . . . . . . . . Quiz Results: . .",
-            "url": "https://raunak2007.github.io/csp-fast-pages/markdown/trimester%201/tri%201%20notes/collegeboard/2022/10/09/video-notes6.html",
-            "relUrl": "/markdown/trimester%201/tri%201%20notes/collegeboard/2022/10/09/video-notes6.html",
+            "title": "Notes on the Internet.",
+            "content": "As time went on, computers got smaller and smaller. . Computers talk through packets, which are small pieces of information which are transferred from one computer to the next. . Bandwidth is the speed at which the packets travel, measured in bits per second. . There are many models to show the different protocols, standards, and data formats which are followed. . The OSI model has 7 layers: physical, data link, network, transport, session, presentation, and application. . The TCP/IP model has 4 layers: network access, internet, transport, and application. . Examples of devices running at the application layer include web servers, where programs are running on machines connected to the Internet, and DNS, where applications are being translated from readable URLs to IP addresses. . Three Targets that can be addressed using IP: . Unicast (specific device) | Multicast (group of devices) | Broadcast (all devices) |",
+            "url": "https://raunak2007.github.io/csp-fast-pages/markdown/csp/2022/10/09/video-notes6.html",
+            "relUrl": "/markdown/csp/2022/10/09/video-notes6.html",
             "date": " • Oct 9, 2022"
         }
         
