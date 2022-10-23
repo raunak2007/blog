@@ -3,7 +3,7 @@ toc: true
 layout: post
 description: This post has notes and lessons that I learned from the Qualcomm event. 
 categories: [extra]
-title: Qualcomm Operations Event Notes/Lessons Learned
+title: Extra Credit Operations at Qualcomm Notes
 image: /images/Qualcomm-Logo.png
 comments: true
 ---
