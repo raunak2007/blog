@@ -112,10 +112,10 @@
   
     
         ,"post10": {
-            "title": "Binary Math (Interactive Application Activity)",
-            "content": "Binary Math with Conversions . Plus Binary Octal Hexadecimal Decimal Minus . +1 | 00000000 | 0 | 0 | 0 | -1 | . Turn on | Turn on | Turn on | Turn on | Turn on | . | | | | | .",
-            "url": "https://raunak2007.github.io/csp-fast-pages/week13/binary",
-            "relUrl": "/week13/binary",
+            "title": "Binary Math",
+            "content": "Binary Math with Conversions . Plus Binary Octal Bits Hexadecimal Decimal Minus . +1 | 00000000 | 0 | 8 0 | 0 | -1 | . Plus Binary Octal Bits Hexadecimal Decimal Minus . +1 | 00000000 | 0 | 8 0 | 0 | -1 | . Plus Binary Octal Bits Hexadecimal Decimal Minus . +1 | 00000000 | 0 | 8 0 | 0 | -1 | . Plus Binary Octal Bits Hexadecimal Decimal Minus . +1 | 00000000 | 0 | 8 0 | 0 | -1 | . Since there is only 8 bits in this binary, the highest we can go is 255, if we go to 266 it will not be able to print . &lt;/div&gt; Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | . | | | | | | | | . &lt;/div&gt; &lt;/div&gt;",
+            "url": "https://raunak2007.github.io/csp-fast-pages/frontend/binary",
+            "relUrl": "/frontend/binary",
             "date": " • Nov 15, 2022"
         }
         
