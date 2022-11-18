@@ -38,12 +38,13 @@ baseurl: "/csp-fast-pages" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
 minima:
-  social_links:
-    twitter: fastdotai
-    github: raunak2007
-    instagram: raunakmondal07
-    linkedin: raunak-mondal-5121241b6
-    email: raunakmondal07@gmail.com
+  skin: dark
+  #social_links:
+    #twitter: fastdotai
+    #github: raunak2007
+    #instagram: raunakmondal07
+    #linkedin: raunak-mondal-5121241b6
+    #email: raunakmondal07@gmail.com
 
 # Set this to true to get LaTeX math equation support
 use_math: 

@@ -1,6 +1,9 @@
 ---
 layout: post
 ---
+---
+layout: post
+---
 Insights:
 
   - > Developing an interest to CS at an early age can help anyone learn CS faster (Anthony)
