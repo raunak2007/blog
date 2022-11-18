@@ -1,10 +1,8 @@
 ---
-title: Binary Math (Interactive Application Activity)
-layout: post
+title: Binary Math
+layout: default
 description: A Binary Math illustrative application using HTML, Liquid, and JavaScript.
-permalink: /week13/binary
-categories: [week 13]
-tags: [html, liquid, javascript, activity, pbl]
+permalink: /frontend/binary
 ---
 
 <!-- Hack 1: add a character display to text when 8 bits, determine if printable or not printable -->
@@ -12,7 +10,7 @@ tags: [html, liquid, javascript, activity, pbl]
 <!-- Hack 3: do your own thing -->
 
 
-{% assign BITS = 5 %}
+{% assign BITS = 8 %}
 
 <div class="container bg-primary">
     <header class="pb-3 mb-4 border-bottom border-primary text-dark">
@@ -25,6 +23,7 @@ tags: [html, liquid, javascript, activity, pbl]
                 <th>Plus</th>
                 <th>Binary</th>
                 <th>Octal</th>
+                <th>Bits</th>
                 <th>Hexadecimal</th>
                 <th>Decimal</th>
                 <th>Minus</th>
@@ -33,11 +32,80 @@ tags: [html, liquid, javascript, activity, pbl]
                 <td><button type="button" id="add1" onclick="add(1)">+1</button></td>
                 <td id="binary">00000000</td>
                 <td id="octal">0</td>
+                <th>{{BITS}}</th>
                 <td id="hexadecimal">0</td>
                 <td id="decimal">0</td>
                 <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
             </tr>
+            <table class="table">
+            <!-- table 2 -->
+            <tr id="table">
+                <th>Plus</th>
+                <th>Binary</th>
+                <th>Octal</th>
+                <th>Bits</th>
+                <th>Hexadecimal</th>
+                <th>Decimal</th>
+                <th>Minus</th>
+            </tr>
+            <tr>
+                <td><button type="button" id="2add1" onclick="add2(1)">+1</button></td>
+                <td id="2binary">00000000</td>
+                <td id="2octal">0</td>
+                <th>{{BITS}}</th>
+                <td id="2hexadecimal">0</td>
+                <td id="2decimal">0</td>
+                <td><button type="button" id="2sub1" onclick="add2(-1)">-1</button></td>
+            </tr>
+            <table class="table">
+            <!-- table 3 -->
+            <tr id="table">
+                <th>Plus</th>
+                <th>Binary</th>
+                <th>Octal</th>
+                <th>Bits</th>
+                <th>Hexadecimal</th>
+                <th>Decimal</th>
+                <th>Minus</th>
+            </tr>
+            <tr>
+                <td><button type="button" id="add1" onclick="add3(1)">+1</button></td>
+                <td id="3binary">00000000</td>
+                <td id="3octal">0</td>
+                <th>{{BITS}}</th>
+                <td id="3hexadecimal">0</td>
+                <td id="3decimal">0</td>
+                <td><button type="button" id="sub1" onclick="add3(-1)">-1</button></td>
+            </tr>
+            <!-- table 4 -->
+            <tr id="table">
+                <th>Plus</th>
+                <th>Binary</th>
+                <th>Octal</th>
+                <th>Bits</th>
+                <th>Hexadecimal</th>
+                <th>Decimal</th>
+                <th>Minus</th>
+            </tr>
+            <tr>
+                <td><button type="button" id="3add1" onclick="add4(1)">+1</button></td>
+                <td id="4binary">00000000</td>
+                <td id="4octal">0</td>
+                <th>{{BITS}}</th>
+                <td id="4hexadecimal">0</td>
+                <td id="4decimal">0</td>
+                <td><button type="button" id="3sub1" onclick="add4(-1)">-1</button></td>
+            </tr>
             </table>
+            <style>
+.square {
+  height: 50px;
+  width: 50px;
+  background-color: #666;
+}
+</style>
+            <div class="square" id="box"></div>
+            <h3>Since there is only 8 bits in this binary, the highest we can go is 255, if we go to 266 it will not be able to print</h3>
         </div>
         <div class="col-12">
             {% comment %}Liquid for loop includes last number, thus the Minus{% endcomment %}
@@ -46,7 +114,7 @@ tags: [html, liquid, javascript, activity, pbl]
             <tr>
                 {% comment %}Build many bits{% endcomment %}
                 {% for i in (0..bits) %}
-                <td><img class="img-responsive py-3" id="bulb{{ i }}" src="https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Ffacebook%2F000%2F032%2F729%2Foff_ada_x.jpg" alt="" width="40" height="Auto">
+                <td><img class="img-responsive py-3" id="bulb{{ i }}" src="{{site.baseurl}}/images/bulb_off.png" alt="" width="40" height="Auto">
                     <button type="button" id="butt{{ i }}" onclick="javascript:toggleBit({{ i }})">Turn on</button>
                 </td>
                 {% endfor %}
@@ -66,9 +134,9 @@ tags: [html, liquid, javascript, activity, pbl]
     const BITS = {{ BITS }};
     const MAX = 2 ** BITS - 1;
     const MSG_ON = "Turn on";
-    const IMAGE_ON = "https://media.makeameme.org/created/it-is-on.jpg";
+    const IMAGE_ON = "{{site.baseurl}}/images/bulb_on.gif";
     const MSG_OFF = "Turn off";
-    const IMAGE_OFF = "https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Ffacebook%2F000%2F032%2F729%2Foff_ada_x.jpg"
+    const IMAGE_OFF = "{{site.baseurl}}/images/bulb_off.png"
 
     // return string with current value of each bit
     function getBits() {
@@ -88,7 +156,41 @@ tags: [html, liquid, javascript, activity, pbl]
         // Decimal conversion
         document.getElementById('decimal').innerHTML = parseInt(binary, 2).toString();
     }
+    function setConversions2(binary) {
+        document.getElementById('2binary').innerHTML = binary;
+        // Octal conversion
+        document.getElementById('2octal').innerHTML = parseInt(binary, 2).toString(8);
+        // Hexadecimal conversion
+        document.getElementById('2hexadecimal').innerHTML = parseInt(binary, 2).toString(16);
+        // Decimal conversion
+        document.getElementById('2decimal').innerHTML = parseInt(binary, 2).toString();
+    }
+    function setConversions3(binary) {
+        document.getElementById('3binary').innerHTML = binary;
+        // Octal conversion
+        document.getElementById('3octal').innerHTML = parseInt(binary, 2).toString(8);
+        // Hexadecimal conversion
+        document.getElementById('3hexadecimal').innerHTML = parseInt(binary, 2).toString(16);
+        // Decimal conversion
+        document.getElementById('3decimal').innerHTML = parseInt(binary, 2).toString();
+    }
+    function setConversions4(binary) {
+        document.getElementById('4binary').innerHTML = binary;
+        // Octal conversion
+        document.getElementById('4octal').innerHTML = parseInt(binary, 2).toString(8);
+        // Hexadecimal conversion
+        document.getElementById('4hexadecimal').innerHTML = parseInt(binary, 2).toString(16);
+        // Decimal conversion
+        document.getElementById('4decimal').innerHTML = parseInt(binary, 2).toString();
+    }
     //
+    function updatecolor() {
+        var dec1 = document.getElementById('2decimal').innerHTML
+        var dec2 = document.getElementById('3decimal').innerHTML
+        var dec3 = document.getElementById('4decimal').innerHTML
+        console.log("rgb("+dec1+","+dec2+","+dec3+")")
+        document.getElementById('box').style.backgroundColor = "rgb("+dec1+","+dec2+","+dec3+")"
+    }
     function decimal_2_base(decimal, base) {
         let conversion = "";
         // loop to convert to base
@@ -152,5 +254,86 @@ tags: [html, liquid, javascript, activity, pbl]
             document.getElementById('butt' + i).innerHTML = MSG_ON;
         }
         }
+    }
+    function add2(n) {
+        let binary = getBits();
+        // convert to decimal and do math
+        let decimal = parseInt(binary, 2);
+        if (n > 0) {  // PLUS
+        decimal = MAX === decimal ? 0 : decimal += n; // OVERFLOW or PLUS
+        } else  {     // MINUS
+        decimal = 0 === decimal ? MAX : decimal += n; // OVERFLOW or MINUS
+        }
+        // convert the result back to binary
+        binary = decimal_2_base(decimal, 2);
+        // update conversions
+        setConversions2(binary);
+        // update bits
+        for (let i = 0; i < binary.length; i++) {
+        let digit = binary.substr(i, 1);
+        document.getElementById('digit' + i).value = digit;
+        if (digit === "1") {
+            document.getElementById('bulb' + i).src = IMAGE_ON;
+            document.getElementById('butt' + i).innerHTML = MSG_OFF;
+        } else {
+            document.getElementById('bulb' + i).src = IMAGE_OFF;
+            document.getElementById('butt' + i).innerHTML = MSG_ON;
+        }
+        }
+        updatecolor()
+    }
+    function add3(n) {
+        let binary = getBits();
+        // convert to decimal and do math
+        let decimal = parseInt(binary, 2);
+        if (n > 0) {  // PLUS
+        decimal = MAX === decimal ? 0 : decimal += n; // OVERFLOW or PLUS
+        } else  {     // MINUS
+        decimal = 0 === decimal ? MAX : decimal += n; // OVERFLOW or MINUS
+        }
+        // convert the result back to binary
+        binary = decimal_2_base(decimal, 2);
+        // update conversions
+        setConversions3(binary);
+        // update bits
+        for (let i = 0; i < binary.length; i++) {
+        let digit = binary.substr(i, 1);
+        document.getElementById('digit' + i).value = digit;
+        if (digit === "1") {
+            document.getElementById('bulb' + i).src = IMAGE_ON;
+            document.getElementById('butt' + i).innerHTML = MSG_OFF;
+        } else {
+            document.getElementById('bulb' + i).src = IMAGE_OFF;
+            document.getElementById('butt' + i).innerHTML = MSG_ON;
+        }
+        }
+        updatecolor()
+    }
+    function add4(n) {
+        let binary = getBits();
+        // convert to decimal and do math
+        let decimal = parseInt(binary, 2);
+        if (n > 0) {  // PLUS
+        decimal = MAX === decimal ? 0 : decimal += n; // OVERFLOW or PLUS
+        } else  {     // MINUS
+        decimal = 0 === decimal ? MAX : decimal += n; // OVERFLOW or MINUS
+        }
+        // convert the result back to binary
+        binary = decimal_2_base(decimal, 2);
+        // update conversions
+        setConversions4(binary);
+        // update bits
+        for (let i = 0; i < binary.length; i++) {
+        let digit = binary.substr(i, 1);
+        document.getElementById('digit' + i).value = digit;
+        if (digit === "1") {
+            document.getElementById('bulb' + i).src = IMAGE_ON;
+            document.getElementById('butt' + i).innerHTML = MSG_OFF;
+        } else {
+            document.getElementById('bulb' + i).src = IMAGE_OFF;
+            document.getElementById('butt' + i).innerHTML = MSG_ON;
+        }
+        }
+        updatecolor()
     }
 </script>
