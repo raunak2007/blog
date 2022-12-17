@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Week 2-3 Vocab | Raunak Mondal’s CSP Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Week 2-3 Vocab" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Raunak Mondal’s AP Computer Science Principles Blog" />
+<meta property="og:description" content="Raunak Mondal’s AP Computer Science Principles Blog" />
+<link rel="canonical" href="https://raunak2007.github.io/csp-fast-pages/2022/12/16/_12_02_notes.html" />
+<meta property="og:url" content="https://raunak2007.github.io/csp-fast-pages/2022/12/16/_12_02_notes.html" />
+<meta property="og:site_name" content="Raunak Mondal’s CSP Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-16T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Week 2-3 Vocab" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-16T00:00:00-06:00","datePublished":"2022-12-16T00:00:00-06:00","description":"Raunak Mondal’s AP Computer Science Principles Blog","headline":"Week 2-3 Vocab","mainEntityOfPage":{"@type":"WebPage","@id":"https://raunak2007.github.io/csp-fast-pages/2022/12/16/_12_02_notes.html"},"url":"https://raunak2007.github.io/csp-fast-pages/2022/12/16/_12_02_notes.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/csp-fast-pages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://raunak2007.github.io/csp-fast-pages/feed.xml" title="Raunak Mondal's CSP Blog" /><link rel="shortcut icon" type="image/x-icon" href="/csp-fast-pages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/csp-fast-pages/">Raunak Mondal&#39;s CSP Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/csp-fast-pages/2022-12-02-grades.html">Peer Grades</a><a class="page-link" href="/csp-fast-pages/about/">About Me</a><a class="page-link" href="/csp-fast-pages/_pages/frontend.html">Frontend</a><a class="page-link" href="/csp-fast-pages/_pages/notes.html">Notes for CSP</a><a class="page-link" href="/csp-fast-pages/search/">Search</a><a class="page-link" href="/csp-fast-pages/categories/">Tags</a><a class="page-link" href="/csp-fast-pages/_pages/vocab.html">My CSP Vocab</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Week 2-3 Vocab</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-12-16T00:00:00-06:00" itemprop="datePublished">
+        Dec 16, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      10 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/raunak2007/csp-fast-pages/tree/master/_notebooks/2022_12_02_notes.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/raunak2007/csp-fast-pages/master?filepath=_notebooks%2F2022_12_02_notes.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/raunak2007/csp-fast-pages/blob/master/_notebooks/2022_12_02_notes.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fraunak2007%2Fcsp-fast-pages%2Fblob%2Fmaster%2F_notebooks%2F2022_12_02_notes.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Vocab">Vocab </a></li>
+<li class="toc-entry toc-h1"><a href="#Variables,-Assignments,-Data-Abstraction">Variables, Assignments, Data Abstraction </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Variables">Variables </a></li>
+<li class="toc-entry toc-h2"><a href="#Assignments">Assignments </a></li>
+<li class="toc-entry toc-h2"><a href="#Data-Abstraction">Data Abstraction </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Algorithms">Algorithms </a></li>
+<li class="toc-entry toc-h1"><a href="#Arithmetic-Operation">Arithmetic Operation </a></li>
+<li class="toc-entry toc-h1"><a href="#String">String </a></li>
+<li class="toc-entry toc-h1"><a href="#Lists-and-Iteration">Lists and Iteration </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Lists">Lists </a></li>
+<li class="toc-entry toc-h2"><a href="#Iteration">Iteration </a></li>
+<li class="toc-entry toc-h2"><a href="#2D-Iteration">2D Iteration </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Algorithms-and-Conditionals-vs-Booleans-and-Binary-Search/Flowcharts">Algorithms and Conditionals vs Booleans and Binary Search/Flowcharts </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Algorithms">Algorithms </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Examples">Examples </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#List-Example:">List Example: </a></li>
+<li class="toc-entry toc-h2"><a href="#Variable-type-examples-(string,integer,boolean):">Variable type examples (string,integer,boolean): </a></li>
+<li class="toc-entry toc-h2"><a href="#Operators-Examples:">Operators Examples: </a></li>
+<li class="toc-entry toc-h2"><a href="#Algorithm-Examples">Algorithm Examples </a></li>
+<li class="toc-entry toc-h2"><a href="#Building-an-Algorithm-Steps:">Building an Algorithm Steps: </a></li>
+<li class="toc-entry toc-h2"><a href="#Binary-Search-Example:">Binary Search Example: </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022_12_02_notes.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Vocab">
+<a class="anchor" href="#Vocab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vocab<a class="anchor-link" href="#Vocab"> </a>
+</h1>
+<ul>
+<li>Binary:<ul>
+<li>Bits<ul>
+<li>Bits are single pieces of information which can either have a 0 or a 1. They are the building block of all code.</li>
+</ul>
+</li>
+<li>Bytes<ul>
+<li>A single byte is 8 bits. Megabytes, Gigabytes, etc are all multiples of bytes and they represent memory or storage</li>
+</ul>
+</li>
+<li>Hexedecimal<ul>
+<li>base 16 counting. Binary is a base 2 system</li>
+</ul>
+</li>
+<li>Unsigned Integer<ul>
+<li>An unsigned integer is a basic number value in bits. It does not include a negative or positive and therefore is non-negative</li>
+</ul>
+</li>
+<li>Signed Integer<ul>
+<li>An integer with a negative or positive</li>
+</ul>
+</li>
+<li>Floating Point<ul>
+<li>A way of approximately representing decimal values</li>
+</ul>
+</li>
+<li>Boolean<ul>
+<li>Data type with a true/false value, can be represented with 1s and 0s</li>
+</ul>
+</li>
+<li>ASCII<ul>
+<li>A Character encoding standard, transfers binary to chars</li>
+</ul>
+</li>
+<li>Unicode<ul>
+<li>Another character encoding standard, builds on ASCII</li>
+</ul>
+</li>
+<li>RGB<ul>
+<li>Color codes are represented in Hexidecimal which describe the red green and blue values to build a color
+  EX: #FF0000, rgb(255, 0, 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Algorithm Terms:</p>
+<ul>
+<li>Variables: An abstraction inside a program that holds a specific value or meaning defined by the programmer.</li>
+<li>
+<p>Data Types:</p>
+<ul>
+<li>Integer- highScore (involves math, save as integer or numbers)</li>
+<li>String- firstName (name is text, so it is a string)</li>
+<li>Boolean- isSunny (2 options, true or false)</li>
+<li>String- phoneNumber (no math, just numbers)</li>
+</ul>
+</li>
+<li>
+<p>Arithmetic Operators:</p>
+<ul>
+<li>Plus indicated addition (a + b)</li>
+<li>Minus indicates subtractions (a - b)</li>
+<li>Asterisk indicated multiplication (a * b)</li>
+<li>Slash indicated division (a / b)</li>
+</ul>
+</li>
+<li>Managing Complexity:<ul>
+<li>Lists: Allows you to complete a process for each value in the list, or store multiple values to one variable.</li>
+<li>2D Lists: Array within an array. You can pull single arrays through using index and variable commands.</li>
+<li>Dictionaries: Allows the storage or data keys and values (assigning a certain piece of data to fit the category it is assigned)</li>
+<li>Class: A particular data structure.</li>
+<li>Algorithms: An algorithm is a finite set of instructions that accomplish a specific task, us as humans, do algorithms on a daily basis.</li>
+<li>Sequence: A specific order a process is completed, which impacts the output.</li>
+<li>Selection: Programmer decides between 2 different functions</li>
+<li>Iteration: Repetition of a process</li>
+<li>For loop: repeats a section of code a set number of times</li>
+<li>While loop: repearts a section of code an unknown number of times, until the code is told to break</li>
+<li>Expressions: A piece of syntax in coding</li>
+</ul>
+</li>
+<li>Characters:<ul>
+<li>Strings : A variable data type which consists of a combination of letters, numbers, and other special characters (ex: @#$%^&amp;*). They are seen inside quotation marks, and operators cannot affect any numbers in the string.<ul>
+<li>Ex: stringVar = “Hello World!”</li>
+<li>“Hello World!” is a string.</li>
+</ul>
+</li>
+<li>Length: The number of elements in a list. Here’s an example in Python:<ul>
+<li>numList = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 8 , 7 , 6 , 5 , 4 , 3 , 2 , 1]</li>
+</ul>
+</li>
+<li>Concatenation: the act of joining two strings into a single string. Often, these strings are printed to an output terminal/console. Here’s an example in pseudocode:<ul>
+<li>concat(“tri”, “llion”)</li>
+<li>This concatenates the strings “tri” and “llion”, making a new string “trillion”.</li>
+</ul>
+</li>
+<li>Upper, Lower, Traversing Strings<ul>
+<li>The first two (upper and lower) seem to be referring to Python methods. They are quite simple. I think it would be easiest to explain with a demonstration:</li>
+<li>String = “WhYaReWeDoInGtHiS”</li>
+<li>print(string)</li>
+<li>print(string.upper())</li>
+<li>print(string.lower())</li>
+<li>Output:</li>
+<li>WhYaReWeDoInGtHiS</li>
+<li>WHYAREWEDOINGTHIS</li>
+<li>whyarewedoingthis</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Variables,-Assignments,-Data-Abstraction">
+<a class="anchor" href="#Variables,-Assignments,-Data-Abstraction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Variables, Assignments, Data Abstraction<a class="anchor-link" href="#Variables,-Assignments,-Data-Abstraction"> </a>
+</h1>
+<h2 id="Variables">
+<a class="anchor" href="#Variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Variables<a class="anchor-link" href="#Variables"> </a>
+</h2>
+<ul>
+<li>Abstraction insde a program that can hold a value</li>
+<li>Organizes data with a name</li>
+<li>Consist of name, value, type</li>
+<li>Understanding of code is through name of variables</li>
+<li>Types of data:<ul>
+<li>Interger, String, Boolean</li>
+<li>List can also be stored in variables <ul>
+<li>Print/retreive specific values</li>
+<li>easily able to add and remove values</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Assignments">
+<a class="anchor" href="#Assignments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assignments<a class="anchor-link" href="#Assignments"> </a>
+</h2>
+<ul>
+<li>Assignment operator allows program to change value represented by variable<ul>
+<li>=, +=, -=, *=, /=, **=</li>
+</ul>
+</li>
+</ul>
+<h2 id="Data-Abstraction">
+<a class="anchor" href="#Data-Abstraction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Abstraction<a class="anchor-link" href="#Data-Abstraction"> </a>
+</h2>
+<ul>
+<li>Method used in coding to usefully represent data</li>
+<li>Variables and list are primary tools</li>
+<li>Provides seperation btw abstract properties of a data type and concrete details of its representation</li>
+</ul>
+<h1 id="Algorithms">
+<a class="anchor" href="#Algorithms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Algorithms<a class="anchor-link" href="#Algorithms"> </a>
+</h1>
+<ul>
+<li>Sequencing<ul>
+<li>Algorithms do tasks in the order of specification.</li>
+</ul>
+</li>
+<li>Selection<ul>
+<li>Helps choose two different outcomes based off a decision.</li>
+</ul>
+</li>
+<li>Iteration<ul>
+<li>If a condition is true, then the code can repeat.</li>
+</ul>
+</li>
+<li>Flowcharts<ul>
+<li>Use shapes and arrows to represent the steps of an algorithm.</li>
+</ul>
+</li>
+<li>Pseudocode<ul>
+<li>A blend of human language and coding format.</li>
+</ul>
+</li>
+</ul>
+<h1 id="Arithmetic-Operation">
+<a class="anchor" href="#Arithmetic-Operation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arithmetic Operation<a class="anchor-link" href="#Arithmetic-Operation"> </a>
+</h1>
+<ul>
+<li>Arithmetic operations exist in most programming languages.</li>
+<li>subtraction (-)</li>
+<li>addition (+)</li>
+<li>multiplication (*)</li>
+<li>division (/)</li>
+<li>Getting the remainder (%)</li>
+<li>ORDER OF OPERATIONS is crucial<ul>
+<li>reassigning variables using operations on other variables can get confusing</li>
+</ul>
+</li>
+<li>PAY ATTENTION TO SEQUENCING SO OPERATIONS OF VARIABLES DONT GET MESSED UP</li>
+<li>Track varaibles (common question in AP Exam)</li>
+</ul>
+<h1 id="String">
+<a class="anchor" href="#String" aria-hidden="true"><span class="octicon octicon-link"></span></a>String<a class="anchor-link" href="#String"> </a>
+</h1>
+<ul>
+<li>A string is a collection of characters. What is a character as character can be anything from numbers, letters, spaces, special symbols, etc.</li>
+<li>len () : to find the length of a string</li>
+<li>lower () : to convert to lowercase</li>
+<li>concat (): in pseudocode and varys from language to language can be used to combine to strings</li>
+</ul>
+<h1 id="Lists-and-Iteration">
+<a class="anchor" href="#Lists-and-Iteration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lists and Iteration<a class="anchor-link" href="#Lists-and-Iteration"> </a>
+</h1>
+<h2 id="Lists">
+<a class="anchor" href="#Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lists<a class="anchor-link" href="#Lists"> </a>
+</h2>
+<ul>
+<li>Sequence of variables<ul>
+<li>Used to store multiple items in a variable</li>
+<li>ordered and flexibe</li>
+</ul>
+</li>
+<li>Tuple: collection thats ordered, unchangeable, allows duplicates</li>
+<li>Set: Unordered, unchangeable, doesn't allow duplicates</li>
+<li>Dictionary: ordered, changeable, doesn't allow duplicates</li>
+<li>Index: refrences an element in a list that is in order</li>
+<li>Elements: values in the list that are assigned to an index</li>
+<li>Methods:<ul>
+<li>append() adds elements</li>
+<li>index() returns the index of the first element with specificed value</li>
+<li>inset() adds element at given position</li>
+<li>remove() removes the first item with the specified value</li>
+<li>reverse() reverse list order</li>
+<li>sort() sorts the list</li>
+<li>count() returns amount of elements with specified value</li>
+<li>copy() returns a copy of the list</li>
+<li>clear() removes elements from list</li>
+</ul>
+</li>
+</ul>
+<h2 id="Iteration">
+<a class="anchor" href="#Iteration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Iteration<a class="anchor-link" href="#Iteration"> </a>
+</h2>
+<ul>
+<li>repetition of a process applied to the result or taken frmo previous statement<ul>
+<li>for loops</li>
+<li>while loops</li>
+</ul>
+</li>
+<li>2 types of iteration: indefinite and definite<ul>
+<li>definite: clarifies how many times the loop is going to run</li>
+<li>indefinite: how many times its going be ran based on conditions</li>
+</ul>
+</li>
+<li>When object is iterable it can be used in an interation </li>
+<li>Iter() returns an interator</li>
+<li>Strings, list, dictionaries, sets, and tuples are iterable objects</li>
+<li>Break: stops the loop</li>
+</ul>
+<h2 id="2D-Iteration">
+<a class="anchor" href="#2D-Iteration" aria-hidden="true"><span class="octicon octicon-link"></span></a>2D Iteration<a class="anchor-link" href="#2D-Iteration"> </a>
+</h2>
+<ul>
+<li>Lists of lists</li>
+<li>Read in 2 dimensions (list on top of list</li>
+</ul>
+<h1 id="Algorithms-and-Conditionals-vs-Booleans-and-Binary-Search/Flowcharts">
+<a class="anchor" href="#Algorithms-and-Conditionals-vs-Booleans-and-Binary-Search/Flowcharts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Algorithms and Conditionals vs Booleans and Binary Search/Flowcharts<a class="anchor-link" href="#Algorithms-and-Conditionals-vs-Booleans-and-Binary-Search/Flowcharts"> </a>
+</h1>
+<h2 id="Algorithms">
+<a class="anchor" href="#Algorithms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Algorithms<a class="anchor-link" href="#Algorithms"> </a>
+</h2>
+<ul>
+<li>Process or set of rules to be followed through code<ul>
+<li>Set limitations</li>
+</ul>
+</li>
+<li>Algorithms can be written in different ways and still accomplish the same tasks</li>
+<li>Algorithms that appear similar can yield different side effects or results.</li>
+<li>Some conditional statements can be written as the same as Boolean expressions (VICE VERSA)</li>
+<li>Different algorithms can be developed or use to solve the same problem.
+## Conditional vs Booleans</li>
+<li>Boolean expression when an expression outputs true or false</li>
+<li>Booleans can only hold true or false
+## Flowcharts</li>
+<li>Help you visualize functonality of an algorithm</li>
+<li>Good way to double check whether an algorithm is acheiving its purpose
+## Binary Search</li>
+<li>Search algorithm that finds position of target value within a sorted array<ul>
+<li>Algorithm for iteratin gto find a value inside a data set</li>
+</ul>
+</li>
+<li>Starts in middle of data set and eliminates half the data</li>
+<li>COLLEGE BOARD INDEX STARTS AT 1 NOT 0
+## Libraries</li>
+<li>A library is a collection of precompiled codes that can be used later on in a program for some specific well-defined operations.</li>
+<li>These precompiled codes can be referred to as modules. Each module contains bundles of code that can be used repeatedly in different programs.</li>
+<li>A library may also contain documentation, configuration data, message templates, classes, and values, etc.</li>
+<li>Importance:<ul>
+<li>Using Libraries makes Python Programming simpler and convenient for the programmer.</li>
+<li>One example would be through looping and iteration, as we don’t need to write the same code again and again for different programs.</li>
+<li>Python libraries play a very vital role in fields of Machine Learning, Data Science, Data Visualization, etc.
+## APIS</li>
+</ul>
+</li>
+<li>An Application Program Interface, or API, contains specific direction for how the procedures in a library behave and can be used.</li>
+<li>An API acts as a gateway for the imported procedures from a library to interact with the rest of your code.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Examples">
+<a class="anchor" href="#Examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples<a class="anchor-link" href="#Examples"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="List-Example:">
+<a class="anchor" href="#List-Example:" aria-hidden="true"><span class="octicon octicon-link"></span></a>List Example:<a class="anchor-link" href="#List-Example:"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">colorsList</span><span class="o">=</span><span class="p">[</span><span class="s2">"pink"</span><span class="p">,</span> <span class="s2">"yellow"</span><span class="p">,</span> <span class="s2">"green"</span><span class="p">,</span> <span class="s2">"blue"</span><span class="p">,</span> <span class="s2">"orange"</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">colorsList</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>['pink', 'yellow', 'green', 'blue', 'orange']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Variable-type-examples-(string,integer,boolean):">
+<a class="anchor" href="#Variable-type-examples-(string,integer,boolean):" aria-hidden="true"><span class="octicon octicon-link"></span></a>Variable type examples (string,integer,boolean):<a class="anchor-link" href="#Variable-type-examples-(string,integer,boolean):"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">"table1"</span> <span class="c1">#string</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+<span class="n">number</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#integer</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
+
+<span class="n">isAbsent</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">isAbsent</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">isAbsent</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>table1 &lt;class 'str'&gt;
+4 &lt;class 'int'&gt;
+False &lt;class 'bool'&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Operators-Examples:">
+<a class="anchor" href="#Operators-Examples:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Operators Examples:<a class="anchor-link" href="#Operators-Examples:"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">num3</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span>
+<span class="n">num4</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">1</span>
+<span class="n">num5</span> <span class="o">=</span> <span class="mi">5</span><span class="o">%</span><span class="k">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+3
+2
+2.0
+1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Algorithm-Examples">
+<a class="anchor" href="#Algorithm-Examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Algorithm Examples<a class="anchor-link" href="#Algorithm-Examples"> </a>
+</h2>
+<p>Algorithms with same code but differnt results</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Select a temperature from 0 to 99 degrees F"</span><span class="p">))</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">temp</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"It's too hot outside!"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">temp</span> <span class="o">&gt;=</span> <span class="mi">65</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Sure I will play outside!"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"It is too cold outside!"</span><span class="p">)</span>
+<span class="c1"># Input 54 and then 95, what do you notice?</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>It's too hot outside!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Select a temperature from 0 to 99 degrees F"</span><span class="p">))</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">temp</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"It's too hot outside!"</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">temp</span> <span class="o">&gt;=</span> <span class="mi">65</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Sure I will play outside!"</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">temp</span> <span class="o">&lt;</span> <span class="mi">65</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"It is too cold outside!"</span><span class="p">)</span>
+    <span class="c1"># Input 54 and then Input 95, what do you notice?</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>It's too hot outside!
+Sure I will play outside!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Algorithms that accomplish the same task but differnet code</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="c1">#iteration</span>
+<span class="n">var</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="k">while</span> <span class="p">(</span><span class="n">var</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">):</span> <span class="c1">#while the var is &lt;= 4, it executes those commands, once it exceeds it hits the else command</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">counter</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="n">var</span> <span class="o">=</span> <span class="n">var</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="c1"># now go through the whole thing 4 times, this is an iteration, a vital part of algorithms.</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="c1">#iteration</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">counter</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">):</span> 
+    <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">counter</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Building-an-Algorithm-Steps:">
+<a class="anchor" href="#Building-an-Algorithm-Steps:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building an Algorithm Steps:<a class="anchor-link" href="#Building-an-Algorithm-Steps:"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"choose value for x"</span><span class="p">)</span>
+
+<span class="n">varx</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter any positive Integer"</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">varx</span> <span class="o">%</span><span class="k">2</span> == 0):
+     <span class="n">varx</span> <span class="o">==</span> <span class="n">varx</span><span class="o">/</span><span class="mi">2</span>       <span class="c1"># Change print to the function</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">varx</span> <span class="o">==</span> <span class="n">varx</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>      <span class="c1"># Change print to the function</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">varx</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"choose value for x"</span><span class="p">)</span>
+
+<span class="n">varx</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter any positive Integer"</span><span class="p">))</span>
+
+<span class="k">while</span> <span class="n">varx</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">varx</span> <span class="o">%</span><span class="k">2</span> == 0):
+        <span class="n">varx</span> <span class="o">=</span> <span class="n">varx</span><span class="o">/</span><span class="mi">2</span>       <span class="c1"># Change print to the function</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">varx</span> <span class="o">=</span> <span class="n">varx</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>      <span class="c1"># Change print to the function</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">varx</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"choose value for x"</span><span class="p">)</span>
+
+<span class="n">varx</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter any positive Integer"</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">varx</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">varx</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">varx</span> <span class="o">%</span><span class="k">2</span> == 0):
+        <span class="n">varx</span> <span class="o">=</span> <span class="n">varx</span><span class="o">/</span><span class="mi">2</span>       
+        <span class="nb">print</span><span class="p">(</span><span class="n">varx</span><span class="p">)</span>               <span class="c1"># add Display</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">varx</span> <span class="o">=</span> <span class="n">varx</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>      
+        <span class="nb">print</span><span class="p">(</span><span class="n">varx</span><span class="p">)</span>               <span class="c1"># add Display</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">varx</span><span class="p">)</span>                       <span class="c1"># Final # Should be 1 every time</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Binary-Search-Example:">
+<a class="anchor" href="#Binary-Search-Example:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Binary Search Example:<a class="anchor-link" href="#Binary-Search-Example:"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">BinarySearch</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
+
+    <span class="c1"># Repeat until the pointers low and high meet each other </span>
+    <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">:</span>
+
+        <span class="n">mid</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span> <span class="c1"># find the middle (taking the higest index number plus the lowest and divided by two)</span>
+
+        <span class="k">if</span> <span class="n">array</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span> <span class="c1"># if desired number is the middle is found return desired number (middle number) </span>
+            <span class="k">return</span> <span class="n">mid</span>
+
+        <span class="k">elif</span> <span class="n">array</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span> 
+            <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+
+<span class="n">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">BinarySearch</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">result</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Element is present at index "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Not found"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Element is present at index 1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="raunak2007/csp-fast-pages"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/csp-fast-pages/2022/12/16/_12_02_notes.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/csp-fast-pages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/csp-fast-pages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/csp-fast-pages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Raunak Mondal&#39;s AP Computer Science Principles Blog</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
