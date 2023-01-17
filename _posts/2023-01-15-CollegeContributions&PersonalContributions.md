@@ -6,7 +6,6 @@ layout: post
 decription: My personal contributions to the Reunion Project and the College Board CPT Project
 categories: [week18]
 tags: [week18]
-author: Tirth Thakkar
 show_tags: true
 comments: true
 ---
