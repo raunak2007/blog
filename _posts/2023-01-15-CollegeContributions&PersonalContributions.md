@@ -1,9 +1,9 @@
 ---
-title: College Board CPT Project & Personal Contributions
+title: College Board CPT Project
 toc: true
 branch: master
 layout: post
-decription: My personal contributions to the Reunion Project and the College Board CPT Project
+decription: My evaluation of the College Board CPT Project
 categories: [week18]
 tags: [week18]
 show_tags: true
