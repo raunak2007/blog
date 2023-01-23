@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Grading | Raunak Mondal’s CSP Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Grading" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Raunak Mondal’s AP Computer Science Principles Blog" />
+<meta property="og:description" content="Raunak Mondal’s AP Computer Science Principles Blog" />
+<link rel="canonical" href="https://raunak2007.github.io/csp-fast-pages/2023/01/22/week3cb.html" />
+<meta property="og:url" content="https://raunak2007.github.io/csp-fast-pages/2023/01/22/week3cb.html" />
+<meta property="og:site_name" content="Raunak Mondal’s CSP Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-22T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Grading" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-22T00:00:00-06:00","datePublished":"2023-01-22T00:00:00-06:00","description":"Raunak Mondal’s AP Computer Science Principles Blog","headline":"Grading","mainEntityOfPage":{"@type":"WebPage","@id":"https://raunak2007.github.io/csp-fast-pages/2023/01/22/week3cb.html"},"url":"https://raunak2007.github.io/csp-fast-pages/2023/01/22/week3cb.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/csp-fast-pages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://raunak2007.github.io/csp-fast-pages/feed.xml" title="Raunak Mondal's CSP Blog" /><link rel="shortcut icon" type="image/x-icon" href="/csp-fast-pages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/csp-fast-pages/">Raunak Mondal&#39;s CSP Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/csp-fast-pages/2022-12-02-grades.html">Peer Grades</a><a class="page-link" href="/csp-fast-pages/about/">About Me</a><a class="page-link" href="/csp-fast-pages/_pages/frontend.html">Frontend</a><a class="page-link" href="/csp-fast-pages/_pages/notes.html">Notes for CSP</a><a class="page-link" href="/csp-fast-pages/search/">Search</a><a class="page-link" href="/csp-fast-pages/categories/">Tags</a><a class="page-link" href="/csp-fast-pages/_pages/vocab.html">My CSP Vocab</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Grading</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-01-22T00:00:00-06:00" itemprop="datePublished">
+        Jan 22, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/raunak2007/csp-fast-pages/tree/master/_notebooks/2023-01-22-week3cb.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/raunak2007/csp-fast-pages/master?filepath=_notebooks%2F2023-01-22-week3cb.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/raunak2007/csp-fast-pages/blob/master/_notebooks/2023-01-22-week3cb.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fraunak2007%2Fcsp-fast-pages%2Fblob%2Fmaster%2F_notebooks%2F2023-01-22-week3cb.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Submission-1">Submission 1 </a></li>
+<li class="toc-entry toc-h1"><a href="#Submission-2">Submission 2 </a></li>
+<li class="toc-entry toc-h1"><a href="#Submission-3">Submission 3 </a></li>
+<li class="toc-entry toc-h1"><a href="#Submission-4">Submission 4 </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-01-22-week3cb.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Submission-1">
+<a class="anchor" href="#Submission-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Submission 1<a class="anchor-link" href="#Submission-1"> </a>
+</h1>
+<table>
+<thead>
+<tr>
+<th>Reporting Category</th>
+<th>Student Score</th>
+<th>College Board Score</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Row 1: Program Purpose and Function</td>
+<td>1</td>
+<td>1</td>
+<td>Inputs and outputs were not described properly, the program is function but the purpose is not describes as well.</td>
+</tr>
+<tr>
+<td>Row 2: Data Abstraction</td>
+<td>0</td>
+<td>0</td>
+<td>Collegeboard didnt acess data from the list so there was no storage.</td>
+</tr>
+<tr>
+<td>Row 3: Managing Complexity</td>
+<td>0</td>
+<td>0</td>
+<td>They didnt give a point as the data could have been used within a list and conditional.</td>
+</tr>
+<tr>
+<td>Row 4: Procedural Abstraction</td>
+<td>1</td>
+<td>0</td>
+<td>No point was given as it didnt have peramaters and funcitionaly through the code</td>
+</tr>
+<tr>
+<td>Row 5: Algorithm Implementation</td>
+<td>1</td>
+<td>1</td>
+<td>algorithims and parameters were given properly.</td>
+</tr>
+<tr>
+<td>Row 6: Testing</td>
+<td>1</td>
+<td>1</td>
+<td>He shows that he was able to fulfill all of the requirements that were asked of them.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Submission-2">
+<a class="anchor" href="#Submission-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Submission 2<a class="anchor-link" href="#Submission-2"> </a>
+</h1>
+<table>
+<thead>
+<tr>
+<th>Reporting Category</th>
+<th>Student Score</th>
+<th>College Board Score</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Row 1: Program Purpose and Function</td>
+<td>1</td>
+<td>1</td>
+<td>It shows that the program was run very well.</td>
+</tr>
+<tr>
+<td>Row 2: Data Abstraction</td>
+<td>1</td>
+<td>1</td>
+<td>Collegeboard gave him a point because the code segments displayed were accurate and it stored correct data</td>
+</tr>
+<tr>
+<td>Row 3: Managing Complexity</td>
+<td>1</td>
+<td>1</td>
+<td>He manages to show the complexities of the issue very well.</td>
+</tr>
+<tr>
+<td>Row 4: Procedural Abstraction</td>
+<td>1</td>
+<td>1</td>
+<td>Uses procedures and uses them effectively.</td>
+</tr>
+<tr>
+<td>Row 5: Algorithm Implementation</td>
+<td>1</td>
+<td>1</td>
+<td>College board gave the 1 due to the fact the loops and many parameters implemented a lot of algorithms with accuracy</td>
+</tr>
+<tr>
+<td>Row 6: Testing</td>
+<td>1</td>
+<td>1</td>
+<td>Alogrithm showing that is addresses all of the different parts and it shows a a good level of complexity.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Submission-3">
+<a class="anchor" href="#Submission-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Submission 3<a class="anchor-link" href="#Submission-3"> </a>
+</h1>
+<table>
+<thead>
+<tr>
+<th>Reporting Category</th>
+<th>Student Score</th>
+<th>College Board Score</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Row 1: Program Purpose and Function</td>
+<td>1</td>
+<td>1</td>
+<td>It shows that the program was run very well. Programming functions properly with inputs and outputs.</td>
+</tr>
+<tr>
+<td>Row 2: Data Abstraction</td>
+<td>0</td>
+<td>0</td>
+<td>Collegeboard didnt give the point as the data wasnt being pulled out from anywhere leaving there to be nothing put into the data.</td>
+</tr>
+<tr>
+<td>Row 3: Managing Complexity</td>
+<td>0</td>
+<td>0</td>
+<td>criteria not met</td>
+</tr>
+<tr>
+<td>Row 4: Procedural Abstraction</td>
+<td>0</td>
+<td>0</td>
+<td>criteria not met</td>
+</tr>
+<tr>
+<td>Row 5: Algorithm Implementation</td>
+<td>0</td>
+<td>0</td>
+<td>criteria not met.</td>
+</tr>
+<tr>
+<td>Row 6: Testing</td>
+<td>0</td>
+<td>0</td>
+<td>didnt give the point as I beleived the app was not doing as said which is why a 0 was given</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Submission-4">
+<a class="anchor" href="#Submission-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Submission 4<a class="anchor-link" href="#Submission-4"> </a>
+</h1>
+<table>
+<thead>
+<tr>
+<th>Reporting Category</th>
+<th>Student Score</th>
+<th>College Board Score</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Row 1: Program Purpose and Function</td>
+<td>1</td>
+<td>1</td>
+<td>It shows that the program was run very well.</td>
+</tr>
+<tr>
+<td>Row 2: Data Abstraction</td>
+<td>1</td>
+<td>1</td>
+<td>The problem with this is that there is a list but it doesnt say what its for.</td>
+</tr>
+<tr>
+<td>Row 3: Managing Complexity</td>
+<td>1</td>
+<td>1</td>
+<td>Includes a list, but that list is not used to manage complexity.</td>
+</tr>
+<tr>
+<td>Row 4: Procedural Abstraction</td>
+<td>1</td>
+<td>1</td>
+<td>Uses procedures and uses them effectively.</td>
+</tr>
+<tr>
+<td>Row 5: Algorithm Implementation</td>
+<td>1</td>
+<td>1</td>
+<td>Algorithm works well with the the rest of the program.</td>
+</tr>
+<tr>
+<td>Row 6: Testing</td>
+<td>0</td>
+<td>0</td>
+<td>Describes both calls, and describes the conditions.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>SThe college board's grade and mine disagree in a few ways. I felt like mine was a little harder. whenever a description or code fragment is requested in an inquiry. I wouldn't notice anything when I looked at the question. The student may have clarified it elsewhere in their response, though. Additionally, I wasn't entirely sure where sequencing, selection, and iteration were located. I made an effort to find it, but I was forced to deduce it from the video.</li>
+<li>My program will have to be quite intricate and capable of having a significant output input, function, and goal. It can't only be an information forum. It must have a function.</li>
+<li>The original CPT failed to adequately describe the goal. It is crucial that on understanding the distinction between purpose and function. The objective of the program is purpose. Function is the means through which it is accomplished. A card game of some form could serve as the function and the purpose could be enjoyment. Additionally, this same project did a poor job of explaining things.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>I think my grade is on par with the marks the College Board gave the example projects. I am well aware of the requirements and what my project needs to succeed. My project must be complete, with a variety of features and abstraction, in order to satisfy all the requirements. I think I understtod most of the topics but some of the things I got confused on were related to the identification of lists and parameters. Sometimes it can be hard to distinguish between them but overall I feel that I learned a lot of new information. </li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="raunak2007/csp-fast-pages"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/csp-fast-pages/2023/01/22/week3cb.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/csp-fast-pages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://raunak2007.github.io/csp-fast-pages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/csp-fast-pages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Raunak Mondal&#39;s AP Computer Science Principles Blog</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
