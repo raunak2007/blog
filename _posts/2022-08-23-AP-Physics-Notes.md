@@ -1,9 +1,6 @@
 ---
 layout: post
 ---
----
-layout: post
----
 ![]({{ site.url }}{{ site.baseurl }}/assets/img/2022-08-23-AP-Physics-Notes/media/image1.jpeg)
 
 AP Physics C: Kinematics Review (Mechanics)

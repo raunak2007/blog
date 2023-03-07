@@ -1,9 +1,6 @@
 ---
 layout: post
 ---
----
-layout: post
----
 **From Pre History to Civilization**
 
  
