@@ -10,7 +10,7 @@ categories: [week 24]
 
 # Final Exam
 ## Results
-I scored a 42/50, or 84%. This is high enough to earn at least a .9/1 in the grade book.
+I scored a 46/50, or 92%. This is high enough to earn at least a .9/1 in the grade book.
 
 ![](https://media.discordapp.net/attachments/876953326850297866/1084961798521884794/download.png?width=1292&height=926)
 
@@ -28,29 +28,6 @@ I scored a 42/50, or 84%. This is high enough to earn at least a .9/1 in the gra
 - Correct Answer: 	false false false
 - Explanation: This question was asking about a code segment and if the code segment displays a certain text. I did not understand this question very well. I put answer C which said true false true. I put this because the variables a, b, and c were defined as such. I did not understand what the code after that did so I thought it was meant just to throw me off. The correct answer is false, false, false. This is because the two code statments changed variables a and c. The a was changed to false because b was true thus not b is false. The statement then is false. The next one defines c as false because a is now defined as false making c false. If I got the correct answer on the fourth line of code I would have got it correct.
 
-## Q31
-
-- My Answer: Check if the time is outside business hours. If it is, check if the gate sensor is activated: If it is, check if the gate sensor is closed. If it is, turn on the motor.
-- Correct Answer: Check if the time is during business hours. If it is, check if the gate sensor is activated: If it is, check if the gate sensor is open. If it is, turn on the motor.
-- Explanation: I got this one wrong because I did not thoroughly read through the algorithm and the gate would open outside of business hours. Option D is correct because the gate would not open outside of business hours and the gate would open correctly.
-
-## Q33
-
-- My Answer: Repeat 3 Times
-- Correct Answer: Repeat 2 Times
-- Explanation: Here, I chose choice C when the correct answer was choice A. The code segment moves it right, forward, left, forward, and right. It does that 4 times. When I was going thru the steps in my head, it seemed correct that it would go thru 3 times. When I looked at it again just now, I saw that it would only need to repeat twice and repeating it 3 times would leave it three rows above its starting position and one row above the gray square.
-
-## Q40
-
-- My Answer: Interchange the rotate right and rotate left blocks
-- Correct Answer: No change is needed; the algorithm is correct as is
-- Explanation: I got this one wrong because interchanging the rotate_right and rotate_left blocks would push the robot off the grid. There would be no change needed in this algorithm.
-
-## Q41
-
-- My Answer: The genetic codes must be converted from binary to decimal numbers
-- Correct Answer: The list must be sorted based on the genetic code values
-- Explanation: I got this question wrong because the list has to be sorted in order of value in order to use a binary search algorithm. So, converting binary to decimal numbers is not necessary.
 
 ## Q49
 
