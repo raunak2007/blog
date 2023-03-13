@@ -12,7 +12,7 @@ categories: [week 24]
 ## Results
 I scored a 42/50, or 84%. This is high enough to earn at least a .9/1 in the grade book.
 
-![Proof of Final](https://awesomescreenshot.s3.amazonaws.com/image/2872977/37844028-42e757c067df0350988f37dfc604fa32.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20230309%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230309T220004Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=6fd29039452f13cec7d306cbf5585090cef76fd80bda751e9992c9fa758673f9)
+![](https://awesomescreenshot.s3.amazonaws.com/image/2872977/37844028-42e757c067df0350988f37dfc604fa32.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20230309%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230309T220004Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=6fd29039452f13cec7d306cbf5585090cef76fd80bda751e9992c9fa758673f9)
 
 # Corrections
 
@@ -34,6 +34,12 @@ I scored a 42/50, or 84%. This is high enough to earn at least a .9/1 in the gra
 - Correct Answer: Check if the time is during business hours. If it is, check if the gate sensor is activated: If it is, check if the gate sensor is open. If it is, turn on the motor.
 - Explanation: I got this one wrong because I did not thoroughly read through the algorithm and the gate would open outside of business hours. Option D is correct because the gate would not open outside of business hours and the gate would open correctly.
 
+## Q33
+
+- My Answer: Repeat 3 Times
+- Correct Answer: Repeat 2 Times
+- Explanation: Here, I chose choice C when the correct answer was choice A. The code segment moves it right, forward, left, forward, and right. It does that 4 times. When I was going thru the steps in my head, it seemed correct that it would go thru 3 times. When I looked at it again just now, I saw that it would only need to repeat twice and repeating it 3 times would leave it three rows above its starting position and one row above the gray square.
+
 ## Q40
 
 - My Answer: Interchange the rotate right and rotate left blocks
@@ -44,7 +50,13 @@ I scored a 42/50, or 84%. This is high enough to earn at least a .9/1 in the gra
 
 - My Answer: The genetic codes must be converted from binary to decimal numbers
 - Correct Answer: The list must be sorted based on the genetic code values
-- I got this question wrong because the list has to be sorted in order of value in order to use a binary search algorithm. So, converting binary to decimal numbers is not necessary.
+- Explanation: I got this question wrong because the list has to be sorted in order of value in order to use a binary search algorithm. So, converting binary to decimal numbers is not necessary.
+
+## Q49
+
+- My Answer: The model used by the simulation software cannot be modified once the simulation has been used
+- Correct Answer: The model used by the simulation software often omits details so that it is easier to implement
+- Explanation: I honestly don’t know why I picked this answer. It makes no sense to be fair. A model can always be changed from a simulation stand point. Details will be omitted after the simulation is done.
 
 ## Q50
 
