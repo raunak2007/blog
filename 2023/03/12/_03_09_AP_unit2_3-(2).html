@@ -1,0 +1,1699 @@
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Unit 2.3 Extracting Information from Data, Pandas</h1><p class="page-description">Data connections, trends, and correlation.  Pandas is introduced as it could be valuable for PBL, data validation, as well as understanding College Board Topics.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-03-12T00:00:00-06:00" itemprop="datePublished">
+        Mar 12, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      19 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/raunak2007/csp-fast-pages/tree/master/_notebooks/2023_03_09_AP_unit2_3 (2).ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/raunak2007/csp-fast-pages/master?filepath=_notebooks%2F2023_03_09_AP_unit2_3+%282%29.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/raunak2007/csp-fast-pages/blob/master/_notebooks/2023_03_09_AP_unit2_3 (2).ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fraunak2007%2Fcsp-fast-pages%2Fblob%2Fmaster%2F_notebooks%2F2023_03_09_AP_unit2_3+%282%29.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/csp-fast-pages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Files-To-Get">Files To Get </a></li>
+<li class="toc-entry toc-h1"><a href="#Pandas-and-DataFrames">Pandas and DataFrames </a></li>
+<li class="toc-entry toc-h1"><a href="#Cleaning-Data">Cleaning Data </a></li>
+<li class="toc-entry toc-h1"><a href="#Extracting-Info">Extracting Info </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#DataFrame-Extract-Column">DataFrame Extract Column </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Notes">Notes </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#DataFrame-Sort">DataFrame Sort </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Notes">Notes </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#DataFrame-Selection-or-Filter">DataFrame Selection or Filter </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Notes">Notes </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#DataFrame-Selection-Max-and-Min">DataFrame Selection Max and Min </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Notes">Notes </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Create-your-own-DataFrame">Create your own DataFrame </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Python-Dictionary-to-Pandas-DataFrame">Python Dictionary to Pandas DataFrame </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Notes">Notes </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Examine-DataFrame-Rows">Examine DataFrame Rows </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Notes">Notes </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Pandas-DataFrame-Information">Pandas DataFrame Information </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Notes">Notes </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Example-of-larger-data-set">Example of larger data set </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Notes">Notes </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#APIs-are-a-Source-for-Writing-Programs-with-Data">APIs are a Source for Writing Programs with Data </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Notes">Notes </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Hacks">Hacks </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Hack-Helpers">Hack Helpers </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Titanic-Data">Titanic Data </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Machine-Learning-Visit-Tutorials-Point">Machine Learning Visit Tutorials Point </a></li>
+<li class="toc-entry toc-h2"><a href="#Hacks">Hacks </a></li>
+<li class="toc-entry toc-h2"><a href="#MCQ">MCQ </a></li>
+<li class="toc-entry toc-h2"><a href="#MCQ2">MCQ2 </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023_03_09_AP_unit2_3 (2).ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Files-To-Get">
+<a class="anchor" href="#Files-To-Get" aria-hidden="true"><span class="octicon octicon-link"></span></a>Files To Get<a class="anchor-link" href="#Files-To-Get"> </a>
+</h1>
+<p>Save this file to your <strong>_notebooks</strong> folder</p>
+<p>wget <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/2023-03-09-AP-unit2-3.ipynb">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/2023-03-09-AP-unit2-3.ipynb</a></p>
+<p>Save these files into a subfolder named <strong>files</strong> in your <strong>_notebooks</strong> folder</p>
+<p>wget <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/files/data.csv">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/files/data.csv</a></p>
+<p>wget <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/files/grade.json">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/files/grade.json</a></p>
+<p>Save this image into a subfolder named <strong>images</strong> in your <strong>_notebooks</strong> folder</p>
+<p>wget <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/images/table_dataframe.png">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/images/table_dataframe.png</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Pandas-and-DataFrames">
+<a class="anchor" href="#Pandas-and-DataFrames" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pandas and DataFrames<a class="anchor-link" href="#Pandas-and-DataFrames"> </a>
+</h1>
+<blockquote>
+<p>In this lesson we will be exploring data analysis using Pandas.</p>
+</blockquote>
+<ul>
+<li>College Board talks about ideas like <ul>
+<li>Tools. "the ability to process data depends on users capabilities and their tools"</li>
+<li>Combining Data.  "combine county data sets"</li>
+<li>Status on Data"determining the artist with the greatest attendance during a particular month"</li>
+<li>Data poses challenge. "the need to clean data", "incomplete data"</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href="https://pandas.pydata.org/docs/getting_started/index.html">From Pandas Overview</a> -- When working with tabular data, such as data stored in spreadsheets or databases, pandas is the right tool for you. pandas will help you to explore, clean, and process your data. In pandas, a data table is called a DataFrame.</li>
+</ul>
+<p><img src="https://github.com/Firestorm0986/CSPrepository2/blob/master/_notebooks/images/table_dataframe.png?raw=1" alt="DataFrame"></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">'''Pandas is used to gather data sets through its DataFrames implementation'''</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Cleaning-Data">
+<a class="anchor" href="#Cleaning-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cleaning Data<a class="anchor-link" href="#Cleaning-Data"> </a>
+</h1>
+<p>When looking at a data set, check to see what data needs to be cleaned. Examples include:</p>
+<ul>
+<li>Missing Data Points</li>
+<li>Invalid Data</li>
+<li>Inaccurate Data</li>
+</ul>
+<p>Run the following code to see what needs to be cleaned</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">'files/grade.json'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="c1"># What part of the data set needs to be cleaned?\</span>
+    <span class="c1"># The columns student ID and year in school, the rows to be exact are row 8 and 4. GPA might also be need to be cleaned if the GPA here is unweighted</span>
+<span class="c1"># From PBL learning, what is a good time to clean data?  Hint, remember Garbage in, Garbage out?</span>
+    <span class="c1"># A good time to clean data is when the data is received. We should filter out garbage data as soon as it is entered. </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>   Student ID Year in School   GPA
+0         123             12  3.57
+1         246             10  4.00
+2         578             12  2.78
+3         469             11  3.45
+4         324         Junior  4.75
+5         313             20  3.33
+6         145             12  2.95
+7         167             10  3.90
+8         235      9th Grade  3.15
+9         nil              9  2.80
+10        469             11  3.45
+11        456             10  2.75
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Extracting-Info">
+<a class="anchor" href="#Extracting-Info" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extracting Info<a class="anchor-link" href="#Extracting-Info"> </a>
+</h1>
+<p>Take a look at some features that the Pandas library has that extracts info from the dataset</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DataFrame-Extract-Column">
+<a class="anchor" href="#DataFrame-Extract-Column" aria-hidden="true"><span class="octicon octicon-link"></span></a>DataFrame Extract Column<a class="anchor-link" href="#DataFrame-Extract-Column"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">'GPA'</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1">#try two columns and remove the index from print statement</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">'Student ID'</span><span class="p">,</span><span class="s1">'GPA'</span><span class="p">]]</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>     GPA
+0   3.57
+1   4.00
+2   2.78
+3   3.45
+4   4.75
+5   3.33
+6   2.95
+7   3.90
+8   3.15
+9   2.80
+10  3.45
+11  2.75
+
+Student ID  GPA
+       123 3.57
+       246 4.00
+       578 2.78
+       469 3.45
+       324 4.75
+       313 3.33
+       145 2.95
+       167 3.90
+       235 3.15
+       nil 2.80
+       469 3.45
+       456 2.75
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Notes">
+<a class="anchor" href="#Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes<a class="anchor-link" href="#Notes"> </a>
+</h3>
+<ul>
+<li>Function df[name of data set] will print the whole dataset</li>
+<li>function df[[name of column]] prints the data in that specific column</li>
+<li>using .tostring(index=false) allows for the index to no be seen</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DataFrame-Sort">
+<a class="anchor" href="#DataFrame-Sort" aria-hidden="true"><span class="octicon octicon-link"></span></a>DataFrame Sort<a class="anchor-link" href="#DataFrame-Sort"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'GPA'</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1">#sort the values in reverse order</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'GPA'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>   Student ID Year in School   GPA
+11        456             10  2.75
+2         578             12  2.78
+9         nil              9  2.80
+6         145             12  2.95
+8         235      9th Grade  3.15
+5         313             20  3.33
+3         469             11  3.45
+10        469             11  3.45
+0         123             12  3.57
+7         167             10  3.90
+1         246             10  4.00
+4         324         Junior  4.75
+
+   Student ID Year in School   GPA
+4         324         Junior  4.75
+1         246             10  4.00
+7         167             10  3.90
+0         123             12  3.57
+3         469             11  3.45
+10        469             11  3.45
+5         313             20  3.33
+8         235      9th Grade  3.15
+6         145             12  2.95
+9         nil              9  2.80
+2         578             12  2.78
+11        456             10  2.75
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Notes">
+<a class="anchor" href="#Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes<a class="anchor-link" href="#Notes"> </a>
+</h3>
+<ul>
+<li>df.sort_values(by = [column name]) sorts the data in ascending order from that column</li>
+<li>the same code with {, ascending=false} allows for the data to be displayed in order with that column but descending order</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DataFrame-Selection-or-Filter">
+<a class="anchor" href="#DataFrame-Selection-or-Filter" aria-hidden="true"><span class="octicon octicon-link"></span></a>DataFrame Selection or Filter<a class="anchor-link" href="#DataFrame-Selection-or-Filter"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">GPA</span> <span class="o">&gt;</span> <span class="mf">3.00</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>   Student ID Year in School   GPA
+0         123             12  3.57
+1         246             10  4.00
+3         469             11  3.45
+4         324         Junior  4.75
+5         313             20  3.33
+7         167             10  3.90
+8         235      9th Grade  3.15
+10        469             11  3.45
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Notes">
+<a class="anchor" href="#Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes<a class="anchor-link" href="#Notes"> </a>
+</h3>
+<ul>
+<li>The code df.[df.colum name &gt; number] allows for only those data rows to be displayed that are true for the inequality given for that column</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DataFrame-Selection-Max-and-Min">
+<a class="anchor" href="#DataFrame-Selection-Max-and-Min" aria-hidden="true"><span class="octicon octicon-link"></span></a>DataFrame Selection Max and Min<a class="anchor-link" href="#DataFrame-Selection-Max-and-Min"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">GPA</span> <span class="o">==</span> <span class="n">df</span><span class="o">.</span><span class="n">GPA</span><span class="o">.</span><span class="n">max</span><span class="p">()])</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">GPA</span> <span class="o">==</span> <span class="n">df</span><span class="o">.</span><span class="n">GPA</span><span class="o">.</span><span class="n">min</span><span class="p">()])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  Student ID Year in School   GPA
+4        324         Junior  4.75
+
+   Student ID Year in School   GPA
+11        456             10  2.75
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Notes">
+<a class="anchor" href="#Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes<a class="anchor-link" href="#Notes"> </a>
+</h3>
+<ul>
+<li>df[df.GPA == df.GPA.max()] and df[df.GPA == df.GPA.min()] print the rows that have the max and min of in the dataset for that column respectively</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Create-your-own-DataFrame">
+<a class="anchor" href="#Create-your-own-DataFrame" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create your own DataFrame<a class="anchor-link" href="#Create-your-own-DataFrame"> </a>
+</h1>
+<p>Using Pandas allows you to create your own DataFrame in Python.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Python-Dictionary-to-Pandas-DataFrame">
+<a class="anchor" href="#Python-Dictionary-to-Pandas-DataFrame" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python Dictionary to Pandas DataFrame<a class="anchor-link" href="#Python-Dictionary-to-Pandas-DataFrame"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1">#the data can be stored as a python dictionary</span>
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"calories"</span><span class="p">:</span> <span class="p">[</span><span class="mi">420</span><span class="p">,</span> <span class="mi">380</span><span class="p">,</span> <span class="mi">390</span><span class="p">],</span>
+  <span class="s2">"duration"</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">45</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="c1">#stores the data in a data frame</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-------------Dict_to_DF------------------"</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"----------Dict_to_DF_labels--------------"</span><span class="p">)</span>
+
+<span class="c1">#or with the index argument, you can label rows.</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"day1"</span><span class="p">,</span> <span class="s2">"day2"</span><span class="p">,</span> <span class="s2">"day3"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-------------Dict_to_DF------------------
+   calories  duration
+0       420        50
+1       380        40
+2       390        45
+----------Dict_to_DF_labels--------------
+      calories  duration
+day1       420        50
+day2       380        40
+day3       390        45
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Notes">
+<a class="anchor" href="#Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes<a class="anchor-link" href="#Notes"> </a>
+</h3>
+<ul>
+<li>pd.DataFrame(dict) converts data into a table - where the keys are the columns and the values are the values inside those columns</li>
+<li>pd.DataFrame(dict, index = ["day1", "day2", "day3"]) converts all the index values from numbers to day1 day2 .... . </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Examine-DataFrame-Rows">
+<a class="anchor" href="#Examine-DataFrame-Rows" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examine DataFrame Rows<a class="anchor-link" href="#Examine-DataFrame-Rows"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"-------Examine Selected Rows---------"</span><span class="p">)</span>
+<span class="c1">#use a list for multiple labels:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">"day1"</span><span class="p">,</span> <span class="s2">"day3"</span><span class="p">]])</span>
+
+<span class="c1">#refer to the row index:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--------Examine Single Row-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"day1"</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-------Examine Selected Rows---------
+      calories  duration
+day1       420        50
+day3       390        45
+--------Examine Single Row-----------
+calories    420
+duration     50
+Name: day1, dtype: int64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Notes">
+<a class="anchor" href="#Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes<a class="anchor-link" href="#Notes"> </a>
+</h3>
+<ul>
+<li>Shows the specific rows that has been asked - print(df.loc[["day1", "day3"]])</li>
+<li>shows the specific row that have been asked - print(df.loc[["day1"]])</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pandas-DataFrame-Information">
+<a class="anchor" href="#Pandas-DataFrame-Information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pandas DataFrame Information<a class="anchor-link" href="#Pandas-DataFrame-Information"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 3 entries, day1 to day3
+Data columns (total 2 columns):
+ #   Column    Non-Null Count  Dtype
+---  ------    --------------  -----
+ 0   calories  3 non-null      int64
+ 1   duration  3 non-null      int64
+dtypes: int64(2)
+memory usage: 180.0+ bytes
+None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Notes">
+<a class="anchor" href="#Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes<a class="anchor-link" href="#Notes"> </a>
+</h3>
+<ul>
+<li>(df.info()) displays all the information about the table, what are the different columns, how are the index numbered and what are the data types present in each column</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Example-of-larger-data-set">
+<a class="anchor" href="#Example-of-larger-data-set" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example of larger data set<a class="anchor-link" href="#Example-of-larger-data-set"> </a>
+</h1>
+<p>Pandas can read CSV and many other types of files, run the following code to see more features with a larger data set</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1">#read csv and sort 'Duration' largest to smallest</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'files/data.csv'</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'Duration'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--Duration Top 10---------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--Duration Bottom 10------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>--Duration Top 10---------
+     Duration  Pulse  Maxpulse  Calories
+69        300    108       143    1500.2
+79        270    100       131    1729.0
+109       210    137       184    1860.4
+60        210    108       160    1376.0
+106       180     90       120     800.3
+90        180    101       127     600.1
+65        180     90       130     800.4
+61        160    110       137    1034.4
+62        160    109       135     853.0
+67        150    107       130     816.0
+--Duration Bottom 10------
+     Duration  Pulse  Maxpulse  Calories
+68         20    106       136     110.4
+100        20     95       112      77.7
+89         20     83       107      50.3
+135        20    136       156     189.0
+94         20    150       171     127.4
+95         20    151       168     229.4
+139        20    141       162     222.4
+64         20    110       130     131.4
+112        15    124       139     124.2
+93         15     80       100      50.5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Notes">
+<a class="anchor" href="#Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes<a class="anchor-link" href="#Notes"> </a>
+</h3>
+<ul>
+<li>pd.read_csv('files/data.csv') reads the data and converts it to a table</li>
+<li>data is present with commas representing each column row. </li>
+<li>.head and .tail display the first 10 and the last 10 data sets or rows respectively. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="APIs-are-a-Source-for-Writing-Programs-with-Data">
+<a class="anchor" href="#APIs-are-a-Source-for-Writing-Programs-with-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>APIs are a Source for Writing Programs with Data<a class="anchor-link" href="#APIs-are-a-Source-for-Writing-Programs-with-Data"> </a>
+</h1>
+<blockquote>
+<p>3rd Party APIs are a great source for creating Pandas Data Frames.</p>
+<ul>
+<li>Data can be fetched and resulting json can be placed into a Data Frame</li>
+<li>Observe output, this looks very similar to a Database</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">'''Pandas can be used to analyze data'''</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="k">def</span> <span class="nf">fetch</span><span class="p">():</span>
+    <span class="sd">'''Obtain data from an endpoint'''</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://flask.nighthawkcodingsociety.com/api/covid/"</span>
+    <span class="n">fetch</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">json</span> <span class="o">=</span> <span class="n">fetch</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="c1"># filter data for requirement</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">'countries_stat'</span><span class="p">])</span>  <span class="c1"># filter endpoint for country stats</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'country_name'</span><span class="p">:</span><span class="s1">'deaths'</span><span class="p">])</span> <span class="c1"># show row 0 through 5 and columns country_name through deaths</span>
+    
+<span class="n">fetch</span><span class="p">()</span>
+
+<span class="c1"># Here we can see that the </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  country_name       cases     deaths
+0          USA  82,649,779  1,018,316
+1        India  43,057,545    522,193
+2       Brazil  30,345,654    662,663
+3       France  28,244,977    145,020
+4      Germany  24,109,433    134,624
+5           UK  21,933,206    173,352
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Notes">
+<a class="anchor" href="#Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes<a class="anchor-link" href="#Notes"> </a>
+</h3>
+<ul>
+<li>The above code makes a function that fetches data from an API on another website and displays the out put as a table using panda. </li>
+<li>It also prints only the rows 0 to 5 and columns country_name to deaths. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Hacks">
+<a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
+</h1>
+<blockquote>
+<p>Early Seed award</p>
+<ul>
+<li>Add this Blog to you own Blogging site.</li>
+<li>Have all lecture files saved to your files directory before Tech Talk starts. Have data.csv open in vscode. Don't tell anyone. Show to Teacher.</li>
+</ul>
+<p>AP Prep</p>
+<ul>
+<li>Add this Blog to you own Blogging site.  In the Blog add notes and observations on each code cell.</li>
+<li>In blog add College Board practice problems for 2.3.</li>
+</ul>
+<p>The next 4 weeks, Teachers want you to improve your understanding of data.  Look at the blog and others on Unit 2.  Your intention is to find some things to differentiate your individual College Board project.</p>
+</blockquote>
+<ul>
+<li>
+<p>Create or Find your own dataset.  The suggestion is to use a JSON file, integrating with your PBL project would be <strong><em>Amazing</em></strong>.</p>
+</li>
+<li>
+<p>When choosing a data set, think about the following...</p>
+<ul>
+<li>Does it have a good sample size?</li>
+<li>Is there bias in the data?</li>
+<li>Does the data set need to be cleaned?</li>
+<li>What is the purpose of the data set?</li>
+<li>...</li>
+</ul>
+</li>
+<li>
+<p>Continue this Blog using Pandas extract info from that dataset (ex. max, min, mean, median, mode, etc.)</p>
+</li>
+</ul>
+<h2 id="Hack-Helpers">
+<a class="anchor" href="#Hack-Helpers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hack Helpers<a class="anchor-link" href="#Hack-Helpers"> </a>
+</h2>
+<blockquote>
+<p>Here is how Mort started on this assignment by asking ChatGPT  ... Regarding Python Pandas, what are some data sets that would be good for learning Pandas?</p>
+</blockquote>
+<ul>
+<li>
+<p>There are many data sets that are suitable for learning pandas, depending on your interests and the skills you want to develop.</p>
+<p>Here are some suggestions...</p>
+<ul>
+<li>Titanic Dataset:This is a classic dataset for data analysis and machine learning, and is often used as an introduction to pandas. The dataset contains information about passengers on the Titanic, including their demographics, ticket class, and survival status.</li>
+<li>
+<p>Iris Dataset: This is another classic dataset that is often used in machine learning and data analysis courses. The dataset contains information about iris flowers, including their sepal length, sepal width, petal length, and petal width.</p>
+</li>
+<li>
+<p>NBA Player Stats: This dataset contains information about NBA players, including their stats for various games, their positions, and their salaries. It is a great dataset for learning how to clean and manipulate data using pandas.</p>
+</li>
+<li>
+<p>Housing Prices Dataset: This dataset contains information about housing prices in a particular city or region, including variables such as the number of bedrooms, square footage, and price. It is a great dataset for learning how to manipulate and analyze numerical data using pandas.</p>
+</li>
+<li>
+<p>COVID-19 Dataset: This dataset contains information about the COVID-19 pandemic, including the number of cases, deaths, and recoveries in various countries and regions. It is a great dataset for learning how to manipulate and analyze time-series data using pandas.</p>
+</li>
+<li>
+<p>World Bank Dataset: This dataset contains information about economic indicators from various countries, such as GDP, population, and poverty rates. It is a great dataset for learning how to manipulate and analyze large datasets using pandas.</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>These are just a few examples of the many datasets that are suitable for learning pandas. The best dataset for you will depend on your interests and the specific skills you want to develop.</p>
+<blockquote>
+<p>Follow up question, "where can I find Titanic data set?"</p>
+</blockquote>
+</li>
+<li>
+<p>The Titanic dataset is a popular dataset for data analysis and machine learning, and it can be found on various websites and data repositories. Here are a few places where you can find the Titanic dataset...</p>
+<ul>
+<li>Kaggle:The Titanic dataset is available on Kaggle, which is a popular platform for data scientists and machine learning enthusiasts. You can download the dataset from the Kaggle website after creating an account.</li>
+<li>
+<p>UCI Machine Learning Repository: The Titanic dataset is also available on the UCI Machine Learning Repository, which is a collection of datasets that are commonly used for machine learning research. You can download the dataset from the UCI Machine Learning Repository website.</p>
+</li>
+<li>
+<p>Seaborn library: If you have the Seaborn library installed in your Python environment, you can load the Titanic dataset directly from the library using the following code:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">titanic_data</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">'titanic'</span><span class="p">)</span>
+</pre></div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Titanic-Data">
+<a class="anchor" href="#Titanic-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Titanic Data<a class="anchor-link" href="#Titanic-Data"> </a>
+</h3>
+<blockquote>
+<p>Look at a sample of data.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Load the titanic dataset</span>
+<span class="n">titanic_data</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">'titanic'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Titanic Data"</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">titanic_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="c1"># titanic data set</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">titanic_data</span><span class="p">[[</span><span class="s1">'survived'</span><span class="p">,</span><span class="s1">'pclass'</span><span class="p">,</span> <span class="s1">'sex'</span><span class="p">,</span> <span class="s1">'age'</span><span class="p">,</span> <span class="s1">'sibsp'</span><span class="p">,</span> <span class="s1">'parch'</span><span class="p">,</span> <span class="s1">'class'</span><span class="p">,</span> <span class="s1">'fare'</span><span class="p">,</span> <span class="s1">'embark_town'</span><span class="p">]])</span> <span class="c1"># look at selected columns</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Titanic Data
+Index(['survived', 'pclass', 'sex', 'age', 'sibsp', 'parch', 'fare',
+       'embarked', 'class', 'who', 'adult_male', 'deck', 'embark_town',
+       'alive', 'alone'],
+      dtype='object')
+     survived  pclass     sex   age  sibsp  parch   class     fare  \
+0           0       3    male  22.0      1      0   Third   7.2500   
+1           1       1  female  38.0      1      0   First  71.2833   
+2           1       3  female  26.0      0      0   Third   7.9250   
+3           1       1  female  35.0      1      0   First  53.1000   
+4           0       3    male  35.0      0      0   Third   8.0500   
+..        ...     ...     ...   ...    ...    ...     ...      ...   
+886         0       2    male  27.0      0      0  Second  13.0000   
+887         1       1  female  19.0      0      0   First  30.0000   
+888         0       3  female   NaN      1      2   Third  23.4500   
+889         1       1    male  26.0      0      0   First  30.0000   
+890         0       3    male  32.0      0      0   Third   7.7500   
+
+     embark_town  
+0    Southampton  
+1      Cherbourg  
+2    Southampton  
+3    Southampton  
+4    Southampton  
+..           ...  
+886  Southampton  
+887  Southampton  
+888  Southampton  
+889    Cherbourg  
+890   Queenstown  
+
+[891 rows x 9 columns]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Use Pandas to clean the data.  Most analysis, like Machine Learning or even Pandas in general like data to be in standardized format.  This is called 'Training' or 'Cleaning' data.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Preprocess the data</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+
+
+<span class="n">td</span> <span class="o">=</span> <span class="n">titanic_data</span>
+<span class="n">td</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'alive'</span><span class="p">,</span> <span class="s1">'who'</span><span class="p">,</span> <span class="s1">'adult_male'</span><span class="p">,</span> <span class="s1">'class'</span><span class="p">,</span> <span class="s1">'embark_town'</span><span class="p">,</span> <span class="s1">'deck'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">td</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">td</span><span class="p">[</span><span class="s1">'sex'</span><span class="p">]</span> <span class="o">=</span> <span class="n">td</span><span class="p">[</span><span class="s1">'sex'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">'male'</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">td</span><span class="p">[</span><span class="s1">'alone'</span><span class="p">]</span> <span class="o">=</span> <span class="n">td</span><span class="p">[</span><span class="s1">'alone'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="kc">True</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Encode categorical variables</span>
+<span class="n">enc</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">)</span>
+<span class="n">enc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">td</span><span class="p">[[</span><span class="s1">'embarked'</span><span class="p">]])</span>
+<span class="n">onehot</span> <span class="o">=</span> <span class="n">enc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">td</span><span class="p">[[</span><span class="s1">'embarked'</span><span class="p">]])</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'embarked_'</span> <span class="o">+</span> <span class="n">val</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">enc</span><span class="o">.</span><span class="n">categories_</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">td</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">onehot</span><span class="p">)</span>
+<span class="n">td</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'embarked'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">td</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">td</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>     survived  pclass  sex   age  sibsp  parch      fare  alone  embarked_C  \
+0           0       3    1  22.0      1      0    7.2500      0         0.0   
+1           1       1    0  38.0      1      0   71.2833      0         1.0   
+2           1       3    0  26.0      0      0    7.9250      1         0.0   
+3           1       1    0  35.0      1      0   53.1000      0         0.0   
+4           0       3    1  35.0      0      0    8.0500      1         0.0   
+..        ...     ...  ...   ...    ...    ...       ...    ...         ...   
+705         0       2    1  39.0      0      0   26.0000      1         0.0   
+706         1       2    0  45.0      0      0   13.5000      1         0.0   
+707         1       1    1  42.0      0      0   26.2875      1         0.0   
+708         1       1    0  22.0      0      0  151.5500      1         0.0   
+710         1       1    0  24.0      0      0   49.5042      1         1.0   
+
+     embarked_Q  embarked_S  
+0           0.0         1.0  
+1           0.0         0.0  
+2           0.0         1.0  
+3           0.0         1.0  
+4           0.0         1.0  
+..          ...         ...  
+705         0.0         1.0  
+706         0.0         1.0  
+707         1.0         0.0  
+708         0.0         1.0  
+710         0.0         0.0  
+
+[564 rows x 11 columns]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>The result of 'Training' data is making it easier to analyze or make conclusions.  In looking at the Titanic, as you clean you would probably want to make assumptions on likely chance of survival.</p>
+</blockquote>
+<p>This would involve analyzing various factors (such as age, gender, class, etc.) that may have affected a person's chances of survival, and using that information to make predictions about whether an individual would have survived or not.</p>
+<ul>
+<li>
+<p>Data description:- Survival - Survival (0 = No; 1 = Yes). Not included in test.csv file.    - Pclass - Passenger Class (1 = 1st; 2 = 2nd; 3 = 3rd)</p>
+<ul>
+<li>Name - Name</li>
+<li>Sex - Sex</li>
+<li>Age - Age</li>
+<li>Sibsp - Number of Siblings/Spouses Aboard</li>
+<li>Parch - Number of Parents/Children Aboard</li>
+<li>Ticket - Ticket Number</li>
+<li>Fare - Passenger Fare</li>
+<li>Cabin - Cabin</li>
+<li>Embarked - Port of Embarkation (C = Cherbourg; Q = Queenstown; S = Southampton)</li>
+</ul>
+</li>
+<li>
+<p>Perished Mean/Average</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">titanic_data</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"survived == 0"</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>survived       0.000000
+pclass         2.464072
+sex            0.844311
+age           31.073353
+sibsp          0.562874
+parch          0.398204
+fare          24.835902
+alone          0.616766
+embarked_C     0.185629
+embarked_Q     0.038922
+embarked_S     0.775449
+dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Survived Mean/Average</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">td</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"survived == 1"</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>survived       1.000000
+pclass         1.878261
+sex            0.326087
+age           28.481522
+sibsp          0.504348
+parch          0.508696
+fare          50.188806
+alone          0.456522
+embarked_C     0.152174
+embarked_Q     0.034783
+embarked_S     0.813043
+dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Survived Max and Min Stats</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">td</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"survived == 1"</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">td</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"survived == 1"</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>survived        1.0000
+pclass          3.0000
+sex             1.0000
+age            80.0000
+sibsp           4.0000
+parch           5.0000
+fare          512.3292
+alone           1.0000
+embarked_C      1.0000
+embarked_Q      1.0000
+embarked_S      1.0000
+dtype: float64
+survived      1.00
+pclass        1.00
+sex           0.00
+age           0.75
+sibsp         0.00
+parch         0.00
+fare          0.00
+alone         0.00
+embarked_C    0.00
+embarked_Q    0.00
+embarked_S    0.00
+dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Machine-Learning-Visit-Tutorials-Point">
+<a class="anchor" href="#Machine-Learning-Visit-Tutorials-Point" aria-hidden="true"><span class="octicon octicon-link"></span></a>Machine Learning <a href="https://www.tutorialspoint.com/scikit_learn/scikit_learn_introduction.htm#:~:text=Scikit%2Dlearn%20(Sklearn)%20is,a%20consistence%20interface%20in%20Python">Visit Tutorials Point</a><a class="anchor-link" href="#Machine-Learning-Visit-Tutorials-Point"> </a>
+</h2>
+<blockquote>
+<p>Scikit-learn (Sklearn) is the most useful and robust library for machine learning in Python. It provides a selection of efficient tools for machine learning and statistical modeling including classification, regression, clustering and dimensionality reduction via a consistence interface in Python.</p>
+</blockquote>
+<ul>
+<li>
+<p>Description from ChatGPT. The Titanic dataset is a popular dataset for data analysis and machine learning. In the context of machine learning, accuracy refers to the percentage of correctly classified instances in a set of predictions. In this case, the testing data is a subset of the original Titanic dataset that the decision tree model has not seen during training......After training the decision tree model on the training data, we can evaluate its performance on the testing data by making predictions on the testing data and comparing them to the actual outcomes. The accuracy of the decision tree classifier on the testing data tells us how well the model generalizes to new data that it hasn't seen before......For example, if the accuracy of the decision tree classifier on the testing data is 0.8 (or 80%), this means that 80% of the predictions made by the model on the testing data were correct....Chance of survival could be done using various machine learning techniques, including decision trees, logistic regression, or support vector machines, among others.</p>
+</li>
+<li>
+<p>Code Below prepares data for further analysis and provides an Accuracy.  IMO, you would insert a new passenger and predict survival.  Datasets could be used on various factors like prediction if a player will hit a Home Run, or a Stock will go up or down.</p>
+<ul>
+<li>
+<a href="https://scikit-learn.org/stable/modules/tree.html#tree">Decision Trees</a>, prediction by a piecewise constant approximation.    </li>
+<li>
+<a href="https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression">Logistic Regression</a>, the probabilities describing the possible outcomes.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="c1"># Split arrays or matrices into random train and test subsets.</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">td</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'survived'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">td</span><span class="p">[</span><span class="s1">'survived'</span><span class="p">]</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Train a decision tree classifier</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Test the model</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'DecisionTreeClassifier Accuracy:'</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">)</span>
+
+<span class="c1"># Train a logistic regression model</span>
+<span class="n">logreg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">logreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Test the model</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">logreg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'LogisticRegression Accuracy:'</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>DecisionTreeClassifier Accuracy: 0.7705882352941177
+LogisticRegression Accuracy: 0.788235294117647
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Users/johnmortensen/opt/anaconda3/lib/python3.9/site-packages/sklearn/linear_model/_logistic.py:814: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hacks">
+<a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Load the titanic dataset</span>
+<span class="n">tips_data</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">'tips'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Tips Data"</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tips_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="c1"># titanic data set</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tips_data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"=="</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tips_data</span><span class="o">.</span><span class="n">tail</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Tips Data
+Index(['total_bill', 'tip', 'sex', 'smoker', 'day', 'time', 'size'], dtype='object')
+   total_bill   tip     sex smoker  day    time  size
+0       16.99  1.01  Female     No  Sun  Dinner     2
+1       10.34  1.66    Male     No  Sun  Dinner     3
+2       21.01  3.50    Male     No  Sun  Dinner     3
+3       23.68  3.31    Male     No  Sun  Dinner     2
+4       24.59  3.61  Female     No  Sun  Dinner     4
+====================================================================================================
+     total_bill   tip     sex smoker   day    time  size
+239       29.03  5.92    Male     No   Sat  Dinner     3
+240       27.18  2.00  Female    Yes   Sat  Dinner     2
+241       22.67  2.00    Male    Yes   Sat  Dinner     2
+242       17.82  1.75    Male     No   Sat  Dinner     2
+243       18.78  3.00  Female     No  Thur  Dinner     2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Preprocess the data</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+
+
+<span class="n">td</span> <span class="o">=</span> <span class="n">tips_data</span>
+
+
+<span class="n">td</span><span class="p">[</span><span class="s1">'sex'</span><span class="p">]</span> <span class="o">=</span> <span class="n">td</span><span class="p">[</span><span class="s1">'sex'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">'Male'</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">td</span><span class="p">[</span><span class="s1">'time'</span><span class="p">]</span> <span class="o">=</span> <span class="n">td</span><span class="p">[</span><span class="s1">'time'</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">'Dinner'</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">td</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'smoker'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">td</span><span class="p">[</span><span class="s1">'percentage'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">td</span><span class="p">[</span><span class="s1">'tip'</span><span class="p">]</span><span class="o">/</span><span class="n">td</span><span class="p">[</span><span class="s1">'total_bill'</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">td</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>     total_bill   tip  sex   day  time  size  percentage
+0         16.99  1.01    0   Sun     0     2    5.944673
+1         10.34  1.66    0   Sun     0     3   16.054159
+2         21.01  3.50    0   Sun     0     3   16.658734
+3         23.68  3.31    0   Sun     0     2   13.978041
+4         24.59  3.61    0   Sun     0     4   14.680765
+..          ...   ...  ...   ...   ...   ...         ...
+239       29.03  5.92    0   Sat     0     3   20.392697
+240       27.18  2.00    0   Sat     0     2    7.358352
+241       22.67  2.00    0   Sat     0     2    8.822232
+242       17.82  1.75    0   Sat     0     2    9.820426
+243       18.78  3.00    0  Thur     0     2   15.974441
+
+[244 rows x 7 columns]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">sike</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">td</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+
+<span class="c1"># fit the model to the data</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">sike</span><span class="p">[[</span><span class="s1">'total_bill'</span><span class="p">]],</span> <span class="n">sike</span><span class="p">[[</span><span class="s1">'percentage'</span><span class="p">]])</span>
+
+<span class="c1"># predict the y values using the model</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sike</span><span class="p">[[</span><span class="s1">'total_bill'</span><span class="p">]])</span>
+
+<span class="c1"># plot the data and the regression line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">sike</span><span class="p">[</span><span class="s1">'total_bill'</span><span class="p">],</span> <span class="n">sike</span><span class="p">[</span><span class="s1">'percentage'</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sike</span><span class="p">[</span><span class="s1">'total_bill'</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="MCQ">
+<a class="anchor" href="#MCQ" aria-hidden="true"><span class="octicon octicon-link"></span></a>MCQ<a class="anchor-link" href="#MCQ"> </a>
+</h2>
+<p><img src="https://user-images.githubusercontent.com/108041389/224614996-b8d3c9c9-ce0e-43fd-8bb0-d0e4334f686a.png" alt="image"></p>
+<h2 id="MCQ2">
+<a class="anchor" href="#MCQ2" aria-hidden="true"><span class="octicon octicon-link"></span></a>MCQ2<a class="anchor-link" href="#MCQ2"> </a>
+</h2>
+<p><img src="https://user-images.githubusercontent.com/108041389/224615164-09271fe8-247f-4478-9084-3d7fd28eea3f.png" alt="image"></p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/csp-fast-pages/2023/03/12/_03_09_AP_unit2_3-(2).html" hidden></a>
+</article>
