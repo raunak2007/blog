@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: base
 title: Frontend
 type: pbl
 week: 5
