@@ -77,3 +77,6 @@ B (incorrect): As the size of the list grows, the number of steps needed to sort
     - follow along with what a program is doing
     - Re-write a program with less complexity
     - Tell a robot what to do in order to move to a certain spot on a grid
+ ## Reflection:
+ 
+Based on my performance, I knew that I could’ve done better and scored higher. As we get closer to the AP test, it will be important to lock in and practice having a focused mindset for these collegeboard tests. I know a lot of the information, but I keep on making silly mistakes. It will be important to visualize the paths for things like the robot and pay attention to the answers and remember to apply all of my knowledge. If I practice these skills, I will be able to perform well on the Multiple Choice section of the collegeboard test.
