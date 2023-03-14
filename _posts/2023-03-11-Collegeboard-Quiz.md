@@ -22,3 +22,6 @@ This quiz was also pretty easy, but, one question I had some problems with was q
 ![](https://jishnus420.github.io/CSP-tri1/images/unit2-3quiz-1.png)
 
 What made this question a little bit challenging was that I was overthinking it, thinking that maybe the tickets for each of the different artists could be different but I just went with the best possible answer.
+# Additional Practice Quizzes:
+![](https://media.discordapp.net/attachments/876953326850297866/1085307007856279622/image.png?width=2098&height=1026)
+![](https://media.discordapp.net/attachments/876953326850297866/1085307127326842891/image.png?width=2068&height=1026)
