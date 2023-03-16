@@ -10,7 +10,7 @@ categories: [week 24]
 
 # Final Exam
 ## Results
-I scored a 46/50, or 92%. This is high enough to earn at least a .9/1 in the grade book.
+I scored a 47/50, or 94%. This is high enough to earn at least a .9/1 in the grade book.
 
 ![](https://media.discordapp.net/attachments/876953326850297866/1084961798521884794/download.png?width=1292&height=926)
 
@@ -27,13 +27,6 @@ I scored a 46/50, or 92%. This is high enough to earn at least a .9/1 in the gra
 - My Answer: true false true
 - Correct Answer: 	false false false
 - Explanation: This question was asking about a code segment and if the code segment displays a certain text. I did not understand this question very well. I put answer C which said true false true. I put this because the variables a, b, and c were defined as such. I did not understand what the code after that did so I thought it was meant just to throw me off. The correct answer is false, false, false. This is because the two code statments changed variables a and c. The a was changed to false because b was true thus not b is false. The statement then is false. The next one defines c as false because a is now defined as false making c false. If I got the correct answer on the fourth line of code I would have got it correct.
-
-
-## Q49
-
-- My Answer: The model used by the simulation software cannot be modified once the simulation has been used
-- Correct Answer: The model used by the simulation software often omits details so that it is easier to implement
-- Explanation: I honestly don’t know why I picked this answer. It makes no sense to be fair. A model can always be changed from a simulation stand point. Details will be omitted after the simulation is done.
 
 ## Q50
 
