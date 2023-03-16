@@ -10,9 +10,9 @@ categories: [week 24]
 
 # Final Exam
 ## Results
-I scored a 47/50, or 94%. This is high enough to earn at least a .9/1 in the grade book.
+I scored a 42/50, or 84%. This is high enough to earn at least a .9/1 in the grade book.
 
-![](https://media.discordapp.net/attachments/876953326850297866/1084961798521884794/download.png?width=1292&height=926)
+![](https://awesomescreenshot.s3.amazonaws.com/image/2872977/37844028-42e757c067df0350988f37dfc604fa32.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20230309%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230309T220004Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=6fd29039452f13cec7d306cbf5585090cef76fd80bda751e9992c9fa758673f9)
 
 # Corrections
 
@@ -27,6 +27,36 @@ I scored a 47/50, or 94%. This is high enough to earn at least a .9/1 in the gra
 - My Answer: true false true
 - Correct Answer: 	false false false
 - Explanation: This question was asking about a code segment and if the code segment displays a certain text. I did not understand this question very well. I put answer C which said true false true. I put this because the variables a, b, and c were defined as such. I did not understand what the code after that did so I thought it was meant just to throw me off. The correct answer is false, false, false. This is because the two code statments changed variables a and c. The a was changed to false because b was true thus not b is false. The statement then is false. The next one defines c as false because a is now defined as false making c false. If I got the correct answer on the fourth line of code I would have got it correct.
+
+## Q31
+
+- My Answer: Check if the time is outside business hours. If it is, check if the gate sensor is activated: If it is, check if the gate sensor is closed. If it is, turn on the motor.
+- Correct Answer: Check if the time is during business hours. If it is, check if the gate sensor is activated: If it is, check if the gate sensor is open. If it is, turn on the motor.
+- Explanation: I got this one wrong because I did not thoroughly read through the algorithm and the gate would open outside of business hours. Option D is correct because the gate would not open outside of business hours and the gate would open correctly.
+
+## Q33
+
+- My Answer: Repeat 3 Times
+- Correct Answer: Repeat 2 Times
+- Explanation: Here, I chose choice C when the correct answer was choice A. The code segment moves it right, forward, left, forward, and right. It does that 4 times. When I was going thru the steps in my head, it seemed correct that it would go thru 3 times. When I looked at it again just now, I saw that it would only need to repeat twice and repeating it 3 times would leave it three rows above its starting position and one row above the gray square.
+
+## Q40
+
+- My Answer: Interchange the rotate right and rotate left blocks
+- Correct Answer: No change is needed; the algorithm is correct as is
+- Explanation: I got this one wrong because interchanging the rotate_right and rotate_left blocks would push the robot off the grid. There would be no change needed in this algorithm.
+
+## Q41
+
+- My Answer: The genetic codes must be converted from binary to decimal numbers
+- Correct Answer: The list must be sorted based on the genetic code values
+- Explanation: I got this question wrong because the list has to be sorted in order of value in order to use a binary search algorithm. So, converting binary to decimal numbers is not necessary.
+
+## Q49
+
+- My Answer: The model used by the simulation software cannot be modified once the simulation has been used
+- Correct Answer: The model used by the simulation software often omits details so that it is easier to implement
+- Explanation: I honestly don’t know why I picked this answer. It makes no sense to be fair. A model can always be changed from a simulation stand point. Details will be omitted after the simulation is done.
 
 ## Q50
 
@@ -47,6 +77,3 @@ B (incorrect): As the size of the list grows, the number of steps needed to sort
     - follow along with what a program is doing
     - Re-write a program with less complexity
     - Tell a robot what to do in order to move to a certain spot on a grid
- ## Reflection:
- 
-Based on my performance, I knew that I could’ve done better and scored higher. As we get closer to the AP test, it will be important to lock in and practice having a focused mindset for these collegeboard tests. I know a lot of the information, but I keep on making silly mistakes. It will be important to visualize the paths for things like the robot and pay attention to the answers and remember to apply all of my knowledge. If I practice these skills, I will be able to perform well on the Multiple Choice section of the collegeboard test.
