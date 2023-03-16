@@ -4,7 +4,6 @@ layout: post
 description: Collegeboard Practice Problems Corrections and Reflections
 categories: [markdown, Week 25, collegeboard]
 title: Collegeboard Practice Problems Corrections and Reflections
-author: Jishnu Singiresu
 show_tags: true
 comments: true
 ---
