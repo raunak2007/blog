@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      11 min read
     
 </span></p>
 
@@ -236,13 +236,24 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>(0, 'id', 'INTEGER', 1, None, 1)
-(1, '_name', 'VARCHAR(255)', 1, None, 0)
-(2, '_uid', 'VARCHAR(255)', 1, None, 0)
-(3, '_password', 'VARCHAR(255)', 1, None, 0)
-(4, '_dob', 'DATE', 0, None, 0)
-</pre>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">OperationalError</span>                          Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">/Users/raunakmondal/csp-fast-pages-5/_notebooks/2023_03_16_AP_unit2_4b.ipynb Cell 4</span> in <span class="ansi-cyan-fg">&lt;cell line: 24&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell:/Users/raunakmondal/csp-fast-pages-5/_notebooks/2023_03_16_AP_unit2_4b.ipynb#W3sZmlsZQ%3D%3D?line=20'&gt;21&lt;/a&gt;</span>     conn.close()
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell:/Users/raunakmondal/csp-fast-pages-5/_notebooks/2023_03_16_AP_unit2_4b.ipynb#W3sZmlsZQ%3D%3D?line=22'&gt;23&lt;/a&gt;</span> # schema is the metadata for a database
+<span class="ansi-green-fg">---&gt; &lt;a href='vscode-notebook-cell:/Users/raunakmondal/csp-fast-pages-5/_notebooks/2023_03_16_AP_unit2_4b.ipynb#W3sZmlsZQ%3D%3D?line=23'&gt;24&lt;/a&gt;</span> schema()
+
+<span class="ansi-green-intense-fg ansi-bold">/Users/raunakmondal/csp-fast-pages-5/_notebooks/2023_03_16_AP_unit2_4b.ipynb Cell 4</span> in <span class="ansi-cyan-fg">schema</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      &lt;a href='vscode-notebook-cell:/Users/raunakmondal/csp-fast-pages-5/_notebooks/2023_03_16_AP_unit2_4b.ipynb#W3sZmlsZQ%3D%3D?line=4'&gt;5&lt;/a&gt;</span> def schema():
+<span class="ansi-green-intense-fg ansi-bold">      &lt;a href='vscode-notebook-cell:/Users/raunakmondal/csp-fast-pages-5/_notebooks/2023_03_16_AP_unit2_4b.ipynb#W3sZmlsZQ%3D%3D?line=5'&gt;6&lt;/a&gt;</span>     
+<span class="ansi-green-intense-fg ansi-bold">      &lt;a href='vscode-notebook-cell:/Users/raunakmondal/csp-fast-pages-5/_notebooks/2023_03_16_AP_unit2_4b.ipynb#W3sZmlsZQ%3D%3D?line=6'&gt;7&lt;/a&gt;</span>     # Connect to the database file
+<span class="ansi-green-fg">----&gt; &lt;a href='vscode-notebook-cell:/Users/raunakmondal/csp-fast-pages-5/_notebooks/2023_03_16_AP_unit2_4b.ipynb#W3sZmlsZQ%3D%3D?line=7'&gt;8&lt;/a&gt;</span>     conn = sqlite3.connect(database)
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell:/Users/raunakmondal/csp-fast-pages-5/_notebooks/2023_03_16_AP_unit2_4b.ipynb#W3sZmlsZQ%3D%3D?line=9'&gt;10&lt;/a&gt;</span>     # Create a cursor object to execute SQL queries
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell:/Users/raunakmondal/csp-fast-pages-5/_notebooks/2023_03_16_AP_unit2_4b.ipynb#W3sZmlsZQ%3D%3D?line=10'&gt;11&lt;/a&gt;</span>     cursor = conn.cursor()
+
+<span class="ansi-red-fg">OperationalError</span>: unable to open database file</pre>
 </div>
 </div>
 
