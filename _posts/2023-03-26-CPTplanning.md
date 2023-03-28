@@ -8,7 +8,7 @@ permalink: /csp/CPTplanningfortest/
 ---
 
 # Ideas
-Health and fitness tracker: Develop a web app that allows users to track their daily exercie routines, water ntake, and nutrition. The ap can store the user's data in a database and display it in graphs and charts.
+Health and fitness tracker: Develop a web app that allows users to track their daily exercise routines, water intake, and nutrition. The ap can store the user's data in a database and display it in graphs and charts.
 
 Personal finance manager: Create a program that help users manage their finances by tracking expenses, creating budgets, and generating reports. The program can use APIs to retrieve financial data and store it in a database.
 
@@ -21,8 +21,7 @@ Online marketplace: Develop an online marketplace that connects buyers and selle
 
 # Progress
 
-I have already worked on my old CPT project from last trimester that works for time management
-From first trimester we have created a social media platform as well that we can work to implement pictures. So far it is only text and blogs
- 
+I have already worked on my old CPT project from last trimester that works for booking flights to travel destinations.
+From first trimester we created a website equivalent to the Clock app on the IOS UI platform. So far it is limited to its current features due to certain limitations
 
 One other idea that I have is some type of calculator that can do complex calculations maybe for physics.
