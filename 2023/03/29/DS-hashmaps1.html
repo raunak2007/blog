@@ -13,12 +13,14 @@
 <link rel="canonical" href="https://raunak2007.github.io/csp-fast-pages/2023/03/29/DS-hashmaps1.html" />
 <meta property="og:url" content="https://raunak2007.github.io/csp-fast-pages/2023/03/29/DS-hashmaps1.html" />
 <meta property="og:site_name" content="Raunak Mondal’s CSP Blog" />
+<meta property="og:image" content="https://raunak2007.github.io/csp-fast-pages/images/python.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-03-29T00:00:00-05:00" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://raunak2007.github.io/csp-fast-pages/images/python.png" />
 <meta property="twitter:title" content="Data Structures- Hashmaps, Sets, Hash Tables, Hashing and Collisions" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-29T00:00:00-05:00","datePublished":"2023-03-29T00:00:00-05:00","description":"Observing hashmaps with python dictionaries","headline":"Data Structures- Hashmaps, Sets, Hash Tables, Hashing and Collisions","mainEntityOfPage":{"@type":"WebPage","@id":"https://raunak2007.github.io/csp-fast-pages/2023/03/29/DS-hashmaps1.html"},"url":"https://raunak2007.github.io/csp-fast-pages/2023/03/29/DS-hashmaps1.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-29T00:00:00-05:00","datePublished":"2023-03-29T00:00:00-05:00","description":"Observing hashmaps with python dictionaries","headline":"Data Structures- Hashmaps, Sets, Hash Tables, Hashing and Collisions","image":"https://raunak2007.github.io/csp-fast-pages/images/python.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://raunak2007.github.io/csp-fast-pages/2023/03/29/DS-hashmaps1.html"},"url":"https://raunak2007.github.io/csp-fast-pages/2023/03/29/DS-hashmaps1.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/csp-fast-pages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://raunak2007.github.io/csp-fast-pages/feed.xml" title="Raunak Mondal's CSP Blog" /><link rel="shortcut icon" type="image/x-icon" href="/csp-fast-pages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -79,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      13 min read
     
 </span></p>
 
@@ -138,17 +140,17 @@ window.onload = wrap_img;
 <a class="anchor" href="#What-is-a-Hashtable/Hashmap?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is a Hashtable/Hashmap?<a class="anchor-link" href="#What-is-a-Hashtable/Hashmap?"> </a>
 </h2>
 <blockquote>
-<p>A hashtable is a data structure with a collection of key-value pairs, where each key maps to a value, and the keys must be unique and hashtable.</p>
+<p>A hashtable is a data structure that with a collection of key-value pairs, where each key maps to a value, and the keys must be unique and hashable.</p>
 </blockquote>
 <ul>
-<li>In Python there is a built in hashtable known as a dictionary.</li>
+<li>In Python there is a built in hashtable known as a <strong>dictionary</strong>.</li>
 </ul>
 <blockquote>
 <p>The primary purpose of a hashtable is to provide efficient lookup, insertion, and deletion operations. When an element is to be inserted into the hashtable, a hash function is used to map the key to a specific index in the underlying array that is used to store the key-value pairs. The value is then stored at that index. When searching for a value, the hash function is used again to find the index where the value is stored.</p>
 <p>The key advantage of a hashtable over other data structures like arrays and linked lists is its average-case time complexity for lookup, insertion, and deletion operations.</p>
 </blockquote>
 <ul>
-<li>The typical time complexity of a hashtable is O(1). </li>
+<li>The typical time complexity of a hashtable is <strong>constant</strong>. </li>
 </ul>
 
 </div>
@@ -182,11 +184,12 @@ window.onload = wrap_img;
 <span class="nb">print</span><span class="p">(</span><span class="n">my_set</span><span class="p">)</span>  
 
 <span class="c1"># What do you notice in the output?</span>
-    <span class="c1"># there are no duplicates. each type of number is outputted only once</span>
-    <span class="c1"># the numbers are outputted in increasing order 1,2,3</span>
+<span class="c1"># First three numbers in the set list are printed</span>
+<span class="c1"># Output of all numbers in the list without any duplicates</span>
 
 <span class="c1"># Why do you think Sets are in the same tech talk as Hashmaps/Hashtables?</span>
-    <span class="c1"># they are in the same ted talk because datastructures and hashtables also do not permit duplicates</span>
+<span class="c1"># Both can't have any duplicates.</span>
+<span class="c1"># Both store data</span>
 </pre></div>
 
     </div>
@@ -256,7 +259,8 @@ window.onload = wrap_img;
 <span class="p">}</span>
 
 <span class="c1"># What data structures do you see?</span>
-    <span class="c1"># strings, integers, list, dictionary</span>
+<span class="c1"># Dictionary for the Taylor Swift info</span>
+<span class="c1"># Dictionary within the tracks key</span>
 
 <span class="c1"># Printing the dictionary</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lover_album</span><span class="p">)</span>
@@ -358,12 +362,14 @@ The Man
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lover_album</span><span class="p">[</span><span class="s2">"producer"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Taylor Swift'</span><span class="p">,</span> <span class="s1">'Jack Antonoff'</span><span class="p">,</span> <span class="s1">'Joel Little'</span><span class="p">,</span> <span class="s1">'Taylor Swift'</span><span class="p">,</span> <span class="s1">'Louis Bell'</span><span class="p">,</span> <span class="s1">'Frank Dukes'</span><span class="p">]</span>
-<span class="n">my_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">lover_album</span><span class="p">[</span><span class="s2">"producer"</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_set</span><span class="p">)</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lover_album</span><span class="p">[</span><span class="s2">"producer"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">'Taylor Swift'</span><span class="p">,</span> <span class="s1">'Jack Antonoff'</span><span class="p">,</span> <span class="s1">'Joel Little'</span><span class="p">,</span> <span class="s1">'Taylor Swift'</span><span class="p">,</span> <span class="s1">'Louis Bell'</span><span class="p">,</span> <span class="s1">'Frank Dukes'</span><span class="p">])</span>
 
 <span class="c1"># What can you change to make sure there are no duplicate producers?</span>
-    <span class="c1">#use the "set" syntax to remove duplicates</span>
+<span class="c1"># Delete on the Taylor Swifts</span>
+<span class="c1"># Add set before the list</span>
+
+<span class="c1"># Printing the dictionary</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lover_album</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -376,7 +382,7 @@ The Man
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{'Taylor Swift', 'Frank Dukes', 'Joel Little', 'Louis Bell', 'Jack Antonoff'}
+<pre>{'title': 'Lover', 'artist': 'Taylor Swift', 'year': 2019, 'genre': ['Pop', 'Synth-pop'], 'tracks': {1: 'I Forgot That You Existed', 2: 'Cruel Summer', 3: 'Lover', 4: 'The Man', 5: 'The Archer', 6: 'I Think He Knows', 7: 'Miss Americana &amp; The Heartbreak Prince', 8: 'Paper Rings', 9: 'Cornelia Street', 10: 'Death By A Thousand Cuts', 11: 'London Boy', 12: "Soon You'll Get Better (feat. Dixie Chicks)", 13: 'False God', 14: 'You Need To Calm Down', 15: 'Afterglow', 16: 'Me! (feat. Brendon Urie of Panic! At The Disco)', 17: "It's Nice To Have A Friend", 18: 'Daylight'}, 'producer': {'Joel Little', 'Louis Bell', 'Jack Antonoff', 'Frank Dukes', 'Taylor Swift'}}
 </pre>
 </div>
 </div>
@@ -396,8 +402,8 @@ The Man
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lover_album</span><span class="p">[</span><span class="s2">"tracks"</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="mi">19</span><span class="p">:</span> <span class="s2">"All Of The Girls You Loved Before"</span><span class="p">})</span>
 
-<span class="c1"># How would you add an additional genre to the dictionary, like electropop? </span>
-    <span class="c1">#use 'append'</span>
+<span class="c1"># How would add an additional genre to the dictionary, like electropop? </span>
+<span class="c1"># You could write:</span>
 <span class="n">lover_album</span><span class="p">[</span><span class="s2">"genre"</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"electropop"</span><span class="p">)</span>
 
 <span class="c1"># Printing the dictionary</span>
@@ -414,7 +420,7 @@ The Man
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{'title': 'Lover', 'artist': 'Taylor Swift', 'year': 2019, 'genre': ['Pop', 'Synth-pop', 'electropop'], 'tracks': {1: 'I Forgot That You Existed', 2: 'Cruel Summer', 3: 'Lover', 4: 'The Man', 5: 'The Archer', 6: 'I Think He Knows', 7: 'Miss Americana &amp; The Heartbreak Prince', 8: 'Paper Rings', 9: 'Cornelia Street', 10: 'Death By A Thousand Cuts', 11: 'London Boy', 12: "Soon You'll Get Better (feat. Dixie Chicks)", 13: 'False God', 14: 'You Need To Calm Down', 15: 'Afterglow', 16: 'Me! (feat. Brendon Urie of Panic! At The Disco)', 17: "It's Nice To Have A Friend", 18: 'Daylight', 19: 'All Of The Girls You Loved Before'}, 'producer': ['Taylor Swift', 'Jack Antonoff', 'Joel Little', 'Taylor Swift', 'Louis Bell', 'Frank Dukes']}
+<pre>{'title': 'Lover', 'artist': 'Taylor Swift', 'year': 2019, 'genre': ['Pop', 'Synth-pop', 'electropop'], 'tracks': {1: 'I Forgot That You Existed', 2: 'Cruel Summer', 3: 'Lover', 4: 'The Man', 5: 'The Archer', 6: 'I Think He Knows', 7: 'Miss Americana &amp; The Heartbreak Prince', 8: 'Paper Rings', 9: 'Cornelia Street', 10: 'Death By A Thousand Cuts', 11: 'London Boy', 12: "Soon You'll Get Better (feat. Dixie Chicks)", 13: 'False God', 14: 'You Need To Calm Down', 15: 'Afterglow', 16: 'Me! (feat. Brendon Urie of Panic! At The Disco)', 17: "It's Nice To Have A Friend", 18: 'Daylight', 19: 'All Of The Girls You Loved Before'}, 'producer': {'Joel Little', 'Louis Bell', 'Jack Antonoff', 'Frank Dukes', 'Taylor Swift'}}
 </pre>
 </div>
 </div>
@@ -434,6 +440,11 @@ The Man
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">lover_album</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="c1"># iterate using a for loop for key and value</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s2">": "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+
+<span class="c1"># Write your own code to print tracks in readable format</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"title: "</span><span class="p">,</span> <span class="n">lover_album</span><span class="p">[</span><span class="s2">"title"</span><span class="p">],</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> artist: "</span><span class="p">,</span><span class="n">lover_album</span><span class="p">[</span><span class="s2">"artist"</span><span class="p">],</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> year: "</span><span class="p">,</span> <span class="n">lover_album</span><span class="p">[</span><span class="s2">"year"</span><span class="p">],</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> genre: "</span><span class="p">,</span> <span class="n">lover_album</span><span class="p">[</span><span class="s2">"genre"</span><span class="p">],</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> tracks: "</span><span class="p">,</span> <span class="n">lover_album</span><span class="p">[</span><span class="s2">"tracks"</span><span class="p">],</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> producer: "</span><span class="p">,</span> <span class="n">lover_album</span><span class="p">[</span><span class="s2">"producer"</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -451,67 +462,16 @@ artist: Taylor Swift
 year: 2019
 genre: ['Pop', 'Synth-pop', 'electropop']
 tracks: {1: 'I Forgot That You Existed', 2: 'Cruel Summer', 3: 'Lover', 4: 'The Man', 5: 'The Archer', 6: 'I Think He Knows', 7: 'Miss Americana &amp; The Heartbreak Prince', 8: 'Paper Rings', 9: 'Cornelia Street', 10: 'Death By A Thousand Cuts', 11: 'London Boy', 12: "Soon You'll Get Better (feat. Dixie Chicks)", 13: 'False God', 14: 'You Need To Calm Down', 15: 'Afterglow', 16: 'Me! (feat. Brendon Urie of Panic! At The Disco)', 17: "It's Nice To Have A Friend", 18: 'Daylight', 19: 'All Of The Girls You Loved Before'}
-producer: ['Taylor Swift', 'Jack Antonoff', 'Joel Little', 'Taylor Swift', 'Louis Bell', 'Frank Dukes']
-</pre>
-</div>
-</div>
+producer: {'Joel Little', 'Louis Bell', 'Jack Antonoff', 'Frank Dukes', 'Taylor Swift'}
 
-</div>
-</div>
+ 
 
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Title:"</span><span class="p">,</span> <span class="n">lover_album</span><span class="p">[</span><span class="s2">"title"</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Artist:"</span><span class="p">,</span> <span class="n">lover_album</span><span class="p">[</span><span class="s2">"artist"</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Year:"</span><span class="p">,</span> <span class="n">lover_album</span><span class="p">[</span><span class="s2">"year"</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Genre:"</span><span class="p">,</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lover_album</span><span class="p">[</span><span class="s2">"genre"</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Tracks:"</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">track_number</span><span class="p">,</span> <span class="n">track_title</span> <span class="ow">in</span> <span class="n">lover_album</span><span class="p">[</span><span class="s2">"tracks"</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"  </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">track_number</span><span class="p">,</span> <span class="n">track_title</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Title: Lover
-Artist: Taylor Swift
-Year: 2019
-Genre: Pop, Synth-pop, electropop
-Tracks:
-  1: I Forgot That You Existed
-  2: Cruel Summer
-  3: Lover
-  4: The Man
-  5: The Archer
-  6: I Think He Knows
-  7: Miss Americana &amp; The Heartbreak Prince
-  8: Paper Rings
-  9: Cornelia Street
-  10: Death By A Thousand Cuts
-  11: London Boy
-  12: Soon You'll Get Better (feat. Dixie Chicks)
-  13: False God
-  14: You Need To Calm Down
-  15: Afterglow
-  16: Me! (feat. Brendon Urie of Panic! At The Disco)
-  17: It's Nice To Have A Friend
-  18: Daylight
-  19: All Of The Girls You Loved Before
+title:  Lover 
+ artist:  Taylor Swift 
+ year:  2019 
+ genre:  ['Pop', 'Synth-pop', 'electropop'] 
+ tracks:  {1: 'I Forgot That You Existed', 2: 'Cruel Summer', 3: 'Lover', 4: 'The Man', 5: 'The Archer', 6: 'I Think He Knows', 7: 'Miss Americana &amp; The Heartbreak Prince', 8: 'Paper Rings', 9: 'Cornelia Street', 10: 'Death By A Thousand Cuts', 11: 'London Boy', 12: "Soon You'll Get Better (feat. Dixie Chicks)", 13: 'False God', 14: 'You Need To Calm Down', 15: 'Afterglow', 16: 'Me! (feat. Brendon Urie of Panic! At The Disco)', 17: "It's Nice To Have A Friend", 18: 'Daylight', 19: 'All Of The Girls You Loved Before'} 
+ producer:  {'Joel Little', 'Louis Bell', 'Jack Antonoff', 'Frank Dukes', 'Taylor Swift'}
 </pre>
 </div>
 </div>
@@ -539,8 +499,8 @@ Tracks:
 <span class="n">search</span><span class="p">()</span>
 
 <span class="c1"># This is a very basic code segment, how can you improve upon this code?</span>
-    <span class="c1"># Add more functionality to the search function by allowing the user to search for specific information within the dictionary (e.g. album title, artist, year, genre, tracks, etc.) instead of just searching for a specific key.</span>
-    <span class="c1"># Use more descriptive error messages to help the user understand why their search was invalid</span>
+<span class="c1">#</span>
+<span class="c1">#</span>
 </pre></div>
 
     </div>
@@ -553,7 +513,143 @@ Tracks:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>['Pop', 'Synth-pop', 'electropop']
+<pre>Taylor Swift
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">search</span><span class="p">():</span>
+    <span class="n">search</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What would you like to know about the album?"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">lover_album</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">search</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Property not found. Please try again. </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">lover_album</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">search</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span>
+
+<span class="c1"># Define the options as a list</span>
+<span class="n">options</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">lover_album</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="c1"># iterate using a for loop for key and value</span>
+    <span class="n">options</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span>
+
+<span class="c1"># Define the menu function</span>
+<span class="k">def</span> <span class="nf">menu</span><span class="p">():</span>
+    <span class="c1"># Display the menu options</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1"> Select an option from the list below:'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">option</span><span class="p">)</span>
+
+    <span class="c1"># Get the user's choice</span>
+    <span class="n">search</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What would you like to know about the album from the list of properties shown? Type the full word or press enter to exit."</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="c1"># Find the selected option in the options list</span>
+    <span class="n">selected_option</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">search</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">option</span><span class="p">):</span>
+            <span class="n">selected_option</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">option</span><span class="p">)</span>
+            <span class="k">break</span>
+    
+
+    <span class="k">if</span> <span class="n">selected_option</span> <span class="o">==</span> <span class="s2">"title"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1"> Title: </span><span class="si">{</span><span class="n">lover_album</span><span class="p">[</span><span class="n">options</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">selected_option</span> <span class="o">==</span> <span class="s2">"artist"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1"> Artist: </span><span class="si">{</span><span class="n">lover_album</span><span class="p">[</span><span class="n">options</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">selected_option</span> <span class="o">==</span> <span class="s2">"year"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1"> Year: </span><span class="si">{</span><span class="n">lover_album</span><span class="p">[</span><span class="n">options</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">selected_option</span> <span class="o">==</span> <span class="s2">"genre"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Genre(s):"</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">lover_album</span><span class="p">[</span><span class="s1">'genre'</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"- </span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">selected_option</span> <span class="o">==</span> <span class="s2">"tracks"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Tracks:"</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">track_number</span><span class="p">,</span> <span class="n">track_title</span> <span class="ow">in</span> <span class="n">lover_album</span><span class="p">[</span><span class="s1">'tracks'</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">track_number</span><span class="si">}</span><span class="s2">) </span><span class="si">{</span><span class="n">track_title</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">selected_option</span> <span class="o">==</span> <span class="s2">"producer"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Producer(s):"</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">lover_album</span><span class="p">[</span><span class="s1">'producer'</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"- </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">search</span> <span class="o">==</span> <span class="s2">""</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Property not found. Please try again. </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="c1"># Repeat the menu</span>
+    <span class="n">menu</span><span class="p">()</span>
+
+
+<span class="n">menu</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+ Select an option from the list below:
+title
+artist
+year
+genre
+tracks
+producer
+
+ Artist: Taylor Swift 
+
+
+ Select an option from the list below:
+title
+artist
+year
+genre
+tracks
+producer
+
+ Tracks:
+1) I Forgot That You Existed
+2) Cruel Summer
+3) Lover
+4) The Man
+5) The Archer
+6) I Think He Knows
+7) Miss Americana &amp; The Heartbreak Prince
+8) Paper Rings
+9) Cornelia Street
+10) Death By A Thousand Cuts
+11) London Boy
+12) Soon You'll Get Better (feat. Dixie Chicks)
+13) False God
+14) You Need To Calm Down
+15) Afterglow
+16) Me! (feat. Brendon Urie of Panic! At The Disco)
+17) It's Nice To Have A Friend
+18) Daylight
+19) All Of The Girls You Loved Before
+
+ Select an option from the list below:
+title
+artist
+year
+genre
+tracks
+producer
 </pre>
 </div>
 </div>
@@ -571,21 +667,21 @@ Tracks:
 <a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
 </h2>
 <ul>
-<li>Create a diagram or comparison illustration (Canva).
-<img src="https://github.com/vivianknee/FastPages/blob/master/images/hashtable.jpg?raw=true" alt="hash">
+<li>Answer <em>ALL</em> questions in the code segments</li>
+<li>Create a diagram or comparison illustration (Canva).<ul>
+<li>What are the pro and cons of using this data structure? </li>
+<li>Dictionary vs List</li>
+</ul>
+</li>
+<li>Expand upon the code given to you, possible improvements in comments</li>
+<li>
+<p>Build your own album showing features of a python dictionary</p>
+</li>
+<li>
+<p>For Mr. Yeung's class: Justify your favorite Taylor Swift song, answer may effect seed</p>
 </li>
 </ul>
-<p><img src="https://github.com/vivianknee/FastPages/blob/master/images/listvsdic.jpg?raw=true" alt="listvdic"></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Build your own album showing features of a python dictionary</li>
-</ul>
+<p><img src="https://bushku.github.io/APCSP_1/images/Lists%20and%20Dictionaries.png" alt="Comparing Dictionary and List"></p>
 
 </div>
 </div>
@@ -597,45 +693,30 @@ Tracks:
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">raunak_album</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"artists"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"The Weekend"</span><span class="p">,</span> <span class="s2">"Billie Eilish"</span><span class="p">,</span> <span class="s2">"Joji"</span><span class="p">,</span> <span class="s2">"keshi"</span><span class="p">,</span> <span class="s2">"Rex Orange County"</span><span class="p">,</span> <span class="s2">"SZA"</span><span class="p">,</span> <span class="s2">"clairo"</span><span class="p">,</span> <span class="s2">"Taylor Swift"</span><span class="p">],</span>
-    <span class="s2">"genre"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Pop"</span><span class="p">,</span> <span class="s2">"indie-pop"</span><span class="p">,</span> <span class="s2">"lofi"</span><span class="p">,</span> <span class="s2">"Rap"</span><span class="p">],</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">haywire_album</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"Haywire"</span><span class="p">,</span>
+    <span class="s2">"artist"</span><span class="p">:</span> <span class="s2">"Josh Turner"</span><span class="p">,</span>
+    <span class="s2">"year"</span><span class="p">:</span> <span class="mi">2012</span><span class="p">,</span>
+    <span class="s2">"genre"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Country"</span><span class="p">],</span>
     <span class="s2">"tracks"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="mi">1</span><span class="p">:</span> <span class="s2">"After Hours"</span><span class="p">,</span>
-        <span class="mi">2</span><span class="p">:</span> <span class="s2">"Cruel Summer"</span><span class="p">,</span>
-        <span class="mi">3</span><span class="p">:</span> <span class="s2">"Sanctuary"</span><span class="p">,</span>
-        <span class="mi">4</span><span class="p">:</span> <span class="s2">"Its You"</span><span class="p">,</span>
-        <span class="mi">5</span><span class="p">:</span> <span class="s2">"Summer"</span><span class="p">,</span>
-        <span class="mi">6</span><span class="p">:</span> <span class="s2">"Amazing"</span><span class="p">,</span>
-        <span class="mi">7</span><span class="p">:</span> <span class="s2">"Best Friend"</span><span class="p">,</span>
-        <span class="mi">8</span><span class="p">:</span> <span class="s2">"Kill Bill"</span><span class="p">,</span>
-        <span class="mi">9</span><span class="p">:</span> <span class="s2">"Snooze"</span><span class="p">,</span>
-        <span class="mi">10</span><span class="p">:</span> <span class="s2">"Amobea"</span><span class="p">,</span>
-        <span class="mi">11</span><span class="p">:</span> <span class="s2">"Die for You"</span><span class="p">,</span>
-        <span class="mi">12</span><span class="p">:</span> <span class="s2">"Save your Tears"</span><span class="p">,</span>
-        <span class="mi">13</span><span class="p">:</span> <span class="s2">"good girls go to hell"</span><span class="p">,</span>
-        <span class="mi">14</span><span class="p">:</span> <span class="s2">"My Future"</span><span class="p">,</span>
-        <span class="mi">15</span><span class="p">:</span> <span class="s2">"Watch"</span><span class="p">,</span>
-        <span class="mi">16</span><span class="p">:</span> <span class="s2">"Bellyache"</span><span class="p">,</span>
-        <span class="mi">17</span><span class="p">:</span> <span class="s2">"cupid"</span><span class="p">,</span>
-        <span class="mi">18</span><span class="p">:</span> <span class="s2">"sour grapes"</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="s2">"Haywire"</span><span class="p">,</span>
+        <span class="mi">2</span><span class="p">:</span> <span class="s2">"Why Don't We Just Dance"</span><span class="p">,</span>
+        <span class="mi">3</span><span class="p">:</span> <span class="s2">"I Wouldn't Be A Man"</span><span class="p">,</span>
+        <span class="mi">4</span><span class="p">:</span> <span class="s2">"I'll Be There"</span><span class="p">,</span>
+        <span class="mi">5</span><span class="p">:</span> <span class="s2">"Friday Paycheck"</span><span class="p">,</span>
+        <span class="mi">6</span><span class="p">:</span> <span class="s2">"This Kind Of Love"</span><span class="p">,</span>
+        <span class="mi">7</span><span class="p">:</span> <span class="s2">"Loving You On My Mind"</span><span class="p">,</span>
+        <span class="mi">8</span><span class="p">:</span> <span class="s2">"The Answer"</span><span class="p">,</span>
+        <span class="mi">9</span><span class="p">:</span> <span class="s2">"Your Smile"</span><span class="p">,</span>
+        <span class="mi">10</span><span class="p">:</span> <span class="s2">"As Fast As I could"</span><span class="p">,</span>
+        <span class="mi">11</span><span class="p">:</span> <span class="s2">"Let's Find a Church"</span><span class="p">,</span>
+        <span class="mi">12</span><span class="p">:</span> <span class="s2">"All Over Me"</span><span class="p">,</span>
+        <span class="mi">13</span><span class="p">:</span> <span class="s2">"Eye Candy"</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">def</span> <span class="nf">print_album</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Artists:"</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="n">raunak_album</span><span class="p">[</span><span class="s2">"artists"</span><span class="p">]:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"- </span><span class="si">{</span><span class="n">artist</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-        
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Genre:"</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">genre</span> <span class="ow">in</span> <span class="n">raunak_album</span><span class="p">[</span><span class="s2">"genre"</span><span class="p">]:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"- </span><span class="si">{</span><span class="n">genre</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-        
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Tracks:"</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">track_number</span><span class="p">,</span> <span class="n">track_title</span> <span class="ow">in</span> <span class="n">raunak_album</span><span class="p">[</span><span class="s2">"tracks"</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">track_number</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">track_title</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-<span class="n">print_album</span><span class="p">()</span>
+<span class="c1"># Printing the dictionary</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">haywire_album</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -648,41 +729,285 @@ Tracks:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Artists:
-- The Weekend
-- Billie Eilish
-- Joji
-- keshi
-- Rex Orange County
-- SZA
-- clairo
-- Taylor Swift
+<pre>{'title': 'Haywire', 'artist': 'Josh Turner', 'year': 2012, 'genre': ['Country'], 'tracks': {1: 'Haywire', 2: "Why Don't We Just Dance", 3: "I Wouldn't Be A Man", 4: "I'll Be There", 5: 'Friday Paycheck', 6: 'This Kind Of Love', 7: 'Loving You On My Mind', 8: 'The Answer', 9: 'Your Smile', 10: 'As Fast As I could', 11: "Let's Find a Church", 12: 'All Over Me', 13: 'Eye Candy'}}
+</pre>
+</div>
+</div>
 
-Genre:
-- Pop
-- indie-pop
-- lofi
-- Rap
+</div>
+</div>
 
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get + index</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">haywire_album</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'tracks'</span><span class="p">)[</span><span class="mi">4</span><span class="p">])</span>
+
+<span class="c1"># double indexing</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">haywire_album</span><span class="p">[</span><span class="s1">'tracks'</span><span class="p">][</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I'll Be There
+I'll Be There
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">haywire_album</span><span class="p">[</span><span class="s2">"producer"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">'Josh Turner'</span><span class="p">,</span> <span class="s1">'Frank Rogers'</span><span class="p">,</span> <span class="s1">'Chris LeDoux'</span><span class="p">])</span>
+
+<span class="c1"># Printing the dictionary</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">haywire_album</span><span class="p">)</span>
+
+<span class="c1"># Printing the producer set</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">haywire_album</span><span class="p">[</span><span class="s2">"producer"</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'title': 'Haywire', 'artist': 'Josh Turner', 'year': 2012, 'genre': ['Country'], 'tracks': {1: 'Haywire', 2: "Why Don't We Just Dance", 3: "I Wouldn't Be A Man", 4: "I'll Be There", 5: 'Friday Paycheck', 6: 'This Kind Of Love', 7: 'Loving You On My Mind', 8: 'The Answer', 9: 'Your Smile', 10: 'As Fast As I could', 11: "Let's Find a Church", 12: 'All Over Me', 13: 'Eye Candy'}, 'producer': {'Chris LeDoux', 'Josh Turner', 'Frank Rogers'}}
+{'Chris LeDoux', 'Josh Turner', 'Frank Rogers'}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">haywire_album</span><span class="p">[</span><span class="s2">"genre"</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"Country"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Title: </span><span class="si">{</span><span class="n">haywire_album</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Artist: </span><span class="si">{</span><span class="n">haywire_album</span><span class="p">[</span><span class="s1">'artist'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Producer(s):'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">prod</span> <span class="ow">in</span> <span class="n">haywire_album</span><span class="p">[</span><span class="s1">'producer'</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"- </span><span class="si">{</span><span class="n">prod</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Year: </span><span class="si">{</span><span class="n">haywire_album</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Genres:"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">genre</span> <span class="ow">in</span> <span class="n">haywire_album</span><span class="p">[</span><span class="s1">'genre'</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"- </span><span class="si">{</span><span class="n">genre</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Tracks:"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">track_number</span><span class="p">,</span> <span class="n">track_title</span> <span class="ow">in</span> <span class="n">haywire_album</span><span class="p">[</span><span class="s1">'tracks'</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">track_number</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">track_title</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Title: Haywire
+Artist: Josh Turner
+Producer(s):
+- Chris LeDoux
+- Josh Turner
+- Frank Rogers
+Year: 2012
+Genres:
+- Country
+- Country
 Tracks:
-1. After Hours
-2. Cruel Summer
-3. Sanctuary
-4. Its You
-5. Summer
-6. Amazing
-7. Best Friend
-8. Kill Bill
-9. Snooze
-10. Amobea
-11. Die for You
-12. Save your Tears
-13. good girls go to hell
-14. My Future
-15. Watch
-16. Bellyache
-17. cupid
-18. sour grapes
+1. Haywire
+2. Why Don't We Just Dance
+3. I Wouldn't Be A Man
+4. I'll Be There
+5. Friday Paycheck
+6. This Kind Of Love
+7. Loving You On My Mind
+8. The Answer
+9. Your Smile
+10. As Fast As I could
+11. Let's Find a Church
+12. All Over Me
+13. Eye Candy
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define the options as a list</span>
+<span class="n">options</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">haywire_album</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="c1"># iterate using a for loop for key and value</span>
+    <span class="n">options</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span>
+
+<span class="c1"># Define the menu function</span>
+<span class="k">def</span> <span class="nf">menu</span><span class="p">():</span>
+    <span class="c1"># Display the menu options</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1"> Select an option from the list below:'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">option</span><span class="p">)</span>
+
+    <span class="c1"># Get the user's choice</span>
+    <span class="n">search</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What would you like to know about the album from the list of properties shown? Type the full word or press enter to exit."</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="c1"># Find the selected option in the options list</span>
+    <span class="n">selected_option</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">search</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">option</span><span class="p">):</span>
+            <span class="n">selected_option</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">option</span><span class="p">)</span>
+            <span class="k">break</span>
+    
+
+    <span class="k">if</span> <span class="n">selected_option</span> <span class="o">==</span> <span class="s2">"title"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1"> Title: </span><span class="si">{</span><span class="n">haywire_album</span><span class="p">[</span><span class="n">options</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">selected_option</span> <span class="o">==</span> <span class="s2">"artist"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1"> Artist: </span><span class="si">{</span><span class="n">haywire_album</span><span class="p">[</span><span class="n">options</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">selected_option</span> <span class="o">==</span> <span class="s2">"year"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="se">\n</span><span class="s1"> Year: </span><span class="si">{</span><span class="n">haywire_album</span><span class="p">[</span><span class="n">options</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">selected_option</span> <span class="o">==</span> <span class="s2">"genre"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Genre(s):"</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">haywire_album</span><span class="p">[</span><span class="s1">'genre'</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"- </span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">selected_option</span> <span class="o">==</span> <span class="s2">"tracks"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Tracks:"</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">track_number</span><span class="p">,</span> <span class="n">track_title</span> <span class="ow">in</span> <span class="n">haywire_album</span><span class="p">[</span><span class="s1">'tracks'</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">track_number</span><span class="si">}</span><span class="s2">) </span><span class="si">{</span><span class="n">track_title</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">selected_option</span> <span class="o">==</span> <span class="s2">"producer"</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Producer(s):"</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">haywire_album</span><span class="p">[</span><span class="s1">'producer'</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"- </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">search</span> <span class="o">==</span> <span class="s2">""</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2"> Property not found. Please try again. </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="c1"># Repeat the menu</span>
+    <span class="n">menu</span><span class="p">()</span>
+
+<span class="n">menu</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+ Select an option from the list below:
+title
+artist
+year
+genre
+tracks
+producer
+
+ Artist: Josh Turner 
+
+
+ Select an option from the list below:
+title
+artist
+year
+genre
+tracks
+producer
+
+ Tracks:
+1) Haywire
+2) Why Don't We Just Dance
+3) I Wouldn't Be A Man
+4) I'll Be There
+5) Friday Paycheck
+6) This Kind Of Love
+7) Loving You On My Mind
+8) The Answer
+9) Your Smile
+10) As Fast As I could
+11) Let's Find a Church
+12) All Over Me
+13) Eye Candy
+
+ Select an option from the list below:
+title
+artist
+year
+genre
+tracks
+producer
 </pre>
 </div>
 </div>
