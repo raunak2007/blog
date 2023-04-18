@@ -1,13 +1,10 @@
 ---
-title: Computers and Networks (Unit 4)
-description: Add Definitions from Unit 4 Computer Systems and Networks
 toc: true
 comments: true
 layout: post
-permalink: /week29/computer&networks
-categories: [week 29]
+title: Computers and Networks (Unit 4)
+description: Add Definitions from Unit 4 Computer Systems and Networks
 ---
-
 ## Requirements
 > Work through College Board Unit 4... blog, add definitions, and pictures.  Be creative, for instance make a story of Computing and Networks that is related to your PBL experiences this year.
 
@@ -16,45 +13,25 @@ categories: [week 29]
 > As we have learned, a computer needs aa program to do something smart.  The sequence of a program initiates a series of actions with the computers Central Processing Unit (CPU). This component is essentially a binary machine focussing on program instructions provided.  The CPU retrieives and stores the data it acts upon in Random Access Memory (RAM). Between the CPU, RAM, and Storage Devices a computer can work with many programs and large amounts of data.
 
 List specification of your Computer, or Computers if working as Pair/Trio
-- Processor GHz: 2.30GHz
-- Memory in GB: 16gb
-- Storage in GB: 500gb
-- OS: Windows 10 Pro build: 19044.2728
+- Processor GHz: Processor	Intel(R) Core(TM) i7-3517U CPU @ 1.90GHz, 2401 Mhz, 2 Core(s), 4 Logical Processor(s)
+- Memory in GB: 8.00 GB
+- Storage in GB: 237 GB
+- OS: OS Name	Microsoft Windows 10 Pro
 
 Define or describe usage of Computer using Computer Programs. Pictures are preferred over a lot of text.  Use your experience.
 - Input devices
-    - Lets the user communicate to the computer
-        - Examples: Keyboard, mouse, microphone
 - Output devices
-    - Lets the computer communicate to the user
-        - Monitor, speaker, headphones
 - Program File
-    - A file that can be executed by the computer to run a program
-        - Example: web browsers, media players, video games, etc...
 - Program Code
-    - The code that tells the computer what to do when the program file is run and ensures that the program file works as intended
-        - The code behind video games, browsers, etc...
 - Processes
-    - An instance where a program is being executed by one or more threads
-        - Examples: Sorting, searching, encrypting/decrypting, compiling, debugging, etc...
 - Ports
-    - An endpoint that enables a server to handle incoming requests from client devices over the internet
-        - 80--, 443--, etc.. for web servers
 - Data File
-    - file that contains information or data in a specific format
-    - Tells a computer program what to do in a computer language
-    - Can be created, read, modified, and deleted
 - Inspect Running Code
-    - Right click > inspect in browser
-    - Shows what is running behind the scenes of the browser
-    - Debugging mode in VSCode
-    - CHerry tomatoes
-    - Tells the coder what is happening in the code in real time
 - Inspect Variables
-    - Seeing what is going on with the values of certain variables that may cause problems in the code
-    - Usually automatically done while debugging
 
-![Computer Hardware](https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/images/cpu.jpeg)
+![](https://github.com/kayleehou/myproject/blob/master/images/cpu_usage_mindmap.PNG?raw=true)
+
+![Computer Hardware]({{site.baseurl}}/images/cpu.jpeg)
 
 
 ### The Internet
@@ -71,24 +48,24 @@ Define or describe usage of Computer using Computer Programs. Pictures are prefe
     - Bandwidth is usually measured in bits per second
 
 - Complete Vocabulary Matching Activity.  Incorporate this into your learnings from year.  To analyze measure path and latency use `traceroute` and `ping` commands from Linux Terminal.  
-    - Path - A path between two computing devices on a computer network (a sender and a receiver) is a sequence of directly connected computing devices that begins at the sender and ends at the receiver.
-    - Route - Routing is the process of finding a path from sender to receiver.
-    - Computer System - A computing system is a group of computing devices and programs working together for a common purpose.
-    - Computer Device - A computing device is a physical artifact that can run a program. Some examples include computers, tablets, servers, routers, and smart sensors.
-    - Bandwidth - The bandwidth of a computer network is the maximum amount of data that can be sent in a fixed amount of time. Bandwidth is usually measured in bits per second.
-    - Computer Network - A computer network is a group of interconnected computing devices capable of sending or receiving data. A computer network is a type of computing system. 
+    - Path - a
+    - Route - e
+    - Computer System - b
+    - Computer Device - c
+    - Bandwidth - d
+    - Computer Network - f
 
 > Watch/review College Board Daily Video 4.1.2
 
 - Complete True of False Questions
-    1. True
-    2. False
-    3. False
-    4. True
-    5. False
-    6. False
-    7. True
 
+1. T
+2. F
+3. F
+4. T
+5. F
+6. T  correct answer: F
+7. T
 
 - Essential Knowledge
     - The internet is a computer network consisting of interconnected networks that use standardized, open (nonproprierary) communication protocols.
@@ -108,25 +85,26 @@ Define or describe usage of Computer using Computer Programs. Pictures are prefe
 
 - Go over AP videos, vocabulary, and essential knowledge.  Draw a diagram showing the internet and its many levels. A preferred diagram would using your knowledge of frontend, backend, deployment, etc.  Picture would highligh vocabulary by illustration. The below illustration have some ideas
 
-![diagram](https://user-images.githubusercontent.com/111464932/230666258-e8579092-febb-45f2-ae8c-e9b23ce5581f.png)
+![Full Stack]({{site.baseurl}}/images/fullstack.png)
 
-![Full Stack](https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/images/fullstack.png)
+![network topology](https://github.com/kayleehou/myproject/blob/master/images/network_topology.PNG?raw=true)
 
+![internet layers](https://github.com/kayleehou/myproject/blob/master/images/internet_layers.PNG?raw=true)
 
 - Often we draw pictures of machines communicating over the Internet with arrows.  However, the real communication goes through protocol layers and the machine and then is trasported of the network.   For College Board and future Computer Knowledge you should become familiar with the following ...
 
 ```
      User Machine  <---> Frontend Server <---> Backend Server
     +-----------+         +-----------+         +-----------+
-    |   Browser   |         |   GH Page   |          |    Flask     |
+    |  Browser  |         |  GH Page  |         |   Flask   |
     +-----------+    ^    +-----------+    ^    +-----------+
-    |     HTTP    |     |    |     HTTP     |     |    |     HTTP    |
-    +-----------+    |    +-----------+     |    +-----------+
-    |     TCP      |    |    |      TCP     |     |    |      TCP     |   
-    +-----------+    |    +-----------+     |    +-----------+
-    |      IP      |    V    |       IP     |     V    |       IP     |
+    |    HTTP   |    |    |    HTTP   |    |    |    HTTP   |
+    +-----------+    |    +-----------+    |    +-----------+
+    |    TCP    |    |    |    TCP    |    |    |    TCP    |   
+    +-----------+    |    +-----------+    |    +-----------+
+    |     IP    |    V    |     IP    |    V    |     IP    |
     +-----------+         +-----------+         +-----------+
-    |   Network   |  <--->  |    Network   |  <--->  |   Network   |
+    |  Network  |  <--->  |  Network  |  <--->  |  Network  |
     +-----------+         +-----------+         +-----------+
 ```
 
@@ -143,19 +121,37 @@ The "network" layer is responsible for ***routing data packets between networks*
 > Watch both Daily videos for 4.2
 
 - Complete the network activity, summarize your understanding of fault tolerance.
+1. yes, it is fault tolerant, even if one path goes down, you can communicate with the other ones 
+2. no, only one path to F, so if one wire goes down, F is also cut off 
+3. no, only one wire connecting A and G 
 
+4.2 video 2 practice: 
+1. C
+2. A 
+
+- the internet is fault tolerant 
+Network where devices can communicate with one another even if one path goes down. It's important to have redundancy in your network, so that if one wire goes down, the other devices can still function because there is more than one path between connected devices. 
 
 ### Parallel and Distributed Computing
-> Review previous lecture on Parallel Computing and watch Daily vidoe 4.3.  Think of ways to make something in you team project to utilize Cores more effectively.  Here are some thoughts to add to your story of Computers and Networks...
+> Review previous lecture on Parallel Computing and watch Daily video 4.3. Think of ways to make something in you team project to utilize Cores more effectively.  Here are some thoughts to add to your story of Computers and Networks...
+- load balancing with an API 
 
-- What is naturally Distributed in Frontend/Backend architecture? 
->  
+- What is naturally Distributed in Frontend/Backend architecture?  
+The backend is naturally distributed as it typically consists of multiple servers, each responsible for handling different tasks or services. By distributing the backend, the application can handle a large number of requests, improve performance and reliability, and provide fault tolerance and high availability. The frontend, on the other hand, is typically executed on a single client device, such as a web browser or mobile app, and is responsible for displaying the user interface and interacting with the user.
 
 - Analyze this command in Docker: ```ENV GUNICORN_CMD_ARGS="--workers=1 --bind=0.0.0.0:8086"```.   Determine if there is options are options in this command for parallel computing within the server that runs python/gunicorn.  Here is an [article](https://medium.com/building-the-system/gunicorn-3-means-of-concurrency-efbb547674b7)
 
+In the context of a Docker image that runs a Python/Gunicorn web application, this command is used to configure the Gunicorn web server. The --workers option specifies the number of worker processes that Gunicorn should spawn to handle incoming requests. In this case, the value is set to 1, which means that Gunicorn will use a single worker process to handle all requests. The --bind option specifies the IP address and port number that Gunicorn should bind to, in this case, 0.0.0.0:8086, which means that Gunicorn will listen on all network interfaces on port 8086.
+
+To enable parallel computing in Python/Gunicorn web application, you can adjust the --workers option to a higher value, which will spawn multiple worker processes to handle incoming requests concurrently. However, increasing the number of worker processes may also increase the memory usage and CPU load of the server.
+
+- CHALLENGE: seek how many workers I have set up on gunicorn and set up more
+I think there are currently 4 workers on gunicorn, I can run gunicorn myapp:app -w 8
+to set up more. 
 
 > Last week we discussed parallel computing on local machine.  There are many options.  Here is something to get parallel computing work with a tool called Ray.
 - Review this [article](https://www.anyscale.com/blog/writing-your-first-distributed-python-application-with-ray)...  Can you get parallel code on images to work more effectively?  I have not tried Ray.
+Ray is a distributed computing system that makes it easy to write parallel and distributed Python applications. It is designed to be efficient and scalable, and can help you parallelize your code across multiple CPU cores, GPUs, or even multiple machines.
 
 - Code example from ChatGPT using squares.  This might be more interesting if nums we generated to be a lot bigger.
 
