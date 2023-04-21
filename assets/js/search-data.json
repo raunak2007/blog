@@ -4,9 +4,9 @@
         "post0": {
             "title": "Overview of City API CRUD",
             "content": "Demonstration of City API connecting between Frontend and Backend . import requests # Set the URL of the API endpoint url = &quot;https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions&quot; # Set the headers for the API request headers = { &quot;X-RapidAPI-Key&quot;: &quot;c0f7469cd7mshc45a4834d55afdep1b5c00jsnc8a41fb46f94&quot;, &quot;X-RapidAPI-Host&quot;: &quot;wft-geo-db.p.rapidapi.com&quot; } # Make the API request using the requests module response = requests.request(&quot;GET&quot;, url, headers=headers) # Print the response text print(response.text) # Check the status code of the response if response.status_code == 200: print(&quot;API request was successful!&quot;) elif response.status_code == 400: print(&quot;Bad request! Check your parameters.&quot;) elif response.status_code == 401: print(&quot;Unauthorized! Check your API key.&quot;) elif response.status_code == 404: print(&quot;API endpoint not found!&quot;) else: print(f&quot;Unexpected status code: {response.status_code}&quot;) # Convert the response text from JSON to a Python dictionary data = response.json() # Print the number of administrative divisions in the response print(f&quot;There are {len(data[&#39;data&#39;])} administrative divisions.&quot;) # Print the names of the first 10 administrative divisions in the response print(&quot;The first 10 administrative divisions are:&quot;) for division in data[&#39;data&#39;][:10]: print(division[&#39;name&#39;]) # Print the full name of the administrative division with ID 3780 division_id = 3780 for division in data[&#39;data&#39;]: if division[&#39;id&#39;] == division_id: print(f&quot;The full name of division {division_id} is {division[&#39;fullName&#39;]}.&quot;) break else: print(f&quot;Division {division_id} not found in response.&quot;) .",
-            "url": "https://raunak2007.github.io/csp-fast-pages/2023/04/19/city_api_for_tri_3_csp_project-(2).html",
-            "relUrl": "/2023/04/19/city_api_for_tri_3_csp_project-(2).html",
-            "date": " • Apr 19, 2023"
+            "url": "https://raunak2007.github.io/csp-fast-pages/2023/04/20/city_api_for_tri_3_csp_project-(2).html",
+            "relUrl": "/2023/04/20/city_api_for_tri_3_csp_project-(2).html",
+            "date": " • Apr 20, 2023"
         }
         
     
