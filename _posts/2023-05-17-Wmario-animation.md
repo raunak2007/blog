@@ -11,63 +11,61 @@ description: Working with 2D elements and working with animations
 <head>
     <title>Projectile Motion Simulation</title>
     <style>
-      #canvas {
-        border: 1px solid #000;
-        margin-top: 20px;
-      }
+        canvas {
+            border: 1px solid black;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <canvas id="canvas" width="800" height="400"></canvas>
 
     <script>
-      // Function to draw the projectile on the canvas
-      function drawProjectile(context, x, y) {
-        context.beginPath();
-        context.arc(x, y, 10, 0, 2 * Math.PI);
-        context.fillStyle = "#FF0000";
-        context.fill();
-        context.closePath();
-      }
+        // Get the canvas element and its context
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
 
-      // Function to simulate the projectile motion
-      function simulateProjectileMotion(canvas, initialVelocity, angle) {
-        var context = canvas.getContext("2d");
-        var time = 0;
-        var timeInterval = 0.05; // Change this value to adjust the time interval
+        // Set the initial position and velocity of the projectile
+        let x = 50;
+        let y = canvas.height / 2;
+        let velocityX = 5;
+        let velocityY = 0;
+        const gravity = 0.2;
 
-        // Calculate initial velocity components
-        var velocityX = initialVelocity * Math.cos(angle);
-        var velocityY = initialVelocity * Math.sin(angle);
+        // Keyboard event listeners
+        document.addEventListener('keydown', function(event) {
+            if (event.keyCode === 32) { // Space key
+                velocityY = -7; // Adjust the vertical velocity to simulate a jump
+            }
+        });
 
-        // Calculate initial position
-        var x = 0;
-        var y = canvas.height;
+        // Animation loop
+        function draw() {
+            // Clear the canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        function animationLoop() {
-          context.clearRect(0, 0, canvas.width, canvas.height);
+            // Update the position and velocity
+            x += velocityX;
+            y += velocityY;
+            velocityY += gravity;
 
-          // Calculate new position
-          x = velocityX * time;
-          y = canvas.height - velocityY * time + 0.5 * 9.81 * Math.pow(time, 2);
+            // Draw the projectile
+            ctx.beginPath();
+            ctx.arc(x, y, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = 'red';
+            ctx.fill();
 
-          // Draw the projectile
-          drawProjectile(context, x, y);
+            // Check for collision with the ground
+            if (y > canvas.height - 10) {
+                y = canvas.height - 10;
+                velocityY = 0;
+            }
 
-          time += timeInterval;
-
-          // Continue animation until the projectile hits the ground
-          if (y < canvas.height) {
-            requestAnimationFrame(animationLoop);
-          }
+            // Request the next animation frame
+            requestAnimationFrame(draw);
         }
 
-        animationLoop();
-      }
-
-      // Run the simulation when the page loads
-      window.onload = function () {
-        var canvas = document.getElementById("canvas");
-        simulateProjectileMotion(canvas, 50, Math.PI / 4); // Adjust the initialVelocity and angle as desired
-      };
+        // Start the animation loop
+        draw();
     </script>
+</body>
+
