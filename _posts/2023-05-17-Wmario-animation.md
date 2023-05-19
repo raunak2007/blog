@@ -65,9 +65,7 @@ description: Working with 2D elements and working with animations
         }
 
         // Start the animation loop
-        draw('orange');
-        draw('blue');
-        draw('green');
+        draw('red');
     </script>
 </body>
 
