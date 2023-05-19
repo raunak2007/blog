@@ -39,7 +39,7 @@ description: Working with 2D elements and working with animations
         });
 
         // Animation loop
-        function draw() {
+        function draw(color) {
             // Clear the canvas
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -51,7 +51,7 @@ description: Working with 2D elements and working with animations
             // Draw the projectile
             ctx.beginPath();
             ctx.arc(x, y, 10, 0, 2 * Math.PI);
-            ctx.fillStyle = 'red';
+            ctx.fillStyle = color;
             ctx.fill();
 
             // Check for collision with the ground
@@ -65,7 +65,9 @@ description: Working with 2D elements and working with animations
         }
 
         // Start the animation loop
-        draw();
+        draw('orange');
+        draw('blue');
+        draw('green');
     </script>
 </body>
 
