@@ -1,12 +1,12 @@
 ---
-- title: Python 2D Iteration and Animations
-- toc: true
-- categories: [week34, tri3]
-- image: /images/javascript.png
-- badges: true
-- comments: true
-- author: Edwin Abraham
-- description: Working with 2D elements and working with animations
+title: Python 2D Iteration and Animations
+toc: true
+categories: [week34, tri3]
+image: /images/javascript.png
+badges: true
+comments: true
+author: Raunak Mondal
+description: Working with 2D elements and working with animations
 ---
 
 {% assign sprite_file = site.baseurl | append: page.image %}  <!--- Liquid concatentation --->
