@@ -10,15 +10,15 @@ description: Plan of 2D Animations
 ---
 ## Integration of 2D Animation Concepts for Projectile Motion of a Red Ball
 
-To create a 2D animation of projectile motion for a red ball using JavaScript and HTML, I will guide you through the following steps:
+To create a 2D animation of projectile motion for a red ball using JavaScript and HTML, I can implement the following steps:
 
-1. **HTML Structure**: Let's start by setting up the basic HTML structure of the page.
+1. **HTML Structure**: I'll start by setting up the basic HTML structure of the page.
 
 \`\`\`html
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Projectile Motion Animation</title>
+    <title>Physics Projectile Motion Animation</title>
     <style>
         #canvas {
             position: relative;
@@ -34,7 +34,7 @@ To create a 2D animation of projectile motion for a red ball using JavaScript an
 </html>
 \`\`\`
 
-2. **JavaScript**: Now, let's create a JavaScript file (e.g., \`script.js\`) and include it in the HTML file using the \`<script>\` tag.
+2. **JavaScript**: Now, I'll create a JavaScript file (e.g., \`script.js\`) and include it in the HTML file using the \`<script>\` tag.
 
 \`\`\`javascript
 // Define variables for ball properties
@@ -91,7 +91,7 @@ function animate() {
 animate();
 \`\`\`
 
-3. **CSS Styling**: We can also add CSS styles to the \`<style>\` tag or an external CSS file to define the appearance of the canvas.
+3. **CSS Styling**: I will also add CSS styles to the \`<style>\` tag or an external CSS file to define the appearance of the canvas.
 
 \`\`\`css
 #canvas {
@@ -100,7 +100,7 @@ animate();
 }
 \`\`\`
 
-4. **Testing**: You can now open the HTML file in a web browser, and you should see a canvas element with a red ball. Press the spacebar to make the ball jump, and observe the projectile motion.
+4. **Testing**: I can now open the HTML file in a web browser and add it to the PhysicsArcade repository, and I should see a canvas element with a red ball. Press the spacebar to make the ball jump, and observe the projectile motion.
 
-By following these steps, you will be able to integrate 2D animation concepts into a \`<script>\` tag inside an HTML file to display the projectile motion of a red ball using keyboard actions.
+By following these steps, I'll be able to integrate 2D animation concepts into a \`<script>\` tag inside an HTML file to display the projectile motion of a red ball using keyboard actions.
 
