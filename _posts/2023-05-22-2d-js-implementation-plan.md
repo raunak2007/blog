@@ -1,3 +1,13 @@
+---
+title: Plan of 2D Animations
+toc: true
+categories: [week34, tri3]
+image: /images/javascript.png
+badges: true
+comments: true
+author: Raunak Mondal
+description: Plan of 2D Animations
+---
 ## Integration of 2D Animation Concepts for Projectile Motion of a Red Ball
 
 To create a 2D animation of projectile motion for a red ball using JavaScript and HTML, follow these steps:
