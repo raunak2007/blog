@@ -1,6 +1,6 @@
 ---
 toc: true
-layout: base
+layout: post
 description: Reflection of my entire progress this year throughout all 3 trimesters of CSP
 categories: [markdown]
 title: Reflection
