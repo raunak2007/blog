@@ -1,1 +1,1 @@
-Sitemap: https://raunak2007.github.io/csp-fast-pages/sitemap.xml
+Sitemap: https://raunak2007.github.io/blog/sitemap.xml
