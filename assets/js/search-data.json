@@ -38,17 +38,6 @@
   
 
   
-      ,"page3": {
-          "title": "Frontend",
-          "content": "| World Time API | Lists, Dictionaries, and Loops | APWH Game Notebook | Hangman Jupyter Notebook | App Ideas | .",
-          "url": "https://raunak2007.github.io/blog/_pages/frontend.html",
-          "relUrl": "/_pages/frontend.html",
-          "date": ""
-      }
-      
-  
-
-  
 
   
   
@@ -73,7 +62,7 @@
   
 
   
-      ,"page13": {
+      ,"page12": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://raunak2007.github.io/blog/robots.txt",
