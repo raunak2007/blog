@@ -14,20 +14,9 @@
 
   
   
-      ,"page0": {
-          "title": "Peer Grades",
-          "content": "Grades as of now: . 1-2 Hacks: 1/1, completed everything accurately and did extra binary hacks | 3-4 Hacks: 0.9/1, Completed all hacks, but didn’t explain his answers for his own problems, which was a part of video 2 hacks | 5-7 Hacks: 0.9/1 | 8, 10 Hacks: 0.9/1 | 9, 11 Hacks: 1/1 | 12-13 Hacks: 1/1 | 14-15 Hacks: 1/1 | 17-18 Hacks: /1 | .",
-          "url": "https://raunak2007.github.io/blog/2022-12-02-grades.html",
-          "relUrl": "/2022-12-02-grades.html",
-          "date": ""
-      }
-      
-  
 
   
-
-  
-      ,"page2": {
+      ,"page1": {
           "title": "About Me",
           "content": "Hi! I’m Raunak Mondal, and I’m a rising senior at Del Norte High School who loves applying math and creative problem-solving to real-world problems. As someone who has enjoyed learning about different cultures throughout both the United States and the rest of the world, I have always wanted to explore reams of sociopolitical data using data analysis methods and I am glad that I have the opportunity to do so through this blog. This blog contains many of the different explorations that I have done in my free time, and I hope you are enlightened by any of the posts that you encounter in my blog. . This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats (including Markdown). &#8617; . |",
           "url": "https://raunak2007.github.io/blog/about/",
@@ -62,7 +51,7 @@
   
 
   
-      ,"page12": {
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://raunak2007.github.io/blog/robots.txt",
